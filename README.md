@@ -4,10 +4,7 @@ DustBuster is an enhanced syntax definition for Dust.js and also include complet
 ## Prerequisites
 Sublime Text 3
 
-## Installing the package (not available yet)
-Still in Development
-Requires Package Control
-Search for DustBuster
+## Installing the package (not available yet, still in dev)
 
 ### Author
 Mike Delucchi
