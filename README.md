@@ -1,5 +1,5 @@
 # DustBuster
-DustBuster is an enhanced syntax definition for Dust.js and also include completion triggers for all supported Dust helpers in this repo:
+DustBuster is an enhanced syntax definition for Dust.js that also includes sublime completions for most current dustjs-helpers:
 [linkedin/dustjs-helpers](https://github.com/linkedin/dustjs-helpers)
 
 ## Primary Features
