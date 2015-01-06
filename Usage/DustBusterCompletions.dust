@@ -1,143 +1,121 @@
-{! db-section|dust !}
+{! section|dust !}
 {#name}
   
 {/name}
 
-{! db-no|dust !}
+{! no|dust !}
 {^name}
   
 {/name}
 
-{! db-yes|dust !}
+{! yes|dust !}
 {?name}
   
 {/name}
 
-{! dbp|dust:partial !}
+{! partial|dust !}
 {>partial params /}
 
-{! dbb|dust:block !}
+{! block|dust !}
 {+block/}
 
-{! dbbd|dust:block (with default) !}
+{! block-with-default|dust !}
 {+block}
   
 {/block}
 
+{! eq-typed|dust !}
 {@eq key="foo" value="foo" type="string"}
   
 {:else}
   
 {/eq}
 
-db-
-
-{! dbeq1|dust:equals-typed !}
-{@eq key="foo" value="foo" type="string"}
-  
-{:else}
-  
-{/eq} 
-
-{! dbeq2|dust:equals-untyped !}
-{@eq key="foo" value="foo" type="string"}
+{! eq-untyped|dust !}
+{@eq key="foo" value="foo"}
   
 {else}
   
 {/eq}
 
-{! dne1|dust:not-equals:no-body !}
+{! ne-no-body|dust !}
 {@ne key="foo" value="foo"/}
 
-{! dne2|dust:not-equals:matching-string-case !}
+{! ne-matching-string|dust !}
 {@ne key="foo" value="foo"}not equal{/ne}
 
-{! dne3|dust:not-equals:non-matching-string-case !}
-{@ne key="foo" value="bar"}
-  not equal
-{:else}
-  bar
-{/ne}
-
-{! dne4|dust:not-equals:non-matching-string-case-missing-else-block !}
+{! ne-non-matching-string|dust !}
 {@ne key="foo" value="bar"}
   not equal
 {/ne}
 
-{! dne5|dust:not-equals:non-equal-numbers-case !}
+{! ne-non-equal-numbers-case|dust !}
 {@ne key="3" value="5" type="number"}
   not equal
 {/ne}
 
-{! dne6|dust:not-equals:non-equal-boolean-case !}
+{! ne-non-equal-boolean-case|dust !}
 {@ne key="false" value="true" type="boolean"}
   not equal
 {/ne}
 
-{! dblt1|dust:less-than !}
-{@lt key="20" value="27"}
-  
-{:else}
-  
-{/lte}
-
-{! dblt2|dust:less-than-var-typed !}
+{! lt|dust !}
 {@lt key="{a}" value="27" type="number"}
   
 {:else}
   
 {/lt}
 
-{! dblte|dust:less-than-equals !}
+{! lte|dust !}
 {@lte key="20" value="27" type="number"}
   
 {:else}
   
 {/lt}
 
-{! dbgt|dust:greater-than !}
+{! gt|dust !}
 {@gt key="27" value="20" type="number"}
   
 {:else}
   
 {/gt}
 
-{! dbgte|dust:greater-than-equals !}
+{! gte|dust !}
 {@gte key="27" value="27" type="number"}
   
 {:else}
   
 {/gte}
 
-{! dbmath1|dust:math !}
+{! math|dust !}
 {@math key="number" method="mod,add,abs,substract..." operand="number" round="true or false"/}
 
-{! dbmath2|dust:math:even-odd-bodies !}
+{! math-even-odd-bodies|dust !}
 {@math key=$idx method="mod" operand=2}
-   {@eq value=0}
-     even
-   {:else}
-     odd
-   {/eq}
- {/math} 
+  {@eq value=0}
+    even
+  {:else}
+    odd
+  {/eq}
+{/math}
 
-{! dbmath3|dust:math:floor !}
-{@math key="16.5" method="floor"/}
+{! math-floor|dust !}
+{@math key="27.5" method="floor"/}
 
-{! dbmath4|dust:math:ceil !}
-{@math key="16.5" method="ceil"/}
+{! math-ceil|dust !}
+{@math key="27.5" method="ceil"/}
 
-{! dbmath5|dust:math:round !}
-{@math key="16.5" method="round"/}
+{! math-round|dust !}
+{@math key="27.5" method="round"/}
 
-{! dbmath6|dust:math:eq-filter !}
+{! math-eq-filter|dust !}
 {@math key="-27" method="abs"}
   {@eq value=27}
     Test is true
   {/eq}
-{/math}
+{/math}   
 
-{! dbmath7|dust:math:greater-than-default !}
+{! math-greater-than-default|dust !}
 {@math key="27" method="add" operand="100"}
   {@gt value=120}
     Greater than
@@ -147,8 +125,7 @@ db-
   {/default}
 {/math}
 
-
-{! dbsel1|dust:select:block-with-key-and-type !}
+{! select-block-with-key-and-type|dust !}
 {@select key="foo" type="string"}
   
 {/select}
