@@ -1,0 +1,222 @@
+{! db-section|dust !}
+{#name}
+  
+{/name}
+
+{! db-no|dust !}
+{^name}
+  
+{/name}
+
+{! db-yes|dust !}
+{?name}
+  
+{/name}
+
+{! dbp|dust:partial !}
+{>partial params /}
+
+{! dbb|dust:block !}
+{+block/}
+
+{! dbbd|dust:block (with default) !}
+{+block}
+  
+{/block}
+
+{@eq key="foo" value="foo" type="string"}
+  
+{:else}
+  
+{/eq}
+
+db-
+
+{! dbeq1|dust:equals-typed !}
+{@eq key="foo" value="foo" type="string"}
+  
+{:else}
+  
+{/eq} 
+
+{! dbeq2|dust:equals-untyped !}
+{@eq key="foo" value="foo" type="string"}
+  
+{else}
+  
+{/eq}
+
+{! dne1|dust:not-equals:no-body !}
+{@ne key="foo" value="foo"/}
+
+{! dne2|dust:not-equals:matching-string-case !}
+{@ne key="foo" value="foo"}not equal{/ne}
+
+{! dne3|dust:not-equals:non-matching-string-case !}
+{@ne key="foo" value="bar"}
+  not equal
+{:else}
+  bar
+{/ne}
+
+{! dne4|dust:not-equals:non-matching-string-case-missing-else-block !}
+{@ne key="foo" value="bar"}
+  not equal
+{/ne}
+
+{! dne5|dust:not-equals:non-equal-numbers-case !}
+{@ne key="3" value="5" type="number"}
+  not equal
+{/ne}
+
+{! dne6|dust:not-equals:non-equal-boolean-case !}
+{@ne key="false" value="true" type="boolean"}
+  not equal
+{/ne}
+
+{! dblt1|dust:less-than !}
+{@lt key="20" value="27"}
+  
+{:else}
+  
+{/lte}
+
+{! dblt2|dust:less-than-var-typed !}
+{@lt key="{a}" value="27" type="number"}
+  
+{:else}
+  
+{/lt}
+
+{! dblte|dust:less-than-equals !}
+{@lte key="20" value="27" type="number"}
+  
+{:else}
+  
+{/lt}
+
+{! dbgt|dust:greater-than !}
+{@gt key="27" value="20" type="number"}
+  
+{:else}
+  
+{/gt}
+
+{! dbgte|dust:greater-than-equals !}
+{@gte key="27" value="27" type="number"}
+  
+{:else}
+  
+{/gte}
+
+{! dbmath1|dust:math !}
+{@math key="number" method="mod,add,abs,substract..." operand="number" round="true or false"/}
+
+{! dbmath2|dust:math:even-odd-bodies !}
+{@math key=$idx method="mod" operand=2}
+   {@eq value=0}
+     even
+   {:else}
+     odd
+   {/eq}
+ {/math} 
+
+{! dbmath3|dust:math:floor !}
+{@math key="16.5" method="floor"/}
+
+{! dbmath4|dust:math:ceil !}
+{@math key="16.5" method="ceil"/}
+
+{! dbmath5|dust:math:round !}
+{@math key="16.5" method="round"/}
+
+{! dbmath6|dust:math:eq-filter !}
+{@math key="-27" method="abs"}
+  {@eq value=27}
+    Test is true
+  {/eq}
+{/math}
+
+{! dbmath7|dust:math:greater-than-default !}
+{@math key="27" method="add" operand="100"}
+  {@gt value=120}
+    Greater than
+  {/gt}
+  {@default}
+    Not greater than
+  {/default}
+{/math}
+
+
+{! dbsel1|dust:select:block-with-key-and-type !}
+{@select key="foo" type="string"}
+  
+{/select}
+
+{! dbsel2|dust:select:multi-condition-default !}
+{@select key="foo"}
+  {@eq value="bar"}bar{/eq}
+  {@eq value="baz"}baz{/eq}
+  {@eq value="biz"}biz{/eq}
+  {@default value="default"}default{/default}
+{/select}
+
+{! dbsel3|dust:select:inside-array !}
+{#array}
+  {@select key=.}
+    {@eq value="foo"}foo{/eq}
+    {@eq value="bar"}bar{/eq}
+    {@default value="default"}default{/default}
+  {/select}
+{/array}
+
+{#array}
+  {@select key=.}
+    {@eq value="foo"}foo{/eq}
+    {@eq value="bar"}bar{/eq}
+    {@default value="default"}default{/default}
+  {/select}
+{/array}
+
+{! dbsize1|dust:size:empty-key !}
+{@size key=""/}
+
+{! dbsize2|dust:string-key !}
+{mystring} has {@size key=mystring/} letters
+
+{! dbtap1|dust:tap-plain-text !}
+{@tapper value="plain text"/}
+
+{! dbtap2|dust:tap-string-and-var !}
+{@tapper value="plain text  {var}"/}
+
+{! dblist|dust:list-width-index !}
+{#list}
+  {idx}. {.}
+{/list}
+
+{! dbump1|dust:context-dump !}
+{@contextDump/}
+
+{! dbump2|dust:context-dump:to-console !}
+{@contextDump to="console"/}
+
+{! dbump3|dust:context-dump:full-test !}
+{@contextDump key="full"/}
+
+{! dbump4|dust:context-dump:function-dump-test !}
+{#aa param="{p}"}{@contextDump key="full"/}{/aa}
+
+{! dbsep1|dust:sep-partial-in-array !}
+{#n}{>hello_there name=. count="30"/}{@sep} {/sep}{/n}
+
+{! dbsep2|dust:sep-partial-in-async-iterator !}
+{#numbers}{#delay}{.}{/delay}{@sep}, {/sep}{/numbers}
+
+{! dbarr1|dust:array !}
+{#array}
+  
+{/array}
+
+{! dbarr2|dust:implicit-array !}
+{#awesome}{.}{~n}{/awesome}

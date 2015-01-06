@@ -1,0 +1,173 @@
+{
+    "scope": "text.html.dust,text.dust",
+    "completions": [
+        {
+            "trigger": "db-section|dust",
+            "contents": "{#${1:name}}\n\t${2}\n{/${1}}"
+        },
+        {
+            "trigger": "db-no|dust",
+            "contents": "{^${1:name}}\n\t${2}\n{/${1}}"
+        },
+        {
+            "trigger": "db-yes|dust",
+            "contents": "{?${1:name}}\n\t${2}\n{/${1}}"
+        },
+        {
+            "trigger": "db-partial|dust",
+            "contents": "{>${1:partial}${2: params }/}${0}"
+        },
+        {
+            "trigger": "db-block|dust",
+            "contents": "{+${1:block}/}${0}"
+        },
+        {
+            "trigger": "db-block-with-default|dust",
+            "contents": "{+${1:block}}\n\t${0}\n{/${1}}"
+        },
+        {
+            "trigger": "db-eq-typed|dust",
+            "contents": "{@eq key=\"${1:foo}\" value=\"${2:foo}\" type=\"${3:string}\"}\n\t${4}\n{:else}\n\t${5}\n{/eq}"
+        },
+        {
+            "trigger": "db-eq-untyped|dust",
+            "contents": "{@eq key=\"${1:foo}\" value=\"${2:foo}\" type=\"${3:string}\"}\n\t${4}\n{else}\n\t${6}\n{/eq}"
+        },
+        {
+            "trigger": "dbne1|dust:not-equals:no-body",
+            "contents": "{@ne key=\"${1:foo}\" value=\"${2:foo}\"/}"
+        },
+        {
+            "trigger": "dbne2|dust:not-equals:matching-string",
+            "contents": "{@ne key=\"${1:foo}\" value=\"${2:foo}\"}${3:not equal}{/ne}"
+        },
+        {
+            "trigger": "dbne3|dust:not-equals:non-matching-string",
+            "contents": "{@ne key=\"${1:foo}\" value=\"${2:bar}\"}\n\t${3:not equal}\n{:else\\}\n\t${4:bar}\n{/ne}"
+        },
+        {
+            "trigger": "dbne4|dust:not-equals:non-matching-string-missing-else",
+            "contents": "{@ne key=\"${1:foo}\" value=\"${2:bar}\"}\n\t${3:not equal}\n{/ne}"
+        },
+        {
+            "trigger": "dbne5|dust:not-equals:non-equal-numbers-case",
+            "contents": "{@ne key=\"${1:3}\" value=\"${2:5}\" type=\"${3:number}\"}\n\t${4:not equal}\n{/ne}"
+        },
+        {
+            "trigger": "dbne6|dust:not-equals:non-equal-boolean-case",
+            "contents": "{@ne key=\"${1:false}\" value=\"${2:true}\" type=\"${3:boolean}\"}\n\t${4:not equal}\n{/ne}"
+        },
+        {
+            "trigger": "dblt1|dust:less-than",
+            "contents": "{@lt key=\"${1:20}\" value=\"${2:27}\"}\n\t${4}\n{:else}\n\t${6}\n{/lte}"
+        },
+        {
+            "trigger": "dblt2|dust:less-than-var-typed",
+            "contents": "{@lt key=\"{${1:a}}\" value=\"${2:27}\" type=\"${3:number}\"}\n\t${4}\n{:else}\n\t${5}\n{/lt}"
+        },
+        {
+            "trigger": "dblte|dust:less-than-equals",
+            "contents": "{@lte key=\"${1:20}\" value=\"${2:27}\" type=\"${3:number}\"}\n\t${4}\n{:else}\n\t${5}\n{/lt}"
+        },
+        {
+            "trigger": "dbgt|dust:greater-than",
+            "contents": "{@gt key=\"${1:27}\" value=\"${2:20}\" type=\"${3:number}\"}\n\t${4}\n{:else}\n\t${5}\n{/gt}"
+        },
+        {
+            "trigger": "dbgte|dust:greater-than-equals",
+            "contents": "{@gte key=\"${1:27}\" value=\"${2:27}\" type=\"${3:number}\"}\n\t${4}\n{:else}\n\t${5}\n{/gte}"
+        },
+        {
+            "trigger": "dbmath1|dust:math",
+            "contents": "{@math key=\"${1:number}\" method=\"${2:mod,add,abs,substract...}\" operand=\"${3:number}\" round=\"${4:true or false}\"/}"
+        },
+        {
+            "trigger": "dbmath2|dust:math:even-odd-bodies",
+            "contents": "{@math key=\\$idx method=\"mod\" operand=2}\n\t{@eq value=0}\n\t\t${1:even}\n\t{:else}\n\t\t${2:odd}\n\t{/eq}\n{/math}"
+        },
+        {
+            "trigger": "dbmath3|dust:math:floor",
+            "contents": "{@math key=\"${1:27.5}\" method=\"floor\"/}"
+        },
+        {
+            "trigger": "dbmath4|dust:math:ceil",
+            "contents": "{@math key=\"${1:27.5}\" method=\"ceil\"/}"
+        },
+        {
+            "trigger": "dbmath5|dust:math:round",
+            "contents": "{@math key=\"${1:27.5}\" method=\"round\"/}"
+        },
+        {
+            "trigger": "dbmath6|dust:math:eq-filter",
+            "contents": "{@math key=\"${1:-27}\" method=\"${2:abs}\"}\n\t{@eq value=${3:27}}\n\t\t${4:Test is true}\n\t{/eq}\n{/math}"
+        },
+        {
+            "trigger": "dbmath7|dust:math:greater-than-default",
+            "contents": "{@math key=\"${1:27}\" method=\"${2:add}\" operand=\"${3:100}\"}\n\t{@gt value=${4:120}}\n\t\t${5:Greater than}\n\t{/gt}\n\t{@default}\n\t\t${6:Not greater than}\n\t{/default}\n{/math}"
+        },
+        {
+            "trigger": "dbsel1|dust:select:block-with-key-and-type",
+            "contents": "{@select key=\"${1:foo}\" type=\"${2:string}\"}\n\t${3}\n{/select}"
+        },
+        {
+            "trigger": "dbsel2|dust:select:multi-condition-default",
+            "contents": "{@select key=\"${1:foo}\"}\n\t{@eq value=\"${2:bar}\"}${3:bar}{/eq}\n\t{@eq value=\"${4:baz}\"}${5:baz}{/eq}\n\t{@eq value=\"${6:biz}\"}${7:biz}{/eq}\n\t{@default value=\"${8:default\"}}${9:default}{/default}\n{/select}"
+        },
+        {
+            "trigger": "dbsel3|dust:select:inside-array",
+            "contents": "{#array}\n\t{@select key=${1:.}}\n\t\t{@eq value=\"${2:foo}\"}${3:foo}{/eq}\n\t\t{@eq value=\"${4:bar}\"}${5:bar}{/eq}\n\t\t{@default value=\"${6:default}\"}${7:default}{/default}\n\t{/select}\n{/array}"
+        },
+        {
+            "trigger": "dbsize1|dust:size:empty-key",
+            "contents": "{@size key=\"${1}\"/}"
+        },
+        {
+            "trigger": "dbsize2|dust:string-key",
+            "contents": "{${1:mystring}} has {@size key=${2:mystring}/} letters"
+        },
+        {
+            "trigger": "dbtap1|dust:tap-plain-text",
+            "contents": "{@tapper value=\"${1:plain text}\"/}"
+        },
+        {
+            "trigger": "dbtap2|dust:tap-string-and-var",
+            "contents": "{@tapper value=\"${1:plain text } {${2:var}}\"/}"
+        },
+        {
+            "trigger": "dblist|dust:list-width-index",
+            "contents": "{#list}\n\t{idx}${1}. {.}\n{/list}"
+        },
+        {
+            "trigger": "dbump1|dust:context-dump",
+            "contents": "{@contextDump/}"
+        },
+        {
+            "trigger": "dbump2|dust:context-dump:to-console",
+            "contents": "{@contextDump to=\"console\"/}"
+        },
+        {
+            "trigger": "dbump3|dust:context-dump:full-test",
+            "contents": "{@contextDump key=\"full\"/}"
+        },
+        {
+            "trigger": "dbump4|dust:context-dump:function-dump-test",
+            "contents": "{#aa param=\"{p}\"}{@contextDump key=\"full\"/}{/aa}"
+        },
+        {
+            "trigger": "dbsep1|dust:sep-partial-in-array",
+            "contents": "{#n}{>hello_there name=. count=\"30\"/}{@sep} {/sep}{/n}"
+        },
+        {
+            "trigger": "dbsep2|dust:sep-partial-in-async-iterator",
+            "contents": "{#numbers}{#delay}{.}{/delay}{@sep}, {/sep}{/numbers}"
+        },
+        {
+            "trigger": "dbarr1|dust:array",
+            "contents": "{#${1:array}}\n\t${2}\n{/${1:array}}"
+        },
+        {
+            "trigger": "dbarr2|dust:implicit-array",
+            "contents": "{#${1:array}}{.}{~n}{/${1:array}}"
+        }
+    ]
+}
