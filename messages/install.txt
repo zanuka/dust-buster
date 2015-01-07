@@ -1,0 +1,14 @@
+Welcome to DustBuster 1.0.0
+============================
+
+You have successfully installed DustBuster! Welcome to the future of dust.js templating. I hope you enjoy these extra features and please feel free to suggest new features.
+
+- NEW: Compatibility with Sublime Text 3 and Sublime Text 2
+- NEW: Enhanced .dust syntax definition
+- NEW: Better comment support
+- NEW: Code completions for currently supported dustjs-helpers
+- NEW: Usage file that documents each trigger and corresponding completion
+
+Now get out there and bust some Dust!
+
+- Mike Delucchi
