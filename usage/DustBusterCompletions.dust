@@ -1,0 +1,211 @@
+{! section|dust !}
+{#name}
+  
+{/name}
+
+{! no|dust !}
+{^name}
+  
+{/name}
+
+{! yes|dust !}
+{?name}
+  
+{/name}
+
+{! partial|dust !}
+{>partial params /}
+
+{! block|dust !}
+{+block/}
+
+{! block-with-default|dust !}
+{+block}
+  
+{/block}
+
+{! eq-typed|dust !}
+{@eq key="foo" value="foo" type="string"}
+  
+{:else}
+  
+{/eq}
+
+{! eq-untyped|dust !}
+{@eq key="foo" value="foo"}
+  
+{else}
+  
+{/eq}
+
+{! ne-matching-string|dust !}
+{@ne key="foo" value="foo"}
+  not equal
+{/ne}
+
+{! ne-non-matching-string|dust !}
+{@ne key="foo" value="bar"}
+  not equal
+{/ne}
+
+{! ne-non-equal-numbers-case|dust !}
+{@ne key="3" value="5" type="number"}
+  not equal
+{/ne}
+
+{! ne-non-equal-boolean-case|dust !}
+{@ne key="false" value="true" type="boolean"}
+  not equal
+{/ne}
+
+{! lt|dust !}
+{@lt key="{a}" value="27" type="number"}
+  
+{:else}
+  
+{/lt}
+
+{! lte|dust !}
+{@lte key="20" value="27" type="number"}
+  
+{:else}
+  
+{/lt}
+
+{! gt|dust !}
+{@gt key="27" value="20" type="number"}
+  
+{:else}
+  
+{/gt}
+
+{! gte|dust !}
+{@gte key="27" value="27" type="number"}
+  
+{:else}
+  
+{/gte}
+
+{! math|dust !}
+{@math key="number" method="mod,add,abs,substract..." operand="number" round="true or false"/}
+
+{! math-floor|dust !}
+{@math key="27.5" method="floor"/}
+
+{! math-ceil|dust !}
+{@math key="27.5" method="ceil"/}
+
+{! math-round|dust !}
+{@math key="27.5" method="round"/}
+
+{! math-abs|dust !}
+{@math key="27.5" method="abs"/}
+
+{! math-subtract|dust !}
+{@math key="27" method="subtract" operand="7"/}
+
+{! math-add|dust !}
+{@math key="27" method="add" operand="7"/}
+
+{! math-multiply|dust !}
+{@math key="27" method="multiply" operand="7"/}
+
+{! math-divide|dust !}
+{@math key="27" method="divide" operand="7"/}
+
+{! math-eq-filter|dust !}
+{@math key="-27" method="abs"}
+  {@eq value=27}
+    Test is true
+  {/eq}
+{/math}   
+
+{! math-greater-than-with-default|dust !}
+{@math key="27" method="add" operand="100"}
+  {@gt value=120}
+    Greater than
+  {/gt}
+  {@default}
+    Not greater than
+  {/default}
+{/math}
+
+{! math-even-odd-bodies|dust !}
+{@math key=$idx method="mod" operand=2}
+  {@eq value=0}
+    even
+  {:else}
+    odd
+  {/eq}
+{/math}
+
+{! math-multiply-and-round|dust !}
+{@math key="27.5" method="multiply" operand="7" round="true"/}
+
+{! select-block-with-key-and-type|dust !}
+{@select key="foo" type="string"}
+  
+{/select}
+
+{! select-multi-condition-default|dust!}
+{@select key="foo"}
+  {@eq value="bar"}bar{/eq}
+  {@eq value="baz"}baz{/eq}
+  {@eq value="biz"}biz{/eq}
+  {@default value="default"}default{/default}
+{/select}
+
+{! select-inside-array|dust !}
+{#array}
+  {@select key=.}
+    {@eq value="foo"}foo{/eq}
+    {@eq value="bar"}bar{/eq}
+    {@default value="default"}default{/default}
+  {/select}
+{/array}
+
+{! size-with-empty-key|dust !}
+{@size key=""/}
+
+{! size-with-string-key|dust !}
+{mystring} has {@size key=mystring/} letters
+
+{! tapper-plain-text-string-literal|dust !}
+{@tapper value="plain text"/}
+
+{! tapper-string-literal-and-context-var|dust !}
+{@tapper value="a is {a}"/}
+
+{! context-dump|dust !}
+{@contextDump/}
+
+{! context-dump-to-console|dust !}
+{@contextDump to="console"/}
+
+{! context-dump-full-test|dust !}
+{@contextDump key="full"/}
+
+{! context-dump-function-dump-test|dust !}
+{#aa param="{p}"}{@contextDump key="full"/}{/aa}
+
+{! sep-partial-in-array|dust !}
+{#n}{>hello_there name=. count="30"/}{@sep} {/sep}{/n}
+
+{! sep-partial-in-async-iterator|dust !}
+{#numbers}{#delay}{.}{/delay}{@sep}, {/sep}{/numbers}
+
+{! array|dust !}
+{#array}
+  
+{/array}
+
+{! array-with-index|dust !}
+{#list}
+  {idx}. {.}
+{/list} 
+
+{! array-implicit|dust !}
+{#array}{.}{~n}{/array}
+
+
+
