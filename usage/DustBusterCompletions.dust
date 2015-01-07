@@ -3,13 +3,13 @@
   
 {/name}
 
-{! no|dust !}
-{^name}
+{! exists-yes|dust !}
+{?name}
   
 {/name}
 
-{! yes|dust !}
-{?name}
+{! exists-no|dust !}
+{^name}
   
 {/name}
 

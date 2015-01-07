@@ -6,12 +6,12 @@
             "contents": "{#${1:name}}\n\t${2}\n{/${1}}"
         },
         {
-            "trigger": "no|dust",
-            "contents": "{^${1:name}}\n\t${2}\n{/${1}}"
+            "trigger": "exists-yes|dust",
+            "contents": "{?${1:name}}\n\t${2}\n{/${1}}"
         },
         {
-            "trigger": "yes|dust",
-            "contents": "{?${1:name}}\n\t${2}\n{/${1}}"
+            "trigger": "exists-no|dust",
+            "contents": "{^${1:name}}\n\t${2}\n{/${1}}"
         },
         {
             "trigger": "partial|dust",
