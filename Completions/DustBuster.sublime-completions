@@ -34,12 +34,8 @@
             "contents": "{@eq key=\"${1:foo}\" value=\"${2:foo}\"}\n\t${3}\n{else}\n\t${4}\n{/eq}"
         },
         {
-            "trigger": "ne-no-body|dust",
-            "contents": "{@ne key=\"${1:foo}\" value=\"${2:foo}\"/}"
-        },
-        {
             "trigger": "ne-matching-string|dust",
-            "contents": "{@ne key=\"${1:foo}\" value=\"${2:foo}\"}${3:not equal}{/ne}"
+            "contents": "{@ne key=\"${1:foo}\" value=\"${2:foo}\"}\n\t${3:not equal}\n{/ne}"
         },
         {
             "trigger": "ne-non-matching-string|dust",
@@ -78,10 +74,6 @@
             "contents": "{@math key=\"${1:number}\" method=\"${2:mod,add,abs,substract...}\" operand=\"${3:number}\" round=\"${4:true or false}\"/}"
         },
         {
-            "trigger": "math-even-odd-bodies|dust",
-            "contents": "{@math key=\\$idx method=\"mod\" operand=2}\n\t{@eq value=0}\n\t\t${1:even}\n\t{:else}\n\t\t${2:odd}\n\t{/eq}\n{/math}"
-        },
-        {
             "trigger": "math-floor|dust",
             "contents": "{@math key=\"${1:27.5}\" method=\"floor\"/}"
         },
@@ -94,12 +86,40 @@
             "contents": "{@math key=\"${1:27.5}\" method=\"round\"/}"
         },
         {
+            "trigger": "math-abs|dust",
+            "contents": "{@math key=\"${1:27.5}\" method=\"abs\"/}"
+        },
+        {
+            "trigger": "math-subtract|dust",
+            "contents": "{@math key=\"${1:27}\" method=\"subtract\" operand=\"${2:7}\"/}"
+        },
+        {
+            "trigger": "math-add|dust",
+            "contents": "{@math key=\"${1:27}\" method=\"add\" operand=\"${2:7}\"/}"
+        },
+        {
+            "trigger": "math-multiply|dust",
+            "contents": "{@math key=\"${1:27}\" method=\"multiply\" operand=\"${2:7}\"/}"
+        },
+        {
+            "trigger": "math-divide|dust",
+            "contents": "{@math key=\"${1:27}\" method=\"divide\" operand=\"${2:7}\"/}"
+        },
+        {
             "trigger": "math-eq-filter|dust",
             "contents": "{@math key=\"${1:-27}\" method=\"${2:abs}\"}\n\t{@eq value=${3:27}}\n\t\t${4:Test is true}\n\t{/eq}\n{/math}"
         },
         {
-            "trigger": "math-greater-than-default|dust",
+            "trigger": "math-greater-than-with-default|dust",
             "contents": "{@math key=\"${1:27}\" method=\"${2:add}\" operand=\"${3:100}\"}\n\t{@gt value=${4:120}}\n\t\t${5:Greater than}\n\t{/gt}\n\t{@default}\n\t\t${6:Not greater than}\n\t{/default}\n{/math}"
+        },
+        {
+            "trigger": "math-even-odd-bodies|dust",
+            "contents": "{@math key=\\$idx method=\"mod\" operand=2}\n\t{@eq value=0}\n\t\t${1:even}\n\t{:else}\n\t\t${2:odd}\n\t{/eq}\n{/math}"
+        },
+        {
+            "trigger": "math-multiply-and-round|dust",
+            "contents": "{@math key=\"${1:27.5}\" method=\"multiply\" operand=\"${2:7}\" round=\"true\"/}"
         },
         {
             "trigger": "select-block-with-key-and-type|dust",
@@ -114,55 +134,55 @@
             "contents": "{#array}\n\t{@select key=${1:.}}\n\t\t{@eq value=\"${2:foo}\"}${3:foo}{/eq}\n\t\t{@eq value=\"${4:bar}\"}${5:bar}{/eq}\n\t\t{@default value=\"${6:default}\"}${7:default}{/default}\n\t{/select}\n{/array}"
         },
         {
-            "trigger": "dbsize1|dust:size:empty-key",
+            "trigger": "size-with-empty-key|dust",
             "contents": "{@size key=\"${1}\"/}"
         },
         {
-            "trigger": "dbsize2|dust:string-key",
+            "trigger": "size-with-string-key|dust",
             "contents": "{${1:mystring}} has {@size key=${2:mystring}/} letters"
         },
         {
-            "trigger": "dbtap1|dust:tap-plain-text",
+            "trigger": "tapper-plain-text-string-literal|dust",
             "contents": "{@tapper value=\"${1:plain text}\"/}"
         },
         {
-            "trigger": "dbtap2|dust:tap-string-and-var",
-            "contents": "{@tapper value=\"${1:plain text } {${2:var}}\"/}"
+            "trigger": "tapper-string-literal-and-context-var|dust",
+            "contents": "{@tapper value=\"${1:a} is {${2:a}}\"/}"
         },
         {
-            "trigger": "dblist|dust:list-width-index",
-            "contents": "{#list}\n\t{idx}${1}. {.}\n{/list}"
-        },
-        {
-            "trigger": "dbump1|dust:context-dump",
+            "trigger": "context-dump|dust",
             "contents": "{@contextDump/}"
         },
         {
-            "trigger": "dbump2|dust:context-dump:to-console",
+            "trigger": "context-dump-to-console|dust",
             "contents": "{@contextDump to=\"console\"/}"
         },
         {
-            "trigger": "dbump3|dust:context-dump:full-test",
+            "trigger": "context-dump-full-test|dust",
             "contents": "{@contextDump key=\"full\"/}"
         },
         {
-            "trigger": "dbump4|dust:context-dump:function-dump-test",
+            "trigger": "context-dump-function-dump-test|dust",
             "contents": "{#aa param=\"{p}\"}{@contextDump key=\"full\"/}{/aa}"
         },
         {
-            "trigger": "dbsep1|dust:sep-partial-in-array",
+            "trigger": "sep-partial-in-array|dust",
             "contents": "{#n}{>hello_there name=. count=\"30\"/}{@sep} {/sep}{/n}"
         },
         {
-            "trigger": "dbsep2|dust:sep-partial-in-async-iterator",
+            "trigger": "sep-partial-in-async-iterator|dust",
             "contents": "{#numbers}{#delay}{.}{/delay}{@sep}, {/sep}{/numbers}"
         },
         {
-            "trigger": "dbarr1|dust:array",
+            "trigger": "array|dust",
             "contents": "{#${1:array}}\n\t${2}\n{/${1:array}}"
         },
         {
-            "trigger": "dbarr2|dust:implicit-array",
+            "trigger": "array-with-index|dust",
+            "contents": "{#list}\n\t{idx}${1}. {.}\n{/list}"
+        },
+        {
+            "trigger": "array-implicit|dust",
             "contents": "{#${1:array}}{.}{~n}{/${1:array}}"
         }
     ]
