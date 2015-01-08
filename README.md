@@ -18,7 +18,7 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
 
 ### Installing the package
-- via Package Control (not available yet, still in dev)
+- via Package Control (search for DustBuster)
 - clone this repo and then symlink it into your packages folder
     + ST2 (cd ~/Library/Application\\ \\Support/Sublime\\ \\Text \\2/Packages)
     + ST3 (cd ~/Library/Application\\ \\Support/Sublime\\ \\Text\\ \\3/Packages)
