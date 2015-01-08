@@ -1,0 +1,20 @@
+
+# TODO:
+☐ add screenshots to readme
+☐ add more custom commands 
+
+# Done:
+✔ create todo
+✔ make compatible with ST2 and ST3
+✔ refactor all dust completions
+✔ create messages
+✔ create usage doc in dust
+✔ create changelog
+✔ create custom syntax def for better dust support
+✔ create better comment support for dust
+✔ add most common and supoorted dust helpers
+✔ create readme markdown
+✔ create repo
+✔ create gitignore
+✔ create repo
+

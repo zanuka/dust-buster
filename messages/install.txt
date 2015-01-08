@@ -12,3 +12,4 @@ You have successfully installed DustBuster! Welcome to the future of dust.js tem
 Now get out there and bust some Dust!
 
 - Mike Delucchi
+
