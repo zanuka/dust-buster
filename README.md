@@ -1,9 +1,9 @@
 ## DustBuster
 DustBuster is an enhanced syntax definition for .dust files that includes sublime completions of dustjs-helper snippets. More info on currently supported helpers can be found at the links below.
 
-• [{linkedin/dustjs-helpers}](https://github.com/linkedin/dustjs-helpers)
-• [linkedin/dustjs-helpers/wiki](https://github.com/linkedin/dustjs-helpers/wiki)
-• [{dust/helper/test/tool}](http://linkedin.github.io/dustjs/test/test.html?q=helpers)
+- [{linkedin/dustjs-helpers}](https://github.com/linkedin/dustjs-helpers)
+- [{linkedin/dustjs-helpers/wiki}](https://github.com/linkedin/dustjs-helpers/wiki)
+- [{dust/helper/test/tool}](http://linkedin.github.io/dustjs/test/test.html?q=helpers)
 
 ### Primary Features
 - syntax definition for .dust files
