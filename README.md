@@ -18,7 +18,7 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
 
 ### Installing the package
-- via Package Control (not available yet, still in dev)
+- via Package Control (search for DustBuster)
 - clone this repo and then symlink it into your packages folder
     + ST2 (cd ~/Library/Application\\ \\Support/Sublime\\ \\Text \\2/Packages)
     + ST3 (cd ~/Library/Application\\ \\Support/Sublime\\ \\Text\\ \\3/Packages)
@@ -200,12 +200,6 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
     > size-with-string-key
         {mystring} has {@size key=mystring/} letters
-
-    > tapper-plain-text-string-literal
-        {@tapper value="plain text"/}
-
-    > tapper-string-literal-and-context-var
-        {@tapper value="a is {a}"/}
 
     > context-dump
         {@contextDump/}
