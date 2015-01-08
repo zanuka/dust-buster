@@ -201,12 +201,6 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
     > size-with-string-key
         {mystring} has {@size key=mystring/} letters
 
-    > tapper-plain-text-string-literal
-        {@tapper value="plain text"/}
-
-    > tapper-string-literal-and-context-var
-        {@tapper value="a is {a}"/}
-
     > context-dump
         {@contextDump/}
 

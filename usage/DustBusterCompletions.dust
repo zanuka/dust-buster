@@ -170,12 +170,6 @@
 {! size-with-string-key|dust !}
 {mystring} has {@size key=mystring/} letters
 
-{! tapper-plain-text-string-literal|dust !}
-{@tapper value="plain text"/}
-
-{! tapper-string-literal-and-context-var|dust !}
-{@tapper value="a is {a}"/}
-
 {! context-dump|dust !}
 {@contextDump/}
 

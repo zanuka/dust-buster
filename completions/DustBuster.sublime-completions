@@ -142,14 +142,6 @@
             "contents": "{${1:mystring}} has {@size key=${2:mystring}/} letters"
         },
         {
-            "trigger": "tapper-plain-text-string-literal|dust",
-            "contents": "{@tapper value=\"${1:plain text}\"/}"
-        },
-        {
-            "trigger": "tapper-string-literal-and-context-var|dust",
-            "contents": "{@tapper value=\"${1:a} is {${2:a}}\"/}"
-        },
-        {
             "trigger": "context-dump|dust",
             "contents": "{@contextDump/}"
         },
