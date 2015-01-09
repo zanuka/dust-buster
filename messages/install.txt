@@ -1,15 +1,22 @@
-Welcome to DustBuster 1.0.0
-============================
+You have successfully installed DustBuster 1.0.2
+================================================
 
-You have successfully installed DustBuster! Welcome to the future of dust.js templating. I hope you enjoy these extra features and please feel free to suggest new features.
+I hope you enjoy these extra features and feel free to suggest new ones.
 
-- NEW: Compatibility with Sublime Text 3 and Sublime Text 2
-- NEW: Enhanced .dust syntax definition
-- NEW: Better comment support
-- NEW: Code completions for currently supported dustjs-helpers
-- NEW: Usage file that documents each trigger and corresponding completion
+- NEW: compatibility with Sublime Text 3 and Sublime Text 2
+- NEW: enhanced .dust syntax definition
+- NEW: better comment support
+- NEW: code completions for currently supported dustjs-helpers (61 total)
+- NEW: usage file that documents each trigger and corresponding completion
+- NEW: add todo
+- NEW: add messages
+- NEW: add changelogs
 
-Now get out there and bust some Dust!
+- TODO: add screenshots to readme
+- TODO: add screencast of DustBuster in action
+- TODO: add more custom commands 
+- TODO: more contextual helpers in completion menu 
+- TODO: add helpful macros
 
 - Mike Delucchi
 

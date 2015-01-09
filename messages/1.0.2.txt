@@ -1,0 +1,7 @@
+DustBuster 1.0.2 Changelog:
+
+Please be sure to restart Sublime Text to start using this new version.
+
+- NEW: add todo
+- NEW: add messages
+- NEW: add changelogs
