@@ -20,17 +20,13 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
 ### Installing the package
 - via Package Control (search for DustBuster)
-- clone this repo and then symlink it into your packages folder
-    + ST2 (cd ~/Library/Application\\ \\Support/Sublime\\ \\Text \\2/Packages)
-    + ST3 (cd ~/Library/Application\\ \\Support/Sublime\\ \\Text\\ \\3/Packages)
-    + symlink like so (ln -s path/to/cloned/repo/dust-buster)
 
 ### Activating the DustBuster syntax definition for all .dust files
 -  open any .dust file and then select View > Syntax > DustBuster
 
 ***
 
-###### New Dust Completions
+### New Dust Completions
 
 - to use these completions, just start typing the completion name and hit tab
 - for example, you coult type "sect" and hit tab for the dust section to render
@@ -232,7 +228,7 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
 ***
 
-###### Existing Dust.js Completions (from previous version)
+#### Existing Dust.js Completions (from previous version)
 by Giampaolo Bellavite [gpbl](https://github.com/gpbl)
 
 <table align="center">
