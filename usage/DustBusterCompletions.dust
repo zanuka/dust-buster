@@ -3,6 +3,11 @@
   
 {/name}
 
+{! block|dust !}
+{+block}
+  
+{/block}
+
 {! exists-yes|dust !}
 {?name}
   
@@ -14,15 +19,13 @@
 {/name}
 
 {! partial|dust !}
-{>partial params /}
+{>"path/to/partial"/} 
 
-{! block|dust !}
-{+block/}
+{! partial-with-params|dust !}
+{>"path/to/partial"  params /}
 
-{! block-with-default|dust !}
-{+block}
-  
-{/block}
+{! partial-dynamic|dust !}
+{>"path/to/partial{dynamic-param}"/}
 
 {! eq-typed|dust !}
 {@eq key="foo" value="foo" type="string"}
@@ -200,6 +203,10 @@
 
 {! array-implicit|dust !}
 {#array}{.}{~n}{/array}
+
+{>partial params /}
+
+{+block/} 
 
 
 

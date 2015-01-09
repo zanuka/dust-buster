@@ -1,5 +1,7 @@
 ## DustBuster
-##### v1.0.0
+##### v1.0.1
+by Mike Delucchi - [zanuka](https://github.com/zanuka)
+
 ***
 DustBuster is an enhanced syntax definition for .dust files that includes sublime completions of dustjs-helper snippets. More info on currently supported helpers can be found at the links below.
 
@@ -12,7 +14,6 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 - sublime completions for supported dustjs-helpers
 
 ### Prerequisites
-- Desire for optimal workflow
 - [Sublime Text 2](http://www.sublimetext.com/2) or [Sublime Text 3](http://www.sublimetext.com/3)
 - [Package Control](https://packagecontrol.io/)
 
@@ -24,49 +25,52 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
     + ST3 (cd ~/Library/Application\\ \\Support/Sublime\\ \\Text\\ \\3/Packages)
     + symlink like so (ln -s path/to/cloned/repo/dust-buster)
 
+### Activating the DustBuster syntax definition for all .dust files
+-  open any .dust file and then select View > Syntax > DustBuster
+
 ***
 
-###### Dust Completions
+###### New Dust Completions
+
+- to use these completions, just start typing the completion name and hit tab
+- for example, you coult type "sect" and hit tab for the dust section to render
+- once completion renders, you can then tab through the snippet accordingly
+- you can also just hit control+spacebar to access all of the completions
 
 ```
     > section
         {#name}
-          
         {/name}
 
+    > block
+        {+block}
+        {/block}
+        
     > exists-yes
         {?name}
-          
         {/name}
 
     > exists-no
         {^name}
-          
         {/name}
 
     > partial
-        {>partial params /}
+        {>"path/to/partial"/} 
 
-    > block
-        {+block/}
+    > partial-with-params
+        {>"path/to/partial"  params /}
 
-    > block-with-default
-        {+block}
-
-        {/block}
+    > partial-dynamic
+        {>"path/to/partial{dynamic-param}"/}
 
     > eq-typed
         {@eq key="foo" value="foo" type="string"}
-          
         {:else}
-          
         {/eq}
 
     > eq-untyped
         {@eq key="foo" value="foo"}
-          
         {else}
-          
         {/eq}
 
     > ne-matching-string
@@ -91,30 +95,22 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
     > lt
         {@lt key="{a}" value="27" type="number"}
-  
         {:else}
-  
         {/lt}
 
     > lte
         {@lte key="20" value="27" type="number"}
-          
         {:else}
-          
         {/lt}
 
     > gt
         {@gt key="27" value="20" type="number"}
-          
         {:else}
-          
         {/gt}
 
     > gte
         {@gte key="27" value="27" type="number"}
-          
         {:else}
-          
         {/gte}
 
     > math
@@ -234,5 +230,122 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
 ```
 
-##### Author
-Mike Delucchi - [zanuka](https://github.com/zanuka)
+***
+
+###### Existing Dust.js Completions
+by Giampaolo Bellavite [gpbl](https://github.com/gpbl)
+
+<table align="center">
+    <thead>
+        <tr>
+            <th>Trigger</th>
+            <th>Meaning</th>
+            <th>Snippet</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>dc</code></td>
+            <td>
+                <b>d</b>ust <b>c</b>omment
+            </td>
+            <td>
+                <code>{! ... !}</code>
+            </td>
+        </tr>
+        <tr>
+            <td><code>ds</code></td>
+            <td>
+                <b>d</b>ust <b>s</b>ection
+            </td>
+            <td>
+                <code>{#section}...{/section}</code>
+            </td>
+        </tr>
+        <tr>
+            <td><code>dn</code></td>
+            <td>
+                <b>d</b>ust <b>n</b>o
+            </td>
+            <td><code>{^name}...{/name}</code></td>
+        </tr>
+        <tr>
+            <td><code>dy</code></td>
+            <td>
+                <b>d</b>ust <b>y</b>es
+            </td>
+            <td><code>{?name}...{/name}</code></td>
+        </tr>
+        <tr>
+            <td><code>dp</code></td>
+            <td>
+                <b>d</b>ust <b>p</b>artial
+            </td>
+            <td><code>{>partial}...{/partial}</code></td>
+        </tr>
+        <tr>
+            <td><code>db</code></td>
+            <td>
+                <b>d</b>ust <b>b</b>lock
+            </td>
+            <td><code>{>block}...{/block}</code></td>
+        </tr>
+        <tr>
+            <td><code>deq</code></td>
+            <td>
+                <b>d</b>ust <b>eq</b>uals
+            </td>
+            <td><code>{@eq}...{:else}...{/eq}</code></td>
+        </tr>
+        <tr>
+            <td><code>dne</code></td>
+            <td>
+                <b>d</b>ust <b>n</b>ot <b>e</b>quals
+            </td>
+            <td><code>{@ne}...{:else}...{/ne}</code></td>
+        </tr>
+        <tr>
+            <td><code>dlt</code></td>
+            <td>
+                <b>d</b>ust <b>l</b>ess <b>t</b>han
+            </td>
+            <td><code>{@lt}...{:else}...{/lt}</code></td>
+        </tr>
+        <tr>
+            <td><code>dlte</code></td>
+            <td>
+                <b>d</b>ust <b>l</b>ess <b>t</b>han or <b>e</b>quals
+            </td>
+            <td><code>{@lte}...{:else}...{/lte}</code></td>
+        </tr>
+        <tr>
+            <td><code>dgt</code></td>
+            <td>
+                <b>d</b>ust <b>g</b>reater <b>t</b>han
+            </td>
+            <td><code>{@gt}...{:else}...{/gt}</code></td>
+        </tr>
+        <tr>
+            <td><code>dgte</code></td>
+            <td>
+                <b>d</b>ust <b>g</b>reater <b>t</b>han or <b>e</b>quals
+            </td>
+            <td><code>{@gte}...{:else}...{/gte}</code></td>
+        </tr>
+         <tr>
+            <td><code>dmath</code></td>
+            <td>
+                <b>d</b>ust <b>math</b>
+            </td>
+            <td><code>{@math key="..." method="..." ...}</code></td>
+        </tr>
+        <tr>
+            <td><code>dsel</code></td>
+            <td>
+                <b>d</b>ust <b>sel</b>ect
+            </td>
+            <td><code>{@select}...{/select}</code></td>
+        </tr>
+    </tbody>
+</table>
+

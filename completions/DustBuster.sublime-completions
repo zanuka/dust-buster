@@ -6,6 +6,10 @@
             "contents": "{#${1:name}}\n\t${2}\n{/${1}}"
         },
         {
+            "trigger": "block|dust",
+            "contents": "{+${1:block}}\n\t${0}\n{/${1}}"
+        },
+        {
             "trigger": "exists-yes|dust",
             "contents": "{?${1:name}}\n\t${2}\n{/${1}}"
         },
@@ -15,15 +19,15 @@
         },
         {
             "trigger": "partial|dust",
-            "contents": "{>${1:partial}${2: params }/}${0}"
+            "contents": "{>\"${1:path/to/partial}\"/}"
         },
         {
-            "trigger": "block|dust",
-            "contents": "{+${1:block}/}${0}"
+            "trigger": "partial-with-params|dust",
+            "contents": "{>\"${1:path/to/partial}\" ${2: params }/}${0}"
         },
         {
-            "trigger": "block-with-default|dust",
-            "contents": "{+${1:block}}\n\t${0}\n{/${1}}"
+            "trigger": "partial-dynamic|dust",
+            "contents": "{>\"${1:path/to/partial}{${2:dynamic-param}}\"/}"
         },
         {
             "trigger": "eq-typed|dust",
@@ -176,6 +180,70 @@
         {
             "trigger": "array-implicit|dust",
             "contents": "{#${1:array}}{.}{~n}{/${1:array}}"
+        },
+        {
+            "trigger": "dc|dust:comment",
+            "contents": "{! ${0} !}"
+        },
+        {
+            "trigger": "ds|dust:section",
+            "contents": "{#${1:name}}\n\t${2}\n{/${1}}"
+        },
+        {
+            "trigger": "dn|dust:no",
+            "contents": "{^${1:name}}\n\t${2}\n{/${1}}"
+        },
+        {
+            "trigger": "dy|dust:yes",
+            "contents": "{?${1:name}}\n\t${2}\n{/${1}}"
+        },
+        {
+            "trigger": "dp|dust:partial",
+            "contents": "{>${1:partial}${2: params }/}${0}"
+        },
+        {
+            "trigger": "db|dust:block",
+            "contents": "{+${1:block}/}${0}"
+        },
+        {
+            "trigger": "db|dust:block (with default)",
+            "contents": "{+${1:block}}\n\t${0}\n{/${1}}"
+        },
+        {
+            "trigger": "deq|dust:eq",
+            "contents": "{@eq ${1:key=\"${2}\"} ${3:value=\"${4}\"}${5: type=\"${6:string}\"}}\n\t${8}\n${7:{:else\\}\n\t${9}\n}{/eq}"
+        },
+        {
+            "trigger": "dne|dust:ne",
+            "contents": "{@ne ${1:key=\"${2}\"} ${3:value=\"${4}\"}${5: type=\"${6:string}\"}}\n\t${8}\n${7:{:else\\}\n\t${9}\n}{/ne}"
+        },
+        {
+            "trigger": "dlt|dust:lt",
+            "contents": "{@lt ${1:key=\"${2}\"} ${3:value=\"${4}\"}${5: type=\"${6:string}\"}}\n\t${8}\n${7:{:else\\}\n\t${9}\n}{/lt}"
+        },
+        {
+            "trigger": "dlte|dust:lte",
+            "contents": "{@lte ${1:key=\"${2}\"} ${3:value=\"${4}\"}${5: type=\"${6:string}\"}}\n\t${8}\n${7:{:else\\}\n\t${9}\n}{/lte}"
+        },
+        {
+            "trigger": "dgt|dust:gt",
+            "contents": "{@gt ${1:key=\"${2}\"} ${3:value=\"${4}\"}${5: type=\"${6:string}\"}}\n\t${8}\n${7:{:else\\}\n\t${9}\n}{/gt}"
+        },
+        {
+            "trigger": "dgte|dust:gte",
+            "contents": "{@gte ${1:key=\"${2}\"} ${3:value=\"${4}\"}${5: type=\"${6:string}\"}}\n\t${8}\n${7:{:else\\}\n\t${9}\n}{/gte}"
+        },
+        {
+            "trigger": "dmath|dust:math",
+            "contents": "{@math ${1:key=\"${2}\"}${3: method=\"${4:mod,add,abs,substract...}\"}${5: operand=\"${6}\"}${7: round=\"${8:true or false}\"}}"
+        },
+        {
+            "trigger": "dsel|dust:select",
+            "contents": "{@select key=\"${1}\"${2: type=\"${3:string}\"}}\n\t${1}\n{/select}"
+        },
+        {
+            "trigger": "dsize|dust:size",
+            "contents": "{@size key=\"${1}\"}"
         }
     ]
 }
