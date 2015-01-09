@@ -2,7 +2,8 @@ DustBuster 1.0.1 Changelog:
 
 Please be sure to restart Sublime Text to start using this new version.
 
-New Features
-
-- coming soon...
-
+- NEW: compatibility with Sublime Text 3 and Sublime Text 2
+- NEW: enhanced .dust syntax definition
+- NEW: better comment support
+- NEW: code completions for currently supported dustjs-helpers (61 total)
+- NEW: usage file that documents each trigger and corresponding completion
