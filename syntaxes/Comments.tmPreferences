@@ -26,7 +26,7 @@
 				<key>name</key>
 				<string>TM_COMMENT_START_2</string>
 				<key>value</key>
-				<string>{!\n </string>
+				<string>{! </string>
 			</dict>
 			<dict>
 				<key>name</key>

@@ -29,7 +29,7 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 ### New Dust Completions
 
 - to use these completions, just start typing the completion name and hit tab
-- for example, you coult type "sect" and hit tab for the dust section to render
+- for example, you could type "sect" and hit tab for the dust section to render
 - once completion renders, you can then tab through the snippet accordingly
 - you can also just hit control+spacebar to access all of the completions
 
@@ -228,8 +228,8 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
 ***
 
-#### Existing Dust.js Completions (from previous version)
-by Giampaolo Bellavite [gpbl](https://github.com/gpbl)
+##### Existing Dust.js Completions (from previous version)
+by [gpbl](https://github.com/gpbl)
 
 <table align="center">
     <thead>
@@ -335,6 +335,10 @@ by Giampaolo Bellavite [gpbl](https://github.com/gpbl)
         </tr>
     </tbody>
 </table>
+
+##### Additional credits
+Previous Dust.js package by [sntran](https://github.com/sntran)
+If you already had this installed, SublimeText should auto-update it with DustBuster on next app startup.
 
 ## License
 
