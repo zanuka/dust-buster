@@ -182,10 +182,6 @@
             "contents": "{#${1:array}}{.}{~n}{/${1:array}}"
         },
         {
-            "trigger": "dc|dust:comment",
-            "contents": "{! ${0} !}"
-        },
-        {
             "trigger": "ds|dust:section",
             "contents": "{#${1:name}}\n\t${2}\n{/${1}}"
         },

@@ -1,0 +1,13 @@
+DustBuster 1.0.3 Changelog:
+
+Please be sure to restart Sublime Text to start using this new version.
+
+- NEW: integrated full tag support, html mixed with dust
+- NEW: added DustBusterHtmlSupport.dust file for usage samples
+- NEW: improved comments and block comments
+- NEW: added MIT license
+- FIXED: a few syntax bugs
+
+Enjoy and please [log issues](https://github.com/zanuka/dust-buster/issues) if you find any during development. 
+
+Mike Delucchi | [zanuka](https://github.com/zanuka)
