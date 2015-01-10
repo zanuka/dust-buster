@@ -6,12 +6,8 @@
 	<array>
 		<string>dust</string>
 	</array>
-	<key>foldingStartMarker</key>
-	<string>(?x)(&lt;(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|form|dl)\b.*?&gt;|&lt;!--(?!.*--&gt;)|\{\s*($|\?&gt;\s*$|//|/\*(.*\*/\s*$|(?!.*?\*/))))</string>
-	<key>foldingStopMarker</key>
-	<string>(?x)(&lt;/(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|form|dl)&gt;|^\s*--&gt;|(^|\s)\})</string>
 	<key>name</key>
-	<string>DustBuster</string>
+	<string>Dust</string>
 	<key>patterns</key>
 	<array>
 		<dict>
@@ -20,15 +16,27 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#comments</string>
-		</dict>
-		<dict>
-			<key>include</key>
 			<string>#block_comments</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#dustbuster_tags</string>
+			<string>#comments</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#block_helper</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#block_end</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#partial_and_var</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#html_tags</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -45,22 +53,110 @@
 					<key>begin</key>
 					<string>\{!</string>
 					<key>end</key>
-					<string>\!\}</string>
+					<string>\}</string>
 					<key>name</key>
 					<string>comment.block.dust</string>
 					<key>patterns</key>
 					<array>
+						<dict>
+							<key>begin</key>
+							<string>\s*(\&lt;)</string>
+							<key>end</key>
+							<string>\&gt;\s</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>@\w*</string>
+							<key>name</key>
+							<string>keyword.annotation.html</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>\s*(\{)</string>
+							<key>end</key>
+							<string>\}\s</string>
+						</dict>
 						<dict>
 							<key>match</key>
 							<string>@\w*</string>
 							<key>name</key>
 							<string>keyword.annotation.dust</string>
 						</dict>
-						<dict>
-							<key>include</key>
-							<string>#comments</string>
-						</dict>
 					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>block_end</key>
+		<dict>
+			<key>begin</key>
+			<string>(\{~?/)([a-zA-Z0-9_\.-]+)\s*</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.dust</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.dust</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(~?\})</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.dust</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.function.block.end.dust</string>
+			<key>patterns</key>
+			<array/>
+		</dict>
+		<key>block_helper</key>
+		<dict>
+			<key>begin</key>
+			<string>(\{)(\+|\?|\^|\@|\#)([-a-zA-Z0-9_\./]+)\s?(@?[-a-zA-Z0-9_\./]+)*</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.dust</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.dust</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(~?\})</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.dust</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.dust</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.function.block.start.dust</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#string</string>
 				</dict>
 			</array>
 		</dict>
@@ -70,44 +166,34 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>\{![^&lt;]</string>
+					<string>(\{!)\s(\{\@|\&lt;)</string>
 					<key>end</key>
 					<string>\!\}</string>
 					<key>name</key>
 					<string>comment.dust</string>
 				</dict>
-			</array>
-		</dict>
-		<key>dustbuster_tags</key>
-		<dict>
-			<key>patterns</key>
-			<array>
 				<dict>
 					<key>begin</key>
-					<string>\{</string>
+					<string>&lt;!--</string>
 					<key>captures</key>
 					<dict>
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.tag.dust</string>
+							<string>punctuation.definition.comment.html</string>
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>\/?\}</string>
+					<string>-{2,3}\s*&gt;</string>
 					<key>name</key>
-					<string>punctuation.definition.tag.dust</string>
+					<string>comment.block.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>match</key>
-							<string>\b[A-Za-z0-9\-]+\b</string>
+							<string>--</string>
 							<key>name</key>
-							<string>variable.parameter.dust</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#string</string>
+							<string>invalid.illegal.bad-comments-or-CDATA.html</string>
 						</dict>
 					</array>
 				</dict>
@@ -121,6 +207,11 @@
 					<key>captures</key>
 					<dict>
 						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.entity.html</string>
+						</dict>
+						<key>2</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.entity.html</string>
@@ -157,6 +248,100 @@
 			<string>\\'</string>
 			<key>name</key>
 			<string>constant.character.escape.js</string>
+		</dict>
+		<key>html_tags</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(&lt;)([a-zA-Z0-9:-]+)(?=[^&gt;]*&gt;&lt;/\2&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(&gt;(&lt;)/)(\2)(&gt;)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>meta.scope.between-tag-pair.html</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.any.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#tag-stuff</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>partial_and_var</key>
+		<dict>
+			<key>begin</key>
+			<string>(\{~?(\+|\^|\&gt;|\#|\?)*)\s*(@?[-a-zA-Z0-9_\./]+)*</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.dust</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.dust</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(~?\}*)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.dust</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.function.inline.other.dust</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#string</string>
+				</dict>
+			</array>
 		</dict>
 		<key>string</key>
 		<dict>
@@ -208,7 +393,19 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#dustbuster_tags</string>
+					<string>#comments</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#helpers_start</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#helpers_end</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#partial_and_var</string>
 				</dict>
 			</array>
 		</dict>
@@ -240,7 +437,41 @@
 			<array>
 				<dict>
 					<key>include</key>
+					<string>#block_comments</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#comments</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#helpers_start</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#helpers_end</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#partial_and_var</string>
+				</dict>
+			</array>
+		</dict>
+		<key>tag-stuff</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#tag_id_attribute</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#tag_generic_attribute</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -248,7 +479,77 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#dustbuster_tags</string>
+					<string>#comments</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#helpers_start</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#helpers_end</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#partial_and_var</string>
+				</dict>
+			</array>
+		</dict>
+		<key>tag_generic_attribute</key>
+		<dict>
+			<key>begin</key>
+			<string>\b([a-zA-Z0-9_-]+)\b\s*(=)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name.generic.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.key-value.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?&lt;='|"|)</string>
+			<key>name</key>
+			<string>entity.other.attribute-name.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#string</string>
+				</dict>
+			</array>
+		</dict>
+		<key>tag_id_attribute</key>
+		<dict>
+			<key>begin</key>
+			<string>\b(id)\b\s*(=)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name.id.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.key-value.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?&lt;='|"|)</string>
+			<key>name</key>
+			<string>meta.attribute-with-value.id.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#string</string>
 				</dict>
 			</array>
 		</dict>
@@ -275,7 +576,7 @@
 		</dict>
 	</dict>
 	<key>scopeName</key>
-	<string>text.dust</string>
+	<string>text.html.dust</string>
 	<key>uuid</key>
 	<string>d5e33b2e-ca20-40a8-bf55-8c16e32b04d4</string>
 </dict>

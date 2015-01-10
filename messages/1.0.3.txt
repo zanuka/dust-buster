@@ -1,0 +1,12 @@
+DustBuster 1.0.3 Changelog:
+
+Please be sure to restart Sublime Text to start using this new version.
+
+- NEW: added all html syntax defintions
+- NEW: added html tag completion
+- NEW: integrated full tag support, html mixed with dust
+- NEW: improved comments and block comments
+
+Thanks, 
+
+Mike Delucchi | [zanuka](https://github.com/zanuka)

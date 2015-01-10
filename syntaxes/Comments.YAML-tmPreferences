@@ -1,5 +1,5 @@
 name: Comments
-scope: text.dust
+scope: text.html.dust
 settings:
   shellVariables:
   - {name: TM_COMMENT_START, value: '{! '}

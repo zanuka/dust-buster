@@ -1,22 +1,21 @@
-{! section|dust !}
 {#name}
   
 {/name}
 
-{! block|dust !}
 {+block}
   
 {/block}
 
-{! exists-yes|dust !}
 {?name}
   
 {/name}
 
-{! exists-no|dust !}
 {^name}
   
 {/name}
+
+
+{@junoComponent component="path/to/your/component" name="componentName" /}
 
 {! partial|dust !}
 {>"path/to/partial"/} 

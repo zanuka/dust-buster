@@ -1,8 +1,12 @@
-You have successfully installed DustBuster 1.0.2
+You have successfully installed DustBuster 1.0.3
 ================================================
 
 I hope you enjoy these extra features and feel free to suggest new ones.
 
+- NEW: added all html syntax defintions
+- NEW: added html tag completion
+- NEW: integrated full tag support, html mixed with dust
+- NEW: improved comments and block comments
 - NEW: compatibility with Sublime Text 3 and Sublime Text 2
 - NEW: enhanced .dust syntax definition
 - NEW: better comment support
