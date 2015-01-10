@@ -16,27 +16,27 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#block_comments</string>
+			<string>#dust_block_comments</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#comments</string>
+			<string>#dust_comments</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#block_helper</string>
+			<string>#dust_block_start</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#block_end</string>
+			<string>#dust_block_end</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#partial_and_var</string>
+			<string>#dust_partials</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#html_tags</string>
+			<string>#dust_html_tags</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -45,7 +45,7 @@
 	</array>
 	<key>repository</key>
 	<dict>
-		<key>block_comments</key>
+		<key>dust_block_comments</key>
 		<dict>
 			<key>patterns</key>
 			<array>
@@ -86,7 +86,7 @@
 				</dict>
 			</array>
 		</dict>
-		<key>block_end</key>
+		<key>dust_block_end</key>
 		<dict>
 			<key>begin</key>
 			<string>(\{~?/)([a-zA-Z0-9_\.-]+)\s*</string>
@@ -95,7 +95,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.dust</string>
+					<string>support.constant.dust</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -110,7 +110,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.dust</string>
+					<string>support.constant.dust</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.dust</string>
 				</dict>
 			</dict>
 			<key>name</key>
@@ -118,10 +123,10 @@
 			<key>patterns</key>
 			<array/>
 		</dict>
-		<key>block_helper</key>
+		<key>dust_block_start</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{)(\+|\?|\^|\@|\#)([-a-zA-Z0-9_\./]+)\s?(@?[-a-zA-Z0-9_\./]+)*</string>
+			<string>(\{)(\+|\?|\^|\@|\#|\:)([-a-zA-Z0-9_\./]+)\s?(@?[-a-zA-Z0-9_\./]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -142,7 +147,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.dust</string>
+					<string>support.constant.dust</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -156,11 +161,11 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#string</string>
+					<string>#dust_strings</string>
 				</dict>
 			</array>
 		</dict>
-		<key>comments</key>
+		<key>dust_comments</key>
 		<dict>
 			<key>patterns</key>
 			<array>
@@ -199,57 +204,7 @@
 				</dict>
 			</array>
 		</dict>
-		<key>entities</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.entity.html</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.entity.html</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.entity.html</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(&amp;)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)</string>
-					<key>name</key>
-					<string>constant.character.entity.html</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>&amp;</string>
-					<key>name</key>
-					<string>invalid.illegal.bad-ampersand.html</string>
-				</dict>
-			</array>
-		</dict>
-		<key>escaped-double-quote</key>
-		<dict>
-			<key>match</key>
-			<string>\\"</string>
-			<key>name</key>
-			<string>constant.character.escape.js</string>
-		</dict>
-		<key>escaped-single-quote</key>
-		<dict>
-			<key>match</key>
-			<string>\\'</string>
-			<key>name</key>
-			<string>constant.character.escape.js</string>
-		</dict>
-		<key>html_tags</key>
+		<key>dust_html_tags</key>
 		<dict>
 			<key>patterns</key>
 			<array>
@@ -306,10 +261,10 @@
 				</dict>
 			</array>
 		</dict>
-		<key>partial_and_var</key>
+		<key>dust_partials</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{~?(\+|\^|\&gt;|\#|\?)*)\s*(@?[-a-zA-Z0-9_\./]+)*</string>
+			<string>(\{*(&gt;))\s*([-a-zA-Z0-9_\./]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -317,14 +272,14 @@
 					<key>name</key>
 					<string>support.constant.dust</string>
 				</dict>
-				<key>3</key>
+				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.dust</string>
+					<string>variable.parameter.dust</string>
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(~?\}*)</string>
+			<string>(~?\/\})</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -332,32 +287,23 @@
 					<key>name</key>
 					<string>support.constant.dust</string>
 				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.dust</string>
+				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.function.inline.other.dust</string>
+			<string>meta.function.block.start.dust</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#string</string>
+					<string>#dust_strings</string>
 				</dict>
 			</array>
 		</dict>
-		<key>string</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#string-single-quoted</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#string-double-quoted</string>
-				</dict>
-			</array>
-		</dict>
-		<key>string-double-quoted</key>
+		<key>dust_string_double_quoted</key>
 		<dict>
 			<key>begin</key>
 			<string>"</string>
@@ -385,31 +331,31 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#comments</string>
+					<string>#dust_comments</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#block_comments</string>
+					<string>#dust_block_comments</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#comments</string>
+					<string>#dust_comments</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#helpers_start</string>
+					<string>#dust_block_start</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#helpers_end</string>
+					<string>#dust_block_end</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#partial_and_var</string>
+					<string>#dust_partials</string>
 				</dict>
 			</array>
 		</dict>
-		<key>string-single-quoted</key>
+		<key>dust_string_single_quoted</key>
 		<dict>
 			<key>begin</key>
 			<string>'</string>
@@ -437,25 +383,89 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#block_comments</string>
+					<string>#dust_block_comments</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#comments</string>
+					<string>#dust_comments</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#helpers_start</string>
+					<string>#dust_block_start</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#helpers_end</string>
+					<string>#dust_block_end</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#partial_and_var</string>
+					<string>#dust_partials</string>
 				</dict>
 			</array>
+		</dict>
+		<key>dust_strings</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#dust_string_single_quoted</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#dust_string_double_quoted</string>
+				</dict>
+			</array>
+		</dict>
+		<key>entities</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.entity.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.entity.html</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.entity.html</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(&amp;)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)</string>
+					<key>name</key>
+					<string>constant.character.entity.html</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>&amp;</string>
+					<key>name</key>
+					<string>invalid.illegal.bad-ampersand.html</string>
+				</dict>
+			</array>
+		</dict>
+		<key>escaped_double_quote</key>
+		<dict>
+			<key>match</key>
+			<string>\\"</string>
+			<key>name</key>
+			<string>constant.character.escape.js</string>
+		</dict>
+		<key>escaped_single_quote</key>
+		<dict>
+			<key>match</key>
+			<string>\\'</string>
+			<key>name</key>
+			<string>constant.character.escape.js</string>
 		</dict>
 		<key>tag-stuff</key>
 		<dict>
@@ -471,27 +481,27 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#string</string>
+					<string>#dust_strings</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#block_comments</string>
+					<string>#dust_block_comments</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#comments</string>
+					<string>#dust_comments</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#helpers_start</string>
+					<string>#dust_block_start</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#helpers_end</string>
+					<string>#dust_block_end</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#partial_and_var</string>
+					<string>#dust_partials</string>
 				</dict>
 			</array>
 		</dict>
@@ -520,7 +530,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#string</string>
+					<string>#dust_strings</string>
 				</dict>
 			</array>
 		</dict>
@@ -549,7 +559,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#string</string>
+					<string>#dust_strings</string>
 				</dict>
 			</array>
 		</dict>

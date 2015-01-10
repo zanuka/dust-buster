@@ -14,8 +14,18 @@
   
 {/name}
 
+{! array|dust !}
+{#array}
+  
+{/array}
 
-{@junoComponent component="path/to/your/component" name="componentName" /}
+{! array-with-index|dust !}
+{#list}
+  {idx}. {.}
+{/list} 
+
+{! array-implicit|dust !}
+{#array}{.}{~n}{/array}
 
 {! partial|dust !}
 {>"path/to/partial"/} 
@@ -190,22 +200,17 @@
 {! sep-partial-in-async-iterator|dust !}
 {#numbers}{#delay}{.}{/delay}{@sep}, {/sep}{/numbers}
 
-{! array|dust !}
-{#array}
-  
-{/array}
+{! block comments supported !}
+{! {+block}
+  {@math key="-27" method="abs"}
+    {@eq value=27}
+      Test is true
+    {/eq}
+  {/math}  
+{/block} !}
 
-{! array-with-index|dust !}
-{#list}
-  {idx}. {.}
-{/list} 
-
-{! array-implicit|dust !}
-{#array}{.}{~n}{/array}
-
-{>partial params /}
-
-{+block/} 
-
-
-
+{! line comments supported !}
+{! {@math key="27.5" method="multiply" operand="7" round="true"/} !}
+{! {@math key="27.5" method="multiply" operand="7" round="true"/} !}
+{! {@math key="27.5" method="multiply" operand="7" round="true"/} !}
+{! {@math key="27.5" method="multiply" operand="7" round="true"/} !}

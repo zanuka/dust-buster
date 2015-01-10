@@ -1,0 +1,105 @@
+
+{! full html syntax support !}
+
+{^name}
+  <a href="">{@size key=""/}</a>
+{/name}
+
+{?name}
+  <a href="">
+    {@math key="27.5" method="multiply" operand="7" round="true"/}
+    {! {@math key="27.5" method="multiply" operand="7" round="true"/} !}
+    {@math key="27.5" method="multiply" operand="7" round="true"/}
+    {! {@math key="27.5" method="multiply" operand="7" round="true"/} !}
+    {@math key="27.5" method="multiply" operand="7" round="true"/}
+  </a>
+{/name}
+
+<nav>
+  <ul>
+    <li><a href="#nowhere" title="Lorum ipsum dolor sit amet">Lorem</a></li>
+    {! <li><a href="#nowhere" title="Aliquam tincidunt mauris eu risus">Aliquam</a></li> !}
+    <li><a href="#nowhere" title="Praesent dapibus, neque id cursus faucibus">Praesent</a></li>
+    {! <li><a href="#nowhere" title="Pellentesque fermentum dolor">Pellentesque</a></li> !}
+  </ul>
+</nav>
+
+<div class="DustBuster">
+  {#dustRules}
+    <ul>
+       <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+       <li>{>"path/to/dust/partial"/}</li>
+       <li>Vestibulum auctor dapibus neque.</li>
+    </ul>
+  {/dustRules}
+</div>
+
+{! form support !}
+<form action="#" method="post">
+    <div>
+         <label for="name">
+           {@eq key="foo" value="foo" type="string"}
+             {! dust is awesome !}
+           {:else}
+             {! and very fast !}
+           {/eq}
+         </label>
+         <input type="text" name="name" id="name" value="" tabindex="1" />
+    </div>
+
+    <div>
+         <h4>Radio Button Choice</h4>
+
+         <label for="radio-choice-1">Choice 1</label>
+         <input type="radio" name="radio-choice-1" id="radio-choice-1" tabindex="2" value="choice-1" />
+
+     <label for="radio-choice-2">Choice 2</label>
+         <input type="radio" name="radio-choice-2" id="radio-choice-2" tabindex="3" value="choice-2" />
+    </div>
+
+  <div>
+    <label for="select-choice">Select Dropdown Choice:</label>
+    <select name="select-choice" id="select-choice">
+      <option value="Choice 1">Choice 1</option>
+      <option value="Choice 2">Choice 2</option>
+      <option value="Choice 3">Choice 3</option>
+
+      {! block comments of dust inside html !}
+
+      {! {@math key="27" method="add" operand="100"}
+        {@gt value=120}
+          Greater than
+        {/gt}
+        {@default}
+          Not greater than
+        {/default}
+      {/math} !}
+
+      {@math key="27" method="add" operand="100"}
+        {@gt value=120}
+          Greater than
+        {/gt}
+        {@default}
+          Not greater than
+        {/default}
+      {/math}
+    </select>
+  </div>
+  
+  <div>
+    <label for="textarea">Textarea:</label>
+    <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+  </div>
+  
+  <div>
+      <label for="checkbox">Checkbox:</label>
+    <input type="checkbox" name="checkbox" id="checkbox" />
+    </div>
+
+  <div>
+      <input type="submit" value="Submit" />
+    </div>
+</form>
+
+
+

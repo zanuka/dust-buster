@@ -241,15 +241,6 @@ by Giampaolo Bellavite [gpbl](https://github.com/gpbl)
     </thead>
     <tbody>
         <tr>
-            <td><code>dc</code></td>
-            <td>
-                <b>d</b>ust <b>c</b>omment
-            </td>
-            <td>
-                <code>{! ... !}</code>
-            </td>
-        </tr>
-        <tr>
             <td><code>ds</code></td>
             <td>
                 <b>d</b>ust <b>s</b>ection
