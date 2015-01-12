@@ -1,5 +1,5 @@
 ## DustBuster
-##### v1.0.3
+##### v1.0.4
 by Mike Delucchi | [zanuka](https://github.com/zanuka)
 
 ***
