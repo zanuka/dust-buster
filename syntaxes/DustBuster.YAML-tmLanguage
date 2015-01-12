@@ -13,27 +13,26 @@ repository:
   dust_block_comments:
     patterns:
     - begin: '\{!'
-      end: '\}'
+      end: '\!}'
       name: comment.block.dust
       patterns:
       - begin: '\s*(\<)'
-        end: '\>\s'
-      - {match: '@\w*', name: keyword.annotation.html}
-      - begin: '\s*(\{)'
-        end: '\}\s'
-      - {match: '@\w*', name: keyword.annotation.dust}
+        end: '\>\s?'
+      - {include: '#dust_comments'}
   dust_block_start:
     begin: (\{)(\+|\?|\^|\@|\#|\:)([-a-zA-Z0-9_\./]+)\s?(@?[-a-zA-Z0-9_\./]+)*
     beginCaptures:
-      '1': {name: support.constant.dust}
-      '3': {name: variable.parameter.dust}
+      '1': {name: entity.name.tag.block.open.dust}
+      '2': {name: support.helper.dust}
+      '3': {name: support.constant.dust}
+      '4': {name: entity.other.attribute-name.generic.dust}
     end: (~?\})
     endCaptures:
-      '1': {name: support.constant.dust}
-      '2': {name: support.constant.dust}
+      '1': {name: entity.name.tag.block.closed.dust}
     name: meta.function.block.start.dust
     patterns:
     - {include: '#dust_strings'}
+    - {include: '#dust_generic_attribute'}
   dust_comments:
     patterns:
     - {begin: '(\{!)\s(\{\@|\<)', end: '\!\}', name: comment.dust}
@@ -47,12 +46,11 @@ repository:
   dust_block_end:
     begin: (\{~?/)([a-zA-Z0-9_\.-]+)\s*
     beginCaptures:
-      '1': {name: support.constant.dust}
-      '2': {name: variable.parameter.dust}
+      '1': {name: entity.name.tag.block.open.dust}
+      '2': {name: support.constant.dust}
     end: (~?\})
     endCaptures:
-      '1': {name: support.constant.dust}
-      '2': {name: support.constant.dust}
+      '1': {name: entity.name.tag.block.closed.dust}
     name: meta.function.block.end.dust
     patterns: []
   entities:
@@ -80,16 +78,17 @@ repository:
         '4': {name: punctuation.definition.tag.html}
       name: meta.tag.any.html
       patterns:
-      - {include: '#tag-stuff'}
+      - {include: '#dust_tags'}
   dust_partials:
     begin: (\{*(>))\s*([-a-zA-Z0-9_\./]+)*
     beginCaptures:
-      '1': {name: support.constant.dust}
+      '1': {name: entity.name.tag.block.open.dust}
       '2': {name: variable.parameter.dust}
+      '3': {name: variable.parameter.dust}
     end: (~?\/\})
     endCaptures:
-      '1': {name: support.constant.dust}
-      '2': {name: support.constant.dust}
+      '1': {name: entity.name.tag.block.open.dust}
+      '2': {name: variable.parameter.dust}
     name: meta.function.block.start.dust
     patterns:
     - {include: '#dust_strings'}
@@ -126,17 +125,17 @@ repository:
     - {include: '#dust_block_start'}
     - {include: '#dust_block_end'}
     - {include: '#dust_partials'}
-  tag-stuff:
+  dust_tags:
     patterns:
-    - {include: '#tag_id_attribute'}
-    - {include: '#tag_generic_attribute'}
+    - {include: '#dust_id_attribute'}
+    - {include: '#dust_generic_attribute'}
     - {include: '#dust_strings'}
     - {include: '#dust_block_comments'}
     - {include: '#dust_comments'}
     - {include: '#dust_block_start'}
     - {include: '#dust_block_end'}
     - {include: '#dust_partials'}
-  tag_generic_attribute:
+  dust_generic_attribute:
     begin: \b([a-zA-Z0-9_-]+)\b\s*(=)
     captures:
       '1': {name: entity.other.attribute-name.generic.html}
@@ -145,7 +144,7 @@ repository:
     name: entity.other.attribute-name.html
     patterns:
     - {include: '#dust_strings'}
-  tag_id_attribute:
+  dust_id_attribute:
     begin: \b(id)\b\s*(=)
     captures:
       '1': {name: entity.other.attribute-name.id.html}

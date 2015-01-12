@@ -31,7 +31,7 @@
 {>"path/to/partial"/} 
 
 {! partial-with-params|dust !}
-{>"path/to/partial"  params /}
+{>"path/to/partial" params /}
 
 {! partial-dynamic|dust !}
 {>"path/to/partial{dynamic-param}"/}
@@ -97,6 +97,8 @@
 {:else}
   
 {/gte}
+
+
 
 {! math|dust !}
 {@math key="number" method="mod,add,abs,substract..." operand="number" round="true or false"/}

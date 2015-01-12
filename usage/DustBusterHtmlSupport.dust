@@ -24,6 +24,36 @@
   </ul>
 </nav>
 
+
+{!
+        <div id="modal-container" class="modal-container-view hidden">{~n}
+            {>"{modalView}" /}
+        </div>{~n}
+ !}  
+
+        <div id="modal-container" class="modal-container-view hidden">  {~n}
+            {>"{modalView}" /}
+        </div> {~n}
+
+{#name}
+
+        <div id="modal-container" class="modal-container-view hidden">
+            {>"{modalView}" /}{~n}
+        </div>
+        {~n}
+  
+{/name}
+
+
+
+{! 
+
+<div id="modal-container" class="modal-container-view hidden">{~n}
+            {>"{modalView}" /}
+        </div>{~n}
+ !} 
+
+
 <div class="DustBuster">
   {#dustRules}
     <ul>
@@ -34,14 +64,11 @@
   {/dustRules}
 </div>
 
-{! form support !}
 <form action="#" method="post">
     <div>
          <label for="name">
            {@eq key="foo" value="foo" type="string"}
-             {! dust is awesome !}
            {:else}
-             {! and very fast !}
            {/eq}
          </label>
          <input type="text" name="name" id="name" value="" tabindex="1" />
@@ -64,16 +91,14 @@
       <option value="Choice 2">Choice 2</option>
       <option value="Choice 3">Choice 3</option>
 
-      {! block comments of dust inside html !}
-
-      {! {@math key="27" method="add" operand="100"}
+      {@math key="27" method="add" operand="100"}
         {@gt value=120}
           Greater than
         {/gt}
         {@default}
           Not greater than
         {/default}
-      {/math} !}
+      {/math} 
 
       {@math key="27" method="add" operand="100"}
         {@gt value=120}
@@ -83,6 +108,7 @@
           Not greater than
         {/default}
       {/math}
+
     </select>
   </div>
   
