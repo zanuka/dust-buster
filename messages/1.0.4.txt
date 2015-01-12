@@ -1,0 +1,10 @@
+DustBuster 1.0.4 Changelog:
+
+Please be sure to restart Sublime Text to start using this new version.
+
+- NEW: improved syntax coloring
+- FIXED: multiline comment bug
+
+Enjoy and please [log issues](https://github.com/zanuka/dust-buster/issues) if you find any during development. 
+
+Mike Delucchi | [zanuka](https://github.com/zanuka)

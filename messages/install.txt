@@ -1,8 +1,10 @@
-You have successfully installed DustBuster 1.0.3
+You have successfully installed DustBuster 1.0.4
 ================================================
 
 I hope you enjoy these extra features and feel free to suggest new ones.
 
+- NEW: improved syntax coloring
+- FIXED: multiline comment bug
 - NEW: added all html syntax defintions
 - NEW: added html tag completion
 - NEW: integrated full tag support, html mixed with dust
