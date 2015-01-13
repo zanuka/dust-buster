@@ -1,4 +1,4 @@
-You have successfully installed DustBuster 1.0.4
+You have successfully installed DustBuster 1.0.5
 ================================================
 
 I hope you enjoy these extra features and feel free to suggest new ones.

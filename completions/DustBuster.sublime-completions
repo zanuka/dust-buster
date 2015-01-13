@@ -35,7 +35,7 @@
         },
         {
             "trigger": "eq-untyped|dust",
-            "contents": "{@eq key=\"${1:foo}\" value=\"${2:foo}\"}\n\t${3}\n{else}\n\t${4}\n{/eq}"
+            "contents": "{@eq key=\"${1:foo}\" value=\"${2:foo}\"}\n\t${3}\n{:else}\n\t${4}\n{/eq}"
         },
         {
             "trigger": "ne-matching-string|dust",

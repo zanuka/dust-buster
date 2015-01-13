@@ -46,13 +46,13 @@
 {! eq-untyped|dust !}
 {@eq key="foo" value="foo"}
   
-{else}
+{:else}
   
 {/eq}
 
 {! ne-matching-string|dust !}
 {@ne key="foo" value="foo"}
-  not equal
+  {! not equal !}
 {/ne}
 
 {! ne-non-matching-string|dust !}
@@ -97,8 +97,6 @@
 {:else}
   
 {/gte}
-
-
 
 {! math|dust !}
 {@math key="number" method="mod,add,abs,substract..." operand="number" round="true or false"/}
