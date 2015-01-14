@@ -1,6 +1,6 @@
 ## DustBuster
 ##### v1.1.0
-by Mike Delucchi | [zanuka](https://github.com/zanuka)
+by Mike Delucchi [@zanuka](https://github.com/zanuka)
 
 ***
 DustBuster is an enhanced syntax definition for .dust files that includes sublime completions of dustjs-helpers and dustjs logic syntax. More info on currently supported helpers can be found at the links below.
@@ -10,16 +10,16 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 - [{dust/helper/test/tool}](http://linkedin.github.io/dustjs/test/test.html?q=helpers)
 
 ### Primary Features
-- syntax definition for .dust files
-- sublime completions for supported dustjs-helpers
+- syntax definition for .dust files (with html support)
+- sublime completions for supported dustjs-helpers and dustjs logic
 
 ### Prerequisites
 - [Sublime Text 2](http://www.sublimetext.com/2) or [Sublime Text 3](http://www.sublimetext.com/3)
 - [Package Control](https://packagecontrol.io/)
 
 
-### Installing the package
-- via Package Control (search for DustBuster)
+### Installing DustBuster
+- cmd+shift+p, Install Package, search for DustBuster or Dust
 
 ### Activating the Dust syntax definition for all .dust files
 -  open any .dust file and then select View > Syntax > Dust
@@ -103,22 +103,7 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
 #### `dm|dust-math`
 ```
-    {@math key="" method="" operand="" round=""/}
-```
-
-#### `dmf|dust-math-floor`
-```
-    {@math key="XX.5" method="floor"/}
-```
-
-#### `dmc|dust-math-ceil`
-```
-    {@math key="XX.5" method="ceil"/}
-```
-
-#### `dmr|dust-math-round`
-```
-    {@math key="XX.5" method="round"/}
+    {@math key="XX" method="XX" operand="XX" round="true|false"/}
 ```
 
 #### `dma|dust-math-add`
@@ -141,74 +126,115 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
     {@math key="XX" method="divide" operand="XX"/}
 ```
 
+#### `dmr|dust-math-round`
+```
+    {@math key="XX.5" method="round"/}
+```
+
+#### `dmf|dust-math-floor`
+```
+    {@math key="XX.5" method="floor"/}
+```
+
+#### `dmc|dust-math-ceil`
+```
+    {@math key="XX.5" method="ceil"/}
+```
+
+#### `dmabs|dust-math-abs`
+```
+    {@math key="XX.5" method="ceil"/}
+```
+
 #### `dmeq|dust-math-eq-filter`
 ```
     {@math key="-XX" method="abs"}
       {@eq value=XX}
-        Test is true
       {/eq}
-    {/math}   
+    {/math}  
 ```
 
-#### `|`
-    dselect-block-with-key-and-type
-        {@select key="foo" type="string"}
-        {/select}
-
-#### `|`
-    dselect-multi-condition-default|dus
-        {@select key="foo"}
-          {@eq value="bar"}bar{/eq}
-          {@eq value="baz"}baz{/eq}
-          {@eq value="biz"}biz{/eq}
-          {@default value="default"}default{/default}
-        {/select}
-
-#### `|`
-    dselect-inside-array
-        {#array}
-          {@select key=.}
-            {@eq value="foo"}foo{/eq}
-            {@eq value="bar"}bar{/eq}
-            {@default value="default"}default{/default}
-          {/select}
-        {/array}
-
-#### `|`
-    dsize-with-empty-key
-        {@size key=""/}
-
-#### `|`
-    dsize-with-string-key
-        {mystring} has {@size key=mystring/} letters
-
-#### `|`
-    dcontext-dump
-        {@contextDump/}
-
-#### `|`
-    dcontext-dump-to-console
-        {@contextDump to="console"/}
-
-#### `|`
-    dcontext-dump-full-test
-        {@contextDump key="full"/}
-
-#### `|`
-    dcontext-dump-function-dump-test
-        {#aa param="{p}"}{@contextDump key="full"/}{/aa}
-
-#### `|`
-    dsep-partial-in-array
-        {#n}{>hello_there name=. count="30"/}{@sep} {/sep}{/n}
-
-#### `|`
-    dsep-partial-in-async-iterator
-        {#numbers}{#delay}{.}{/delay}{@sep}, {/sep}{/numbers}
-
+#### `dskt|dust-select-with-key-and-type`
 ```
-##### Additional Credits
-DustBuster is a complete rewrite of a package by [sntran](https://github.com/sntran) with completions by [gpbl](https://github.com/gpbl).
+    {@select key="foo" type="string"}
+    {/select}
+```
+
+#### `dsmcd|dust-select-multi-condition-with-default`
+```
+    {@select key="foo"}
+      {@eq value="bar"}bar{/eq}
+      {@eq value="baz"}baz{/eq}
+      {@eq value="biz"}biz{/eq}
+      {@default value="default"}default{/default}
+    {/select}
+```
+
+#### `dsia|dust-select-inside-array`
+```
+    {#array}
+      {@select key=.}
+        {@eq value="foo"}foo{/eq}
+        {@eq value="bar"}bar{/eq}
+        {@default value="default"}default{/default}
+      {/select}
+    {/array}
+```
+
+#### `dsize|dust-size`
+```
+    {@size key=XX/}
+```
+
+#### `ddump|dust-context-dump`
+```
+    {@contextDump/}
+```
+
+#### `dsep|dust-separator`
+```
+    {@sep} {/sep}
+```
+
+#### `dfs|dust-filter-suppress-auto-escape`
+```
+    {name|s}
+```
+
+#### `dfh|dust-filter-force-html-escaping`
+```
+    {name|h}
+```
+
+#### `dfj|dust-filter-force-javascript-escaping`
+```
+    {name|j}
+```
+
+#### `dfu|dust-filter-native-encodeURI`
+```
+    {name|u}
+```
+
+#### `dfuc|dust-filter-native-encodeURIComponent`
+```
+    {name|uc}
+```
+
+#### `dfjs|dust-filter-stringify-json`
+```
+    {name|js}
+```
+
+#### `dfjp|dust-filter-parse-json`
+```
+    {name|jp}
+```
+
+
+
+###### Additional Credits
+DustBuster is a complete rewrite of a previous package by [sntran](https://github.com/sntran) and [gpbl](https://github.com/gpbl).
 
 ## License
 

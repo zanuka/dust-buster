@@ -1,28 +1,45 @@
-You have successfully installed DustBuster 1.1.0
-================================================
+You have successfully installed
+   ___           __  ___           __         
+  / _ \__ _____ / /_/ _ )__ _____ / /____ ____
+ / // / // (_-</ __/ _  / // (_-</ __/ -_) __/
+/____/\_,_/___/\__/____/\_,_/___/\__/\__/_/   
 
 I hope you enjoy these extra features and feel free to suggest new ones.
 
+v1.1.0
+- NEW: all completions refactored (prefixed by d, shortened)
+- NEW: more improvements to syntax definition
+- NEW: updated readme with better completions
+- NEW: completions for filters
+- FIXED: single-line syntax support
+
+v1.0.4 
 - NEW: improved syntax coloring
 - FIXED: multiline comment bug
+
+v1.0.3
+- NEW: integrated full tag support, html mixed with dust
+- NEW: added DustBusterHtmlSupport.dust file for usage samples
+- NEW: improved comments and block comments
+- NEW: added MIT license
+- FIXED: a few syntax bugs
+
+v1.0.2  
 - NEW: added all html syntax defintions
 - NEW: added html tag completion
 - NEW: integrated full tag support, html mixed with dust
 - NEW: improved comments and block comments
-- NEW: compatibility with Sublime Text 3 and Sublime Text 2
 - NEW: enhanced .dust syntax definition
-- NEW: better comment support
-- NEW: code completions for currently supported dustjs-helpers (61 total)
-- NEW: usage file that documents each trigger and corresponding completion
 - NEW: add todo
 - NEW: add messages
 - NEW: add changelogs
 
-- TODO: add screenshots to readme
-- TODO: add screencast of DustBuster in action
-- TODO: add more custom commands 
-- TODO: more contextual helpers in completion menu 
-- TODO: add helpful macros
+v1.0.1
+- NEW: compatibility with Sublime Text 3 and Sublime Text 2
+- NEW: enhanced .dust syntax definition
+- NEW: better comment support
+- NEW: code completions for currently supported dustjs-helpers
+- NEW: usage file that documents each trigger and corresponding completion
 
-- Mike Delucchi
+[@zanuka](https://github.com/zanuka)
 

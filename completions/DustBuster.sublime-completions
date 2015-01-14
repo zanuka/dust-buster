@@ -94,60 +94,56 @@
             "contents": "{@math key=\"${1:-XX}\" method=\"${2:abs}\"}\n\t{@eq value=${3:XX}}\n\t\t${4}\n\t{/eq}\n{/math}"
         },
         {
-            "trigger": "dselect-block-with-key-and-type|dust",
+            "trigger": "dskt|dust-select-with-key-and-type",
             "contents": "{@select key=\"${1:foo}\" type=\"${2:string}\"}\n\t${3}\n{/select}"
         },
         {
-            "trigger": "dselect-multi-condition-default|dust",
+            "trigger": "dsmcd|dust-select-multi-condition-with-default",
             "contents": "{@select key=\"${1:foo}\"}\n\t{@eq value=\"${2:bar}\"}${3:bar}{/eq}\n\t{@eq value=\"${4:baz}\"}${5:baz}{/eq}\n\t{@eq value=\"${6:biz}\"}${7:biz}{/eq}\n\t{@default value=\"${8:default\"}}${9:default}{/default}\n{/select}"
         },
         {
-            "trigger": "dselect-inside-array|dust",
+            "trigger": "dsia|dust-select-inside-array",
             "contents": "{#array}\n\t{@select key=${1:.}}\n\t\t{@eq value=\"${2:foo}\"}${3:foo}{/eq}\n\t\t{@eq value=\"${4:bar}\"}${5:bar}{/eq}\n\t\t{@default value=\"${6:default}\"}${7:default}{/default}\n\t{/select}\n{/array}"
         },
         {
-            "trigger": "dsize-with-empty-key|dust",
-            "contents": "{@size key=\"${1}\"/}"
+            "trigger": "dsize|dust-size",
+            "contents": "{@size key=${1:XX}/}"
         },
         {
-            "trigger": "dsize-with-string-key|dust",
-            "contents": "{${1:mystring}} has {@size key=${2:mystring}/} letters"
-        },
-        {
-            "trigger": "dcontext-dump|dust",
+            "trigger": "ddump|dust-context-dump",
             "contents": "{@contextDump/}"
         },
         {
-            "trigger": "dcontext-dump-to-console|dust",
-            "contents": "{@contextDump to=\"console\"/}"
+            "trigger": "dsep|dust-separator",
+            "contents": "{@sep}, {/sep}"
         },
         {
-            "trigger": "dcontext-dump-full-test|dust",
-            "contents": "{@contextDump key=\"full\"/}"
-        },
-        {
-            "trigger": "dcontext-dump-function-dump-test|dust",
-            "contents": "{#aa param=\"{p}\"}{@contextDump key=\"full\"/}{/aa}"
-        },
-        {
-            "trigger": "dsep-partial-in-array|dust",
-            "contents": "{#n}{>hello_there name=. count=\"30\"/}{@sep} {/sep}{/n}"
-        },
-        {
-            "trigger": "dsep-partial-in-async-iterator|dust",
-            "contents": "{#numbers}{#delay}{.}{/delay}{@sep}, {/sep}{/numbers}"
-        },
-        {
-            "trigger": "darray-with-index|dust",
-            "contents": "{#list}\n\t{idx}${1}. {.}\n{/list}"
-        },
-        {
-            "trigger": "darray-implicit|dust",
-            "contents": "{#${1:array}}{.}{~n}{/${1:array}}"
-        },
-        {
-            "trigger": "df-suppress-auto-escape|dust",
+            "trigger": "dfs|dust-filter-suppress-auto-escape",
             "contents": "{${1:name}|s}"
-        }
+        },
+        {
+            "trigger": "dfh|dust-filter-force-html-escaping",
+            "contents": "{${1:name}|h}"
+        },
+        {
+            "trigger": "dfj|dust-filter-force-javascript-escaping",
+            "contents": "{${1:name}|j}"
+        },
+        {
+            "trigger": "dfu|dust-filter-native-encodeURI",
+            "contents": "{${1:name}|u}"
+        },
+        {
+            "trigger": "dfuc|dust-filter-native-encodeURIComponent",
+            "contents": "{${1:name}|uc}"
+        },
+        {
+            "trigger": "dfjs|dust-filter-stringify-json",
+            "contents": "{${1:name}|js}"
+        },
+        {
+            "trigger": "dfjp|dust-filter-parse-json",
+            "contents": "{${1:name}|jp}"
+        },
     ]
 }

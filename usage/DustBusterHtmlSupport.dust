@@ -1,4 +1,14 @@
 {! full html syntax support !}
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
 {^name}
   <a href="">{@size key=""/}</a>
   {+block}
