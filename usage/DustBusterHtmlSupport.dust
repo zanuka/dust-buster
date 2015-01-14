@@ -1,8 +1,27 @@
-
 {! full html syntax support !}
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+</body>
+</html>
 
 {^name}
   <a href="">{@size key=""/}</a>
+  {+block}
+    
+    {>"path/to/partial"/} 
+
+    {@eq key="foo" value="foo" type="string"}
+      
+    {:else}
+      
+    {/eq}
+
+  {/block}
 {/name}
 
 {?name}
@@ -25,34 +44,30 @@
 </nav>
 
 
+{! multiline comment support !}
+
 {!
         <div id="modal-container" class="modal-container-view hidden">{~n}
             {>"{modalView}" /}
         </div>{~n}
- !}  
 
-        <div id="modal-container" class="modal-container-view hidden">  {~n}
-            {>"{modalView}" /}
-        </div> {~n}
-
-{#name}
-
-        <div id="modal-container" class="modal-container-view hidden">
-            {>"{modalView}" /}{~n}
-        </div>
-        {~n}
-  
-{/name}
-
-
-
-{! 
-
-<div id="modal-container" class="modal-container-view hidden">{~n}
+        <div id="modal-container" class="modal-container-view hidden">{~n}
             {>"{modalView}" /}
         </div>{~n}
- !} 
 
+!}
+
+{@eq key="" value="" type="string"}
+  
+{:else}
+  
+{/eq}
+
+{@math key="" method="mod,add,abs,substract..." operand="" round="true or false"}
+
+{@math key="" method="mod,add,abs,substract..." operand="" round="true or false"}
+
+{@math key="" method="mod,add,abs,substract..." operand="" round="true or false"}
 
 <div class="DustBuster">
   {#dustRules}

@@ -1,175 +1,95 @@
-{#name}
-  
-{/name}
+{! ds|dust-section !}
+{#section-name}
+{/section-name}
 
-{+block}
-  
-{/block}
+{! db|dust-block !}
+{+block-name}
+{/block-name}
 
-{?name}
-  
-{/name}
+{! dy|dust-exist !}
+{?name}{/name}
 
-{^name}
-  
-{/name}
+{! dn|dust-not-exist !}
+{^name}{/name}
 
-{! array|dust !}
-{#array}
-  
-{/array}
-
-{! array-with-index|dust !}
-{#list}
-  {idx}. {.}
-{/list} 
-
-{! array-implicit|dust !}
-{#array}{.}{~n}{/array}
-
-{! partial|dust !}
+{! dp|dust-partial !}
 {>"path/to/partial"/} 
 
-{! partial-with-params|dust !}
+{! dpp|dust-partial-params !}
 {>"path/to/partial" params /}
 
-{! partial-dynamic|dust !}
+{! dpd|dust-partial-dynamic !}
 {>"path/to/partial{dynamic-param}"/}
 
-{! eq-typed|dust !}
-{@eq key="foo" value="foo" type="string"}
-  
-{:else}
-  
-{/eq}
+{! de|dust-equals !}
+{@eq value="bar"}{/eq}
 
-{! eq-untyped|dust !}
-{@eq key="foo" value="foo"}
-  
-{else}
-  
-{/eq}
+{! dne|dust-not-equals !}
+{@ne key="foo" value="foo"}{/ne}
 
-{! ne-matching-string|dust !}
-{@ne key="foo" value="foo"}
-  not equal
-{/ne}
+{! dlt|dust-less-than !}
+{@lt value=XX}{/lt}
 
-{! ne-non-matching-string|dust !}
-{@ne key="foo" value="bar"}
-  not equal
-{/ne}
+{! dlte|dust-less-than-equals !}
+{@lte value=XX}{/lte}
 
-{! ne-non-equal-numbers-case|dust !}
-{@ne key="3" value="5" type="number"}
-  not equal
-{/ne}
+{! dgt|dust-greater-than !}
+{@gt value=XX}{/gt}
 
-{! ne-non-equal-boolean-case|dust !}
-{@ne key="false" value="true" type="boolean"}
-  not equal
-{/ne}
+{! dgte|dust-greater-than-equals !}
+{@gte value=XX}{/gte}
 
-{! lt|dust !}
-{@lt key="{a}" value="27" type="number"}
-  
-{:else}
-  
-{/lt}
+{! dm|dust-math !}
+{@math key="XX" method="XX" operand="XX" round="true|false"/}
 
-{! lte|dust !}
-{@lte key="20" value="27" type="number"}
-  
-{:else}
-  
-{/lt}
+{! dma|dust-math-add !}
+{@math key="XX" method="add" operand="XX"/}
 
-{! gt|dust !}
-{@gt key="27" value="20" type="number"}
-  
-{:else}
-  
-{/gt}
+{! dms|dust-math-subtract !}
+{@math key="XX" method="subtract" operand="XX"/}
 
-{! gte|dust !}
-{@gte key="27" value="27" type="number"}
-  
-{:else}
-  
-{/gte}
+{! dmm|dust-math-multiply!}
+{@math key="XX" method="multiply" operand="XX"/}
 
+{! dmd|dust-math-divide !}
+{@math key="XX" method="divide" operand="XX"/}
 
+{! dmr|dust-math-round !}
+{@math key="XX.5" method="round"/}
 
-{! math|dust !}
-{@math key="number" method="mod,add,abs,substract..." operand="number" round="true or false"/}
+{! dmf|dust-math-floor !}
+{@math key="XX.5" method="floor"/}
 
-{! math-floor|dust !}
-{@math key="27.5" method="floor"/}
+{! dmc|dust-math-ceil !}
+{@math key="XX.5" method="ceil"/}
 
-{! math-ceil|dust !}
-{@math key="27.5" method="ceil"/}
+{! dmabs|dust-math-abs !}
+{@math key="XX.5" method="abs"/}
 
-{! math-round|dust !}
-{@math key="27.5" method="round"/}
-
-{! math-abs|dust !}
-{@math key="27.5" method="abs"/}
-
-{! math-subtract|dust !}
-{@math key="27" method="subtract" operand="7"/}
-
-{! math-add|dust !}
-{@math key="27" method="add" operand="7"/}
-
-{! math-multiply|dust !}
-{@math key="27" method="multiply" operand="7"/}
-
-{! math-divide|dust !}
-{@math key="27" method="divide" operand="7"/}
-
-{! math-eq-filter|dust !}
-{@math key="-27" method="abs"}
-  {@eq value=27}
-    Test is true
-  {/eq}
-{/math}   
-
-{! math-greater-than-with-default|dust !}
-{@math key="27" method="add" operand="100"}
-  {@gt value=120}
-    Greater than
-  {/gt}
-  {@default}
-    Not greater than
-  {/default}
-{/math}
-
-{! math-even-odd-bodies|dust !}
-{@math key=$idx method="mod" operand=2}
-  {@eq value=0}
-    even
-  {:else}
-    odd
+{! dmeq|dust-math-eq-filter !}
+{@math key="-XX" method="abs"}
+  {@eq value=XX}
+    
   {/eq}
 {/math}
 
-{! math-multiply-and-round|dust !}
-{@math key="27.5" method="multiply" operand="7" round="true"/}
 
-{! select-block-with-key-and-type|dust !}
+
+{! dskt|dust-select-with-key-and-type !}
 {@select key="foo" type="string"}
   
 {/select}
 
-{! select-multi-condition-default|dust!}
+
+{! dsmcd|dust-select-multi-condition-with-default !}
 {@select key="foo"}
   {@eq value="bar"}bar{/eq}
   {@eq value="baz"}baz{/eq}
   {@eq value="biz"}biz{/eq}
   {@default value="default"}default{/default}
-{/select}
+{/select} 
 
-{! select-inside-array|dust !}
+{! dsia|dust-select-inside-array !}
 {#array}
   {@select key=.}
     {@eq value="foo"}foo{/eq}
@@ -178,29 +98,35 @@
   {/select}
 {/array}
 
-{! size-with-empty-key|dust !}
-{@size key=""/}
+{! dsize|dust-size !}
+{@size key=XX/}
 
-{! size-with-string-key|dust !}
-{mystring} has {@size key=mystring/} letters
-
-{! context-dump|dust !}
+{! ddump|dust-context-dump !}
 {@contextDump/}
 
-{! context-dump-to-console|dust !}
-{@contextDump to="console"/}
+{! dsep|dust-separator !}
+{@sep}, {/sep}
 
-{! context-dump-full-test|dust !}
-{@contextDump key="full"/}
+{! dfs|dust-filter-suppress-auto-escape !}
+{name|s}
 
-{! context-dump-function-dump-test|dust !}
-{#aa param="{p}"}{@contextDump key="full"/}{/aa}
+{! dfh|dust-filter-force-html-escaping !}
+{name|h}
 
-{! sep-partial-in-array|dust !}
-{#n}{>hello_there name=. count="30"/}{@sep} {/sep}{/n}
+{! dfj|dust-filter-force-javascript-escaping !}
+{name|j}
 
-{! sep-partial-in-async-iterator|dust !}
-{#numbers}{#delay}{.}{/delay}{@sep}, {/sep}{/numbers}
+{! dfu|dust-filter-native-encodeURI !}
+{name|u}
+
+{! dfuc|dust-filter-native-encodeURIComponent !}
+{name|uc}
+
+{! dfjs|dust-filter-stringify-json !}
+{name|js}
+
+{! dfjp|dust-filter-parse-json !}
+{name|jp}
 
 {! block comments supported !}
 {! {+block}
@@ -211,8 +137,8 @@
   {/math}  
 {/block} !}
 
-{! line comments supported !}
+{! single line comments supported !}
 {! {@math key="27.5" method="multiply" operand="7" round="true"/} !}
+{@math key="27.5" method="multiply" operand="7" round="true"/}
 {! {@math key="27.5" method="multiply" operand="7" round="true"/} !}
-{! {@math key="27.5" method="multiply" operand="7" round="true"/} !}
-{! {@math key="27.5" method="multiply" operand="7" round="true"/} !}
+{@math key="27.5" method="multiply" operand="7" round="true"/}

@@ -1,344 +1,240 @@
 ## DustBuster
-##### v1.0.4
-by Mike Delucchi | [zanuka](https://github.com/zanuka)
+##### v1.1.0
+by Mike Delucchi [@zanuka](https://github.com/zanuka)
 
 ***
-DustBuster is an enhanced syntax definition for .dust files that includes sublime completions of dustjs-helper snippets. More info on currently supported helpers can be found at the links below.
-
-- [{linkedin/dustjs-helpers}](https://github.com/linkedin/dustjs-helpers)
-- [{linkedin/dustjs-helpers/wiki}](https://github.com/linkedin/dustjs-helpers/wiki)
-- [{dust/helper/test/tool}](http://linkedin.github.io/dustjs/test/test.html?q=helpers)
+DustBuster is an enhanced syntax definition for .dust files that includes sublime completions of dustjs-helpers and dustjs logic syntax.
 
 ### Primary Features
-- syntax definition for .dust files
-- sublime completions for supported dustjs-helpers
+- syntax definition for .dust files (with html support)
+- sublime completions for supported dustjs-helpers and dustjs logic
 
 ### Prerequisites
 - [Sublime Text 2](http://www.sublimetext.com/2) or [Sublime Text 3](http://www.sublimetext.com/3)
 - [Package Control](https://packagecontrol.io/)
 
-
-### Installing the package
-- via Package Control (search for DustBuster)
+### Installing DustBuster
+- cmd+shift+p, Install Package, search for DustBuster or Dust
 
 ### Activating the Dust syntax definition for all .dust files
 -  open any .dust file and then select View > Syntax > Dust
 
+### Supported Helpers ###
+- [{linkedin/dustjs-helpers}](https://github.com/linkedin/dustjs-helpers)
+- [{linkedin/dustjs-helpers/wiki}](https://github.com/linkedin/dustjs-helpers/wiki)
+- [{dust/helper/test/tool}](http://linkedin.github.io/dustjs/test/test.html?q=helpers)
+
 ***
 
-### New Dust Completions
+### Sublime Completions
 
 - to use these completions, just start typing the completion name and hit tab
-- for example, you could type "sect" and hit tab for the dust section to render
-- once completion renders, you can then tab through the snippet accordingly
-- you can also just hit control+spacebar to access all of the completions
+- for example, type "ds", hit tab and `{#name}{/name}` will be rendered
+- you can then tab through the snippet and change values
+- type "d", then control+spacebar to view all of the completions
 
+
+#### `ds|dust-section`
 ```
-    > section
-        {#name}
-        {/name}
-
-    > block
-        {+block}
-        {/block}
-        
-    > exists-yes
-        {?name}
-        {/name}
-
-    > exists-no
-        {^name}
-        {/name}
-
-    > partial
-        {>"path/to/partial"/} 
-
-    > partial-with-params
-        {>"path/to/partial"  params /}
-
-    > partial-dynamic
-        {>"path/to/partial{dynamic-param}"/}
-
-    > eq-typed
-        {@eq key="foo" value="foo" type="string"}
-        {:else}
-        {/eq}
-
-    > eq-untyped
-        {@eq key="foo" value="foo"}
-        {else}
-        {/eq}
-
-    > ne-matching-string
-        {@ne key="foo" value="foo"}
-          not equal
-        {/ne}
-
-    > ne-non-matching-string
-        {@ne key="foo" value="bar"}
-          not equal
-        {/ne}
-
-    > ne-non-equal-numbers-case
-        {@ne key="3" value="5" type="number"}
-          not equal
-        {/ne}
-
-    > ne-non-equal-boolean-case
-        {@ne key="false" value="true" type="boolean"}
-          not equal
-        {/ne}
-
-    > lt
-        {@lt key="{a}" value="27" type="number"}
-        {:else}
-        {/lt}
-
-    > lte
-        {@lte key="20" value="27" type="number"}
-        {:else}
-        {/lt}
-
-    > gt
-        {@gt key="27" value="20" type="number"}
-        {:else}
-        {/gt}
-
-    > gte
-        {@gte key="27" value="27" type="number"}
-        {:else}
-        {/gte}
-
-    > math
-        {@math key="number" method="mod,add,abs,substract..." operand="number" round="true or false"/}
-
-    > math-floor
-        {@math key="27.5" method="floor"/}
-
-    > math-ceil
-        {@math key="27.5" method="ceil"/}
-
-    > math-round
-        {@math key="27.5" method="round"/}
-
-    > math-abs
-        {@math key="27.5" method="abs"/}
-
-    > math-subtract
-        {@math key="27" method="subtract" operand="7"/}
-
-    > math-add
-        {@math key="27" method="add" operand="7"/}
-
-    > math-multiply
-        {@math key="27" method="multiply" operand="7"/}
-
-    > math-divide
-        {@math key="27" method="divide" operand="7"/}
-
-    > math-eq-filter
-        {@math key="-27" method="abs"}
-          {@eq value=27}
-            Test is true
-          {/eq}
-        {/math}   
-
-    > math-greater-than-with-default
-        {@math key="27" method="add" operand="100"}
-          {@gt value=120}
-            Greater than
-          {/gt}
-          {@default}
-            Not greater than
-          {/default}
-        {/math}
-
-    > math-even-odd-bodies
-        {@math key=$idx method="mod" operand=2}
-          {@eq value=0}
-            even
-          {:else}
-            odd
-          {/eq}
-        {/math}
-
-    > math-multiply-and-round
-        {@math key="27.5" method="multiply" operand="7" round="true"/}
-
-    > select-block-with-key-and-type
-        {@select key="foo" type="string"}
-  
-        {/select}
-
-    > select-multi-condition-default|dus
-        {@select key="foo"}
-          {@eq value="bar"}bar{/eq}
-          {@eq value="baz"}baz{/eq}
-          {@eq value="biz"}biz{/eq}
-          {@default value="default"}default{/default}
-        {/select}
-
-    > select-inside-array
-        {#array}
-          {@select key=.}
-            {@eq value="foo"}foo{/eq}
-            {@eq value="bar"}bar{/eq}
-            {@default value="default"}default{/default}
-          {/select}
-        {/array}
-
-    > size-with-empty-key
-        {@size key=""/}
-
-    > size-with-string-key
-        {mystring} has {@size key=mystring/} letters
-
-    > context-dump
-        {@contextDump/}
-
-    > context-dump-to-console
-        {@contextDump to="console"/}
-
-    > context-dump-full-test
-        {@contextDump key="full"/}
-
-    > context-dump-function-dump-test
-        {#aa param="{p}"}{@contextDump key="full"/}{/aa}
-
-    > sep-partial-in-array
-        {#n}{>hello_there name=. count="30"/}{@sep} {/sep}{/n}
-
-    > sep-partial-in-async-iterator
-        {#numbers}{#delay}{.}{/delay}{@sep}, {/sep}{/numbers}
-
-    > array
-        {#array}
-          
-        {/array}
-
-    > array-with-index
-        {#list}
-          {idx}. {.}
-        {/list} 
-
-    > array-implicit
-        {#array}{.}{~n}{/array}
-
+    {#section-name}
+    {/section-name}
 ```
 
-***
+#### `db|dust-block`
+```
+    {+block-name}
+    {/block-name}
+```
 
-##### Existing Dust.js Completions (from previous version)
-by [gpbl](https://github.com/gpbl)
+#### `dy|dust-yes-exist`
+```
+    {?name} {/name}
+```
 
-<table align="center">
-    <thead>
-        <tr>
-            <th>Trigger</th>
-            <th>Meaning</th>
-            <th>Snippet</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>ds</code></td>
-            <td>
-                <b>d</b>ust <b>s</b>ection
-            </td>
-            <td>
-                <code>{#section}...{/section}</code>
-            </td>
-        </tr>
-        <tr>
-            <td><code>dn</code></td>
-            <td>
-                <b>d</b>ust <b>n</b>o
-            </td>
-            <td><code>{^name}...{/name}</code></td>
-        </tr>
-        <tr>
-            <td><code>dy</code></td>
-            <td>
-                <b>d</b>ust <b>y</b>es
-            </td>
-            <td><code>{?name}...{/name}</code></td>
-        </tr>
-        <tr>
-            <td><code>dp</code></td>
-            <td>
-                <b>d</b>ust <b>p</b>artial
-            </td>
-            <td><code>{>partial}...{/partial}</code></td>
-        </tr>
-        <tr>
-            <td><code>db</code></td>
-            <td>
-                <b>d</b>ust <b>b</b>lock
-            </td>
-            <td><code>{>block}...{/block}</code></td>
-        </tr>
-        <tr>
-            <td><code>deq</code></td>
-            <td>
-                <b>d</b>ust <b>eq</b>uals
-            </td>
-            <td><code>{@eq}...{:else}...{/eq}</code></td>
-        </tr>
-        <tr>
-            <td><code>dne</code></td>
-            <td>
-                <b>d</b>ust <b>n</b>ot <b>e</b>quals
-            </td>
-            <td><code>{@ne}...{:else}...{/ne}</code></td>
-        </tr>
-        <tr>
-            <td><code>dlt</code></td>
-            <td>
-                <b>d</b>ust <b>l</b>ess <b>t</b>han
-            </td>
-            <td><code>{@lt}...{:else}...{/lt}</code></td>
-        </tr>
-        <tr>
-            <td><code>dlte</code></td>
-            <td>
-                <b>d</b>ust <b>l</b>ess <b>t</b>han or <b>e</b>quals
-            </td>
-            <td><code>{@lte}...{:else}...{/lte}</code></td>
-        </tr>
-        <tr>
-            <td><code>dgt</code></td>
-            <td>
-                <b>d</b>ust <b>g</b>reater <b>t</b>han
-            </td>
-            <td><code>{@gt}...{:else}...{/gt}</code></td>
-        </tr>
-        <tr>
-            <td><code>dgte</code></td>
-            <td>
-                <b>d</b>ust <b>g</b>reater <b>t</b>han or <b>e</b>quals
-            </td>
-            <td><code>{@gte}...{:else}...{/gte}</code></td>
-        </tr>
-         <tr>
-            <td><code>dmath</code></td>
-            <td>
-                <b>d</b>ust <b>math</b>
-            </td>
-            <td><code>{@math key="..." method="..." ...}</code></td>
-        </tr>
-        <tr>
-            <td><code>dsel</code></td>
-            <td>
-                <b>d</b>ust <b>sel</b>ect
-            </td>
-            <td><code>{@select}...{/select}</code></td>
-        </tr>
-    </tbody>
-</table>
+#### `dn|dust-no-exist` 
+```
+    {^name} {/name}
+```
 
-##### Additional credits
-Previous Dust.js package by [sntran](https://github.com/sntran)
-If you already had this installed, SublimeText should auto-update it with DustBuster on next app startup.
+#### `dp|dust-partial`
+```
+    {>"path/to/partial"/}
+```
+
+#### `dpp|dust-partial-params`
+```
+    {>"path/to/partial" params /}
+```
+
+#### `dpd|dust-partial-dynamic`
+```
+    {>"path/to/partial{dynamic-param}" /}
+```
+
+#### `deq|dust-equals`
+```
+    {@eq value="bar"} {/eq}
+```
+
+#### `dne|dust-not-equals`
+```
+    {@ne key="foo" value="foo"} {/ne}
+```
+
+#### `dlt|dust-less-than`
+```
+    {@lt value=XX} {/lt}
+```
+
+#### `dlte|dust-less-than-equals`
+```
+    {@lte value=XX} {/lte}
+```
+
+#### `dgt|dust-greater-than`
+```
+    {@gt key="XX" value="20" type="number"} {/gt}
+```
+
+#### `dgte|dust-greater-than-equals`
+```
+    {@gte key="XX" value="XX" type="number"} {/gte}
+```
+
+#### `dm|dust-math`
+```
+    {@math key="XX" method="XX" operand="XX" round="true|false"/}
+```
+
+#### `dma|dust-math-add`
+```
+    {@math key="XX" method="add" operand="XX"/}
+```
+
+#### `dms|dust-math-subtract`
+```
+    {@math key="XX" method="subtract" operand="XX"/}
+```
+
+#### `dmm|dust-math-multiply`
+```
+    {@math key="XX" method="multiply" operand="XX"/}
+```
+
+#### `dmd|dust-math-divide`
+```
+    {@math key="XX" method="divide" operand="XX"/}
+```
+
+#### `dmr|dust-math-round`
+```
+    {@math key="XX.5" method="round"/}
+```
+
+#### `dmf|dust-math-floor`
+```
+    {@math key="XX.5" method="floor"/}
+```
+
+#### `dmc|dust-math-ceil`
+```
+    {@math key="XX.5" method="ceil"/}
+```
+
+#### `dmabs|dust-math-abs`
+```
+    {@math key="XX.5" method="ceil"/}
+```
+
+#### `dmeq|dust-math-eq-filter`
+```
+    {@math key="-XX" method="abs"}
+      {@eq value=XX}
+      {/eq}
+    {/math}  
+```
+
+#### `dskt|dust-select-with-key-and-type`
+```
+    {@select key="foo" type="string"}
+    {/select}
+```
+
+#### `dsmcd|dust-select-multi-condition-with-default`
+```
+    {@select key="foo"}
+      {@eq value="bar"}bar{/eq}
+      {@eq value="baz"}baz{/eq}
+      {@eq value="biz"}biz{/eq}
+      {@default value="default"}default{/default}
+    {/select}
+```
+
+#### `dsia|dust-select-inside-array`
+```
+    {#array}
+      {@select key=.}
+        {@eq value="foo"}foo{/eq}
+        {@eq value="bar"}bar{/eq}
+        {@default value="default"}default{/default}
+      {/select}
+    {/array}
+```
+
+#### `dsize|dust-size`
+```
+    {@size key=XX/}
+```
+
+#### `ddump|dust-context-dump`
+```
+    {@contextDump/}
+```
+
+#### `dsep|dust-separator`
+```
+    {@sep} {/sep}
+```
+
+#### `dfs|dust-filter-suppress-auto-escape`
+```
+    {name|s}
+```
+
+#### `dfh|dust-filter-force-html-escaping`
+```
+    {name|h}
+```
+
+#### `dfj|dust-filter-force-javascript-escaping`
+```
+    {name|j}
+```
+
+#### `dfu|dust-filter-native-encodeURI`
+```
+    {name|u}
+```
+
+#### `dfuc|dust-filter-native-encodeURIComponent`
+```
+    {name|uc}
+```
+
+#### `dfjs|dust-filter-stringify-json`
+```
+    {name|js}
+```
+
+#### `dfjp|dust-filter-parse-json`
+```
+    {name|jp}
+```
+
+
+
+###### Additional Credits
+DustBuster is a complete rewrite of a previous package by [sntran](https://github.com/sntran) and [gpbl](https://github.com/gpbl).
 
 ## License
 

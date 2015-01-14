@@ -36,6 +36,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#dust_inline</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#dust_html_tags</string>
 		</dict>
 		<dict>
@@ -86,7 +90,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.dust</string>
+					<string>entity.name.tag.helper.dust</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -113,17 +117,17 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.block.open.dust</string>
+					<string>entity.name.tag.delimiter.dust</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>support.helper.dust</string>
+					<string>constant.character</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.dust</string>
+					<string>entity.name.tag.helper.dust</string>
 				</dict>
 				<key>4</key>
 				<dict>
@@ -139,6 +143,11 @@
 				<dict>
 					<key>name</key>
 					<string>entity.name.tag.block.closed.dust</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>constant.character.dust</string>
 				</dict>
 			</dict>
 			<key>name</key>
@@ -203,7 +212,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.other.attribute-name.generic.html</string>
+					<string>entity.other.attribute.generic.html</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -309,6 +318,48 @@
 				</dict>
 			</array>
 		</dict>
+		<key>dust_inline</key>
+		<dict>
+			<key>begin</key>
+			<string>\{\s*([-a-zA-Z0-9_\./]+)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.delimiter.dust</string>
+				</dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>constant.character.dust</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(~?\})</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.delimiter.dust</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.delimiter.dust</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.function.inline</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#dust_generic_attribute</string>
+				</dict>
+			</array>
+		</dict>
 		<key>dust_partials</key>
 		<dict>
 			<key>begin</key>
@@ -323,12 +374,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.dust</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>variable.parameter.dust</string>
+					<string>constant.character.dust</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -444,6 +490,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#dust_inline</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#dust_block_start</string>
 				</dict>
 				<dict>
@@ -493,6 +543,10 @@
 				<dict>
 					<key>include</key>
 					<string>#dust_comments</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#dust_inline</string>
 				</dict>
 				<dict>
 					<key>include</key>

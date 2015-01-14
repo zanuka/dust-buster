@@ -1,0 +1,11 @@
+DustBuster 1.1.0 Changelog:
+
+Please be sure to restart Sublime Text to start using this new version.
+
+- NEW: all completions refactored (prefixed by d, shortened)
+- NEW: more improvements to syntax definition
+- NEW: updated readme with better completions
+- NEW: completions for filters
+- FIXED: single-line syntax support
+
+[@zanuka](https://github.com/zanuka)
