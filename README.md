@@ -36,39 +36,39 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
 #### `ds|dust-section`
 ```
-        {#section-name}
-        {/section-name}
+    {#section-name}
+    {/section-name}
 ```
 
 #### `db|dust-block`
 ```
-        {+block-name}
-        {/block-name}
+    {+block-name}
+    {/block-name}
 ```
 
 #### `dy|dust-yes-exist`
 ```
-        {?name} {/name}
+    {?name} {/name}
 ```
 
 #### `dn|dust-no-exist` 
 ```
-        {^name} {/name}
+    {^name} {/name}
 ```
 
 #### `dp|dust-partial`
 ```
-        {>"path/to/partial"/}
+    {>"path/to/partial"/}
 ```
 
 #### `dpp|dust-partial-params`
 ```
-        {>"path/to/partial" params /}
+    {>"path/to/partial" params /}
 ```
 
 #### `dpd|dust-partial-dynamic`
 ```
-        {>"path/to/partial{dynamic-param}" /}
+    {>"path/to/partial{dynamic-param}" /}
 ```
 
 #### `deq|dust-equals`
@@ -88,7 +88,7 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
 #### `dlte|dust-less-than-equals`
 ```
-    {@lte value=27} {/lt}
+    {@lte value=27} {/lte}
 ```
 
 #### `dgt|dust-greater-than`
@@ -101,74 +101,51 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
     {@gte key="27" value="27" type="number"} {/gte}
 ```
 
-#### `|`
-    dmath
-        {@math key="number" method="mod,add,abs,substract..." operand="number" round="true or false"/}
+#### `dm|dust-math`
+    {@math key="number" method="mod,add,abs,substract,divide..." operand="number" round="true or false"/}
 
-#### `|`
-    dmath-floor
-        {@math key="27.5" method="floor"/}
+#### `dmf|dust-math-floor`
+```
+    {@math key="27.5" method="floor"/}
+```
 
-#### `|`
-    dmath-ceil
-        {@math key="27.5" method="ceil"/}
+#### `dmc|dust-math-ceil`
+```
+    {@math key="27.5" method="ceil"/}
+```
 
-#### `|`
-    dmath-round
-        {@math key="27.5" method="round"/}
+#### `dmr|dust-math-round`
+```
+    {@math key="27.5" method="round"/}
+```
 
-#### `|`
-    dmath-abs
-        {@math key="27.5" method="abs"/}
+#### `dma|dust-math-add`
+```
+    {@math key="27" method="add" operand="7"/}
+```
 
-#### `|`
+#### `dms|dust-math-subtract`
     dmath-subtract
         {@math key="27" method="subtract" operand="7"/}
 
-#### `|`
-    dmath-add
-        {@math key="27" method="add" operand="7"/}
+#### `dmm|dust-math-multiply`
+```
+    {@math key="27" method="multiply" operand="7"/}
+```
 
-#### `|`
-    dmath-multiply
-        {@math key="27" method="multiply" operand="7"/}
+#### `dmd|dust-math-divide`
+```
+    {@math key="27" method="divide" operand="7"/}
+```
 
-#### `|`
-    dmath-divide
-        {@math key="27" method="divide" operand="7"/}
-
-#### `|`
-    dmath-eq-filter
-        {@math key="-27" method="abs"}
-          {@eq value=27}
-            Test is true
-          {/eq}
-        {/math}   
-
-#### `|`
-    dmath-greater-than-with-default
-        {@math key="27" method="add" operand="100"}
-          {@gt value=120}
-            Greater than
-          {/gt}
-          {@default}
-            Not greater than
-          {/default}
-        {/math}
-
-#### `|`
-    dmath-even-odd-bodies
-        {@math key=$idx method="mod" operand=2}
-          {@eq value=0}
-            even
-          {:else}
-            odd
-          {/eq}
-        {/math}
-
-#### `|`
-    dmath-multiply-and-round
-        {@math key="27.5" method="multiply" operand="7" round="true"/}
+#### `dmeq|dust-math-eq-filter`
+```
+    {@math key="-27" method="abs"}
+      {@eq value=27}
+        Test is true
+      {/eq}
+    {/math}   
+```
 
 #### `|`
     dselect-block-with-key-and-type

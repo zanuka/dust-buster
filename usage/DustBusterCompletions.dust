@@ -46,39 +46,39 @@
 {@gte key="27" value="27" type="number"}{/gte}
 
 
-{! math|dust !}
-{@math key="number" method="mod,add,abs,substract..." operand="number" round="true or false"/}
+{! dm|dust-math !}
+{@math key="number" method="mod,add,abs,substract..." operand="number" round="true or false"/}  
 
-{! math-floor|dust !}
-{@math key="27.5" method="floor"/}
-
-{! math-ceil|dust !}
-{@math key="27.5" method="ceil"/}
-
-{! math-round|dust !}
-{@math key="27.5" method="round"/}
-
-{! math-abs|dust !}
-{@math key="27.5" method="abs"/}
-
-{! math-subtract|dust !}
-{@math key="27" method="subtract" operand="7"/}
-
-{! math-add|dust !}
+{! dma|dust-math-add !}
 {@math key="27" method="add" operand="7"/}
 
-{! math-multiply|dust !}
+{! dms|dust-math-subtract !}
+{@math key="27" method="subtract" operand="7"/}
+
+{! dmm|dust-math-multiply!}
 {@math key="27" method="multiply" operand="7"/}
 
-{! math-divide|dust !}
+{! dmd|dust-math-divide !}
 {@math key="27" method="divide" operand="7"/}
 
-{! math-eq-filter|dust !}
+{! dmr|dust-math-round !}
+{@math key="27.5" method="round"/}  
+
+{! dmf|dust-math-floor !}
+{@math key="27.5" method="floor"/}
+
+{! dmc|dust-math-ceil !}
+{@math key="27.5" method="ceil"/}
+
+{! dmabs|dust-math-abs !}
+{@math key="27.5" method="abs"/}
+
+{! dmeq|dust-math-eq-filter !}
 {@math key="-27" method="abs"}
   {@eq value=27}
-    Test is true
+    
   {/eq}
-{/math}   
+{/math}
 
 {! math-greater-than-with-default|dust !}
 {@math key="27" method="add" operand="100"}

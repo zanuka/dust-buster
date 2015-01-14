@@ -54,56 +54,44 @@
             "contents": "{@gte key=\"${1:27}\" value=\"${2:27}\" type=\"${3:number}\"}\n\t${4}\n{:else}\n\t${5}\n{/gte}"
         },
         {
-            "trigger": "dmath|dust",
+            "trigger": "dm|dust-math",
             "contents": "{@math key=\"${1:number}\" method=\"${2:mod,add,abs,substract...}\" operand=\"${3:number}\" round=\"${4:true or false}\"/}"
         },
         {
-            "trigger": "dmath-floor|dust",
-            "contents": "{@math key=\"${1:27.5}\" method=\"floor\"/}"
-        },
-        {
-            "trigger": "dmath-ceil|dust",
-            "contents": "{@math key=\"${1:27.5}\" method=\"ceil\"/}"
-        },
-        {
-            "trigger": "dmath-round|dust",
-            "contents": "{@math key=\"${1:27.5}\" method=\"round\"/}"
-        },
-        {
-            "trigger": "dmath-abs|dust",
-            "contents": "{@math key=\"${1:27.5}\" method=\"abs\"/}"
-        },
-        {
-            "trigger": "dmath-subtract|dust",
-            "contents": "{@math key=\"${1:27}\" method=\"subtract\" operand=\"${2:7}\"/}"
-        },
-        {
-            "trigger": "dmath-add|dust",
+            "trigger": "dma|dust-math-add",
             "contents": "{@math key=\"${1:27}\" method=\"add\" operand=\"${2:7}\"/}"
         },
         {
-            "trigger": "dmath-multiply|dust",
+            "trigger": "dms|dust-math-subtract",
+            "contents": "{@math key=\"${1:27}\" method=\"subtract\" operand=\"${2:7}\"/}"
+        },
+        {
+            "trigger": "dmm|dust-math-multiply",
             "contents": "{@math key=\"${1:27}\" method=\"multiply\" operand=\"${2:7}\"/}"
         },
         {
-            "trigger": "dmath-divide|dust",
+            "trigger": "dmd|dust-math-divide",
             "contents": "{@math key=\"${1:27}\" method=\"divide\" operand=\"${2:7}\"/}"
         },
         {
-            "trigger": "dmath-eq-filter|dust",
-            "contents": "{@math key=\"${1:-27}\" method=\"${2:abs}\"}\n\t{@eq value=${3:27}}\n\t\t${4:Test is true}\n\t{/eq}\n{/math}"
+            "trigger": "dmr|dust-math-round",
+            "contents": "{@math key=\"${1:27.5}\" method=\"round\"/}"
         },
         {
-            "trigger": "dmath-greater-than-with-default|dust",
-            "contents": "{@math key=\"${1:27}\" method=\"${2:add}\" operand=\"${3:100}\"}\n\t{@gt value=${4:120}}\n\t\t${5:Greater than}\n\t{/gt}\n\t{@default}\n\t\t${6:Not greater than}\n\t{/default}\n{/math}"
+            "trigger": "dmf|dust-math-floor",
+            "contents": "{@math key=\"${1:27.5}\" method=\"floor\"/}"
         },
         {
-            "trigger": "dmath-even-odd-bodies|dust",
-            "contents": "{@math key=\\$idx method=\"mod\" operand=2}\n\t{@eq value=0}\n\t\t${1:even}\n\t{:else}\n\t\t${2:odd}\n\t{/eq}\n{/math}"
+            "trigger": "dmc|dust-math-ceil",
+            "contents": "{@math key=\"${1:27.5}\" method=\"ceil\"/}"
         },
         {
-            "trigger": "dmath-multiply-and-round|dust",
-            "contents": "{@math key=\"${1:27.5}\" method=\"multiply\" operand=\"${2:7}\" round=\"true\"/}"
+            "trigger": "dmabs|dust-math-abs",
+            "contents": "{@math key=\"${1:27.5}\" method=\"abs\"/}"
+        },
+        {
+            "trigger": "dmeq|dust-math-eq-filter",
+            "contents": "{@math key=\"${1:-27}\" method=\"${2:abs}\"}\n\t{@eq value=${3:27}}\n\t\t${4}\n\t{/eq}\n{/math}"
         },
         {
             "trigger": "dselect-block-with-key-and-type|dust",
