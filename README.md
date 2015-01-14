@@ -3,11 +3,7 @@
 by Mike Delucchi [@zanuka](https://github.com/zanuka)
 
 ***
-DustBuster is an enhanced syntax definition for .dust files that includes sublime completions of dustjs-helpers and dustjs logic syntax. More info on currently supported helpers can be found at the links below.
-
-- [{linkedin/dustjs-helpers}](https://github.com/linkedin/dustjs-helpers)
-- [{linkedin/dustjs-helpers/wiki}](https://github.com/linkedin/dustjs-helpers/wiki)
-- [{dust/helper/test/tool}](http://linkedin.github.io/dustjs/test/test.html?q=helpers)
+DustBuster is an enhanced syntax definition for .dust files that includes sublime completions of dustjs-helpers and dustjs logic syntax.
 
 ### Primary Features
 - syntax definition for .dust files (with html support)
@@ -17,12 +13,16 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 - [Sublime Text 2](http://www.sublimetext.com/2) or [Sublime Text 3](http://www.sublimetext.com/3)
 - [Package Control](https://packagecontrol.io/)
 
-
 ### Installing DustBuster
 - cmd+shift+p, Install Package, search for DustBuster or Dust
 
 ### Activating the Dust syntax definition for all .dust files
 -  open any .dust file and then select View > Syntax > Dust
+
+### Supported Helpers ###
+- [{linkedin/dustjs-helpers}](https://github.com/linkedin/dustjs-helpers)
+- [{linkedin/dustjs-helpers/wiki}](https://github.com/linkedin/dustjs-helpers/wiki)
+- [{dust/helper/test/tool}](http://linkedin.github.io/dustjs/test/test.html?q=helpers)
 
 ***
 
