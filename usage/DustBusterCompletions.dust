@@ -31,76 +31,55 @@
 
 
 {! dlt|dust-less-than !}
-{@lt value=27}{/lt}
+{@lt value=XX}{/lt}
 
 
 {! dlte|dust-less-than-equals !}
-{@lte value=27}{/lte}
+{@lte value=XX}{/lte}
 
 
-{! gt|dust !}
-{@gt key="27" value="20" type="number"}{/gt}
+{! dgt|dust-greater-than !}
+{@gt value=XX}{/gt}
 
-
-{! gte|dust !}
-{@gte key="27" value="27" type="number"}{/gte}
+{! dgte|dust-greater-than-equals !}
+{@gte value=XX}{/gte}
 
 
 {! dm|dust-math !}
-{@math key="number" method="mod,add,abs,substract..." operand="number" round="true or false"/}  
+{@math key="XX" method="XX" operand="XX" round="true|false"/}
 
 {! dma|dust-math-add !}
-{@math key="27" method="add" operand="7"/}
+{@math key="XX" method="add" operand="XX"/}
 
 {! dms|dust-math-subtract !}
-{@math key="27" method="subtract" operand="7"/}
+{@math key="XX" method="subtract" operand="XX"/}
 
 {! dmm|dust-math-multiply!}
-{@math key="27" method="multiply" operand="7"/}
+{@math key="XX" method="multiply" operand="XX"/}
 
 {! dmd|dust-math-divide !}
-{@math key="27" method="divide" operand="7"/}
+{@math key="XX" method="divide" operand="XX"/}
 
 {! dmr|dust-math-round !}
-{@math key="27.5" method="round"/}  
+{@math key="XX.5" method="round"/}
 
 {! dmf|dust-math-floor !}
-{@math key="27.5" method="floor"/}
+{@math key="XX.5" method="floor"/}
 
 {! dmc|dust-math-ceil !}
-{@math key="27.5" method="ceil"/}
+{@math key="XX.5" method="ceil"/}
 
 {! dmabs|dust-math-abs !}
-{@math key="27.5" method="abs"/}
+{@math key="XX.5" method="abs"/}
 
 {! dmeq|dust-math-eq-filter !}
-{@math key="-27" method="abs"}
-  {@eq value=27}
+{@math key="-XX" method="abs"}
+  {@eq value=XX}
     
   {/eq}
 {/math}
 
-{! math-greater-than-with-default|dust !}
-{@math key="27" method="add" operand="100"}
-  {@gt value=120}
-    Greater than
-  {/gt}
-  {@default}
-    Not greater than
-  {/default}
-{/math}
 
-{! math-even-odd-bodies|dust !}
-{@math key=$idx method="mod" operand=2}
-  {@eq value=0}
-    even
-  {:else}
-    odd
-  {/eq}
-{/math}
-
-{! math-multiply-and-round|dust !}
-{@math key="27.5" method="multiply" operand="7" round="true"/}
 
 {! select-block-with-key-and-type|dust !}
 {@select key="foo" type="string"}

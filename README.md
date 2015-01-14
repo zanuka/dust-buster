@@ -102,7 +102,9 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 ```
 
 #### `dm|dust-math`
-    {@math key="number" method="mod,add,abs,substract,divide..." operand="number" round="true or false"/}
+```
+    {@math key="" method="" operand="" round=""/}
+```
 
 #### `dmf|dust-math-floor`
 ```
