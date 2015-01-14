@@ -1,19 +1,19 @@
-{! ds|dust !}
+{! ds|dust-section !}
 {#name}
   
 {/name}
 
-{! db|dust !}
+{! db|dust-block !}
 {+block}
   
 {/block}
 
-{! dy|dust !}
+{! dy|dust-yes !}
 {?name}
   
 {/name}
 
-{! dn|dust !}
+{! dn|dust-no !}
 {^name}
   
 {/name}
@@ -201,6 +201,7 @@
 
 
 {name|s}
+
 {name|js}
 
 {! block comments supported !}

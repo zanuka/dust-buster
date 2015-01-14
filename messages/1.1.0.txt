@@ -2,8 +2,9 @@ DustBuster 1.1.0 Changelog:
 
 Please be sure to restart Sublime Text to start using this new version.
 
-- NEW: improvements to syntax definition
+- NEW: more improvements to syntax definition
 - FIXED: single-line syntax support
+- NEW: updated readme with all completions in table
 
 Enjoy and please [log issues](https://github.com/zanuka/dust-buster/issues) if you find any during development. 
 
