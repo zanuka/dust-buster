@@ -1,23 +1,22 @@
+{! ds|dust !}
 {#name}
   
 {/name}
 
+{! db|dust !}
 {+block}
   
 {/block}
 
+{! dy|dust !}
 {?name}
   
 {/name}
 
+{! dn|dust !}
 {^name}
   
 {/name}
-
-{! array|dust !}
-{#array}
-  
-{/array}
 
 {! array-with-index|dust !}
 {#list}
@@ -199,6 +198,10 @@
 
 {! sep-partial-in-async-iterator|dust !}
 {#numbers}{#delay}{.}{/delay}{@sep}, {/sep}{/numbers}
+
+
+{name|s}
+{name|js}
 
 {! block comments supported !}
 {! {+block}

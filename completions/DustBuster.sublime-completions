@@ -1,245 +1,185 @@
 {
-    "scope": "text.html.dust,text.dust",
+    "scope": "text.html.dust",
     "completions": [
         {
-            "trigger": "section|dust",
-            "contents": "{#${1:name}}\n\t${2}\n{/${1}}"
+            "trigger": "ds|dust",
+            "contents": "{#${1:name}}\n\t${2}\n{/${1}}",
         },
         {
-            "trigger": "block|dust",
+            "trigger": "db|dust",
             "contents": "{+${1:block}}\n\t${0}\n{/${1}}"
         },
         {
-            "trigger": "exists-yes|dust",
+            "trigger": "dy|dust",
             "contents": "{?${1:name}}\n\t${2}\n{/${1}}"
         },
         {
-            "trigger": "exists-no|dust",
+            "trigger": "dn|dust",
             "contents": "{^${1:name}}\n\t${2}\n{/${1}}"
         },
         {
-            "trigger": "partial|dust",
+            "trigger": "dp|dust",
             "contents": "{>\"${1:path/to/partial}\"/}"
         },
         {
-            "trigger": "partial-with-params|dust",
+            "trigger": "dp-with-params|dust",
             "contents": "{>\"${1:path/to/partial}\" ${2: params }/}${0}"
         },
         {
-            "trigger": "partial-dynamic|dust",
+            "trigger": "dp-dynamic|dust",
             "contents": "{>\"${1:path/to/partial}{${2:dynamic-param}}\"/}"
         },
         {
-            "trigger": "eq-typed|dust",
+            "trigger": "deq-typed|dust",
             "contents": "{@eq key=\"${1:foo}\" value=\"${2:foo}\" type=\"${3:string}\"}\n\t${4}\n{:else}\n\t${5}\n{/eq}"
         },
         {
-            "trigger": "eq-untyped|dust",
+            "trigger": "deq-untyped|dust",
             "contents": "{@eq key=\"${1:foo}\" value=\"${2:foo}\"}\n\t${3}\n{:else}\n\t${4}\n{/eq}"
         },
         {
-            "trigger": "ne-matching-string|dust",
+            "trigger": "dne-matching-string|dust",
             "contents": "{@ne key=\"${1:foo}\" value=\"${2:foo}\"}\n\t${3:not equal}\n{/ne}"
         },
         {
-            "trigger": "ne-non-matching-string|dust",
+            "trigger": "dne-non-matching-string|dust",
             "contents": "{@ne key=\"${1:foo}\" value=\"${2:bar}\"}\n\t${3:not equal}\n{:else\\}\n\t${4:bar}\n{/ne}"
         },
         {
-            "trigger": "ne-non-matching-string-missing-else|dust",
+            "trigger": "dne-non-matching-string-missing-else|dust",
             "contents": "{@ne key=\"${1:foo}\" value=\"${2:bar}\"}\n\t${3:not equal}\n{/ne}"
         },
         {
-            "trigger": "ne-non-equal-numbers-case|dust",
+            "trigger": "dne-non-equal-numbers-case|dust",
             "contents": "{@ne key=\"${1:3}\" value=\"${2:5}\" type=\"${3:number}\"}\n\t${4:not equal}\n{/ne}"
         },
         {
-            "trigger": "ne-non-equal-boolean-case|dust",
+            "trigger": "dne-non-equal-boolean-case|dust",
             "contents": "{@ne key=\"${1:false}\" value=\"${2:true}\" type=\"${3:boolean}\"}\n\t${4:not equal}\n{/ne}"
         },
         {
-            "trigger": "lt|dust",
+            "trigger": "dlt|dust",
             "contents": "{@lt key=\"{${1:a}}\" value=\"${2:27}\" type=\"${3:number}\"}\n\t${4}\n{:else}\n\t${5}\n{/lt}"
         },
         {
-            "trigger": "lte|dust",
+            "trigger": "dlte|dust",
             "contents": "{@lte key=\"${1:20}\" value=\"${2:27}\" type=\"${3:number}\"}\n\t${4}\n{:else}\n\t${5}\n{/lt}"
         },
         {
-            "trigger": "gt|dust",
+            "trigger": "dgt|dust",
             "contents": "{@gt key=\"${1:27}\" value=\"${2:20}\" type=\"${3:number}\"}\n\t${4}\n{:else}\n\t${5}\n{/gt}"
         },
         {
-            "trigger": "gte|dust",
+            "trigger": "dgte|dust",
             "contents": "{@gte key=\"${1:27}\" value=\"${2:27}\" type=\"${3:number}\"}\n\t${4}\n{:else}\n\t${5}\n{/gte}"
         },
         {
-            "trigger": "math|dust",
+            "trigger": "dmath|dust",
             "contents": "{@math key=\"${1:number}\" method=\"${2:mod,add,abs,substract...}\" operand=\"${3:number}\" round=\"${4:true or false}\"/}"
         },
         {
-            "trigger": "math-floor|dust",
+            "trigger": "dmath-floor|dust",
             "contents": "{@math key=\"${1:27.5}\" method=\"floor\"/}"
         },
         {
-            "trigger": "math-ceil|dust",
+            "trigger": "dmath-ceil|dust",
             "contents": "{@math key=\"${1:27.5}\" method=\"ceil\"/}"
         },
         {
-            "trigger": "math-round|dust",
+            "trigger": "dmath-round|dust",
             "contents": "{@math key=\"${1:27.5}\" method=\"round\"/}"
         },
         {
-            "trigger": "math-abs|dust",
+            "trigger": "dmath-abs|dust",
             "contents": "{@math key=\"${1:27.5}\" method=\"abs\"/}"
         },
         {
-            "trigger": "math-subtract|dust",
+            "trigger": "dmath-subtract|dust",
             "contents": "{@math key=\"${1:27}\" method=\"subtract\" operand=\"${2:7}\"/}"
         },
         {
-            "trigger": "math-add|dust",
+            "trigger": "dmath-add|dust",
             "contents": "{@math key=\"${1:27}\" method=\"add\" operand=\"${2:7}\"/}"
         },
         {
-            "trigger": "math-multiply|dust",
+            "trigger": "dmath-multiply|dust",
             "contents": "{@math key=\"${1:27}\" method=\"multiply\" operand=\"${2:7}\"/}"
         },
         {
-            "trigger": "math-divide|dust",
+            "trigger": "dmath-divide|dust",
             "contents": "{@math key=\"${1:27}\" method=\"divide\" operand=\"${2:7}\"/}"
         },
         {
-            "trigger": "math-eq-filter|dust",
+            "trigger": "dmath-eq-filter|dust",
             "contents": "{@math key=\"${1:-27}\" method=\"${2:abs}\"}\n\t{@eq value=${3:27}}\n\t\t${4:Test is true}\n\t{/eq}\n{/math}"
         },
         {
-            "trigger": "math-greater-than-with-default|dust",
+            "trigger": "dmath-greater-than-with-default|dust",
             "contents": "{@math key=\"${1:27}\" method=\"${2:add}\" operand=\"${3:100}\"}\n\t{@gt value=${4:120}}\n\t\t${5:Greater than}\n\t{/gt}\n\t{@default}\n\t\t${6:Not greater than}\n\t{/default}\n{/math}"
         },
         {
-            "trigger": "math-even-odd-bodies|dust",
+            "trigger": "dmath-even-odd-bodies|dust",
             "contents": "{@math key=\\$idx method=\"mod\" operand=2}\n\t{@eq value=0}\n\t\t${1:even}\n\t{:else}\n\t\t${2:odd}\n\t{/eq}\n{/math}"
         },
         {
-            "trigger": "math-multiply-and-round|dust",
+            "trigger": "dmath-multiply-and-round|dust",
             "contents": "{@math key=\"${1:27.5}\" method=\"multiply\" operand=\"${2:7}\" round=\"true\"/}"
         },
         {
-            "trigger": "select-block-with-key-and-type|dust",
+            "trigger": "dselect-block-with-key-and-type|dust",
             "contents": "{@select key=\"${1:foo}\" type=\"${2:string}\"}\n\t${3}\n{/select}"
         },
         {
-            "trigger": "select-multi-condition-default|dust",
+            "trigger": "dselect-multi-condition-default|dust",
             "contents": "{@select key=\"${1:foo}\"}\n\t{@eq value=\"${2:bar}\"}${3:bar}{/eq}\n\t{@eq value=\"${4:baz}\"}${5:baz}{/eq}\n\t{@eq value=\"${6:biz}\"}${7:biz}{/eq}\n\t{@default value=\"${8:default\"}}${9:default}{/default}\n{/select}"
         },
         {
-            "trigger": "select-inside-array|dust",
+            "trigger": "dselect-inside-array|dust",
             "contents": "{#array}\n\t{@select key=${1:.}}\n\t\t{@eq value=\"${2:foo}\"}${3:foo}{/eq}\n\t\t{@eq value=\"${4:bar}\"}${5:bar}{/eq}\n\t\t{@default value=\"${6:default}\"}${7:default}{/default}\n\t{/select}\n{/array}"
         },
         {
-            "trigger": "size-with-empty-key|dust",
+            "trigger": "dsize-with-empty-key|dust",
             "contents": "{@size key=\"${1}\"/}"
         },
         {
-            "trigger": "size-with-string-key|dust",
+            "trigger": "dsize-with-string-key|dust",
             "contents": "{${1:mystring}} has {@size key=${2:mystring}/} letters"
         },
         {
-            "trigger": "context-dump|dust",
+            "trigger": "dcontext-dump|dust",
             "contents": "{@contextDump/}"
         },
         {
-            "trigger": "context-dump-to-console|dust",
+            "trigger": "dcontext-dump-to-console|dust",
             "contents": "{@contextDump to=\"console\"/}"
         },
         {
-            "trigger": "context-dump-full-test|dust",
+            "trigger": "dcontext-dump-full-test|dust",
             "contents": "{@contextDump key=\"full\"/}"
         },
         {
-            "trigger": "context-dump-function-dump-test|dust",
+            "trigger": "dcontext-dump-function-dump-test|dust",
             "contents": "{#aa param=\"{p}\"}{@contextDump key=\"full\"/}{/aa}"
         },
         {
-            "trigger": "sep-partial-in-array|dust",
+            "trigger": "dsep-partial-in-array|dust",
             "contents": "{#n}{>hello_there name=. count=\"30\"/}{@sep} {/sep}{/n}"
         },
         {
-            "trigger": "sep-partial-in-async-iterator|dust",
+            "trigger": "dsep-partial-in-async-iterator|dust",
             "contents": "{#numbers}{#delay}{.}{/delay}{@sep}, {/sep}{/numbers}"
         },
         {
-            "trigger": "array|dust",
-            "contents": "{#${1:array}}\n\t${2}\n{/${1:array}}"
-        },
-        {
-            "trigger": "array-with-index|dust",
+            "trigger": "darray-with-index|dust",
             "contents": "{#list}\n\t{idx}${1}. {.}\n{/list}"
         },
         {
-            "trigger": "array-implicit|dust",
+            "trigger": "darray-implicit|dust",
             "contents": "{#${1:array}}{.}{~n}{/${1:array}}"
         },
         {
-            "trigger": "ds|dust:section",
-            "contents": "{#${1:name}}\n\t${2}\n{/${1}}"
-        },
-        {
-            "trigger": "dn|dust:no",
-            "contents": "{^${1:name}}\n\t${2}\n{/${1}}"
-        },
-        {
-            "trigger": "dy|dust:yes",
-            "contents": "{?${1:name}}\n\t${2}\n{/${1}}"
-        },
-        {
-            "trigger": "dp|dust:partial",
-            "contents": "{>${1:partial}${2: params }/}${0}"
-        },
-        {
-            "trigger": "db|dust:block",
-            "contents": "{+${1:block}/}${0}"
-        },
-        {
-            "trigger": "db|dust:block (with default)",
-            "contents": "{+${1:block}}\n\t${0}\n{/${1}}"
-        },
-        {
-            "trigger": "deq|dust:eq",
-            "contents": "{@eq ${1:key=\"${2}\"} ${3:value=\"${4}\"}${5: type=\"${6:string}\"}}\n\t${8}\n${7:{:else\\}\n\t${9}\n}{/eq}"
-        },
-        {
-            "trigger": "dne|dust:ne",
-            "contents": "{@ne ${1:key=\"${2}\"} ${3:value=\"${4}\"}${5: type=\"${6:string}\"}}\n\t${8}\n${7:{:else\\}\n\t${9}\n}{/ne}"
-        },
-        {
-            "trigger": "dlt|dust:lt",
-            "contents": "{@lt ${1:key=\"${2}\"} ${3:value=\"${4}\"}${5: type=\"${6:string}\"}}\n\t${8}\n${7:{:else\\}\n\t${9}\n}{/lt}"
-        },
-        {
-            "trigger": "dlte|dust:lte",
-            "contents": "{@lte ${1:key=\"${2}\"} ${3:value=\"${4}\"}${5: type=\"${6:string}\"}}\n\t${8}\n${7:{:else\\}\n\t${9}\n}{/lte}"
-        },
-        {
-            "trigger": "dgt|dust:gt",
-            "contents": "{@gt ${1:key=\"${2}\"} ${3:value=\"${4}\"}${5: type=\"${6:string}\"}}\n\t${8}\n${7:{:else\\}\n\t${9}\n}{/gt}"
-        },
-        {
-            "trigger": "dgte|dust:gte",
-            "contents": "{@gte ${1:key=\"${2}\"} ${3:value=\"${4}\"}${5: type=\"${6:string}\"}}\n\t${8}\n${7:{:else\\}\n\t${9}\n}{/gte}"
-        },
-        {
-            "trigger": "dmath|dust:math",
-            "contents": "{@math ${1:key=\"${2}\"}${3: method=\"${4:mod,add,abs,substract...}\"}${5: operand=\"${6}\"}${7: round=\"${8:true or false}\"}}"
-        },
-        {
-            "trigger": "dsel|dust:select",
-            "contents": "{@select key=\"${1}\"${2: type=\"${3:string}\"}}\n\t${1}\n{/select}"
-        },
-        {
-            "trigger": "dsize|dust:size",
-            "contents": "{@size key=\"${1}\"}"
+            "trigger": "df-suppress-auto-escape|dust",
+            "contents": "{${1:name}|s}"
         }
     ]
 }

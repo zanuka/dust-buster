@@ -7,6 +7,7 @@ patterns:
 - {include: '#dust_block_start'}
 - {include: '#dust_block_end'}
 - {include: '#dust_partials'}
+- {include: '#dust_inline'}
 - {include: '#dust_html_tags'}
 - {include: text.html.basic}
 repository:
@@ -19,6 +20,18 @@ repository:
       - begin: '\s*(\<)'
         end: '\>\s?'
       - {include: '#dust_comments'}
+  dust_inline:
+    begin: \{\s*([-a-zA-Z0-9_\./]+)
+    beginCaptures:
+      '0': {name: entity.name.tag.delimiter.dust}
+      '1': {name: constant.character.dust}
+    end: (~?\})
+    endCaptures:
+      '1': {name: entity.name.tag.delimiter.dust}
+      '2': {name: entity.name.tag.delimiter.dust}
+    name: meta.function.inline
+    patterns:
+    - {include: '#dust_generic_attribute'}
   dust_block_start:
     begin: (\{)(\+|\?|\^|\@|\#|\:)([-a-zA-Z0-9_\./]+)\s?(@?[-a-zA-Z0-9_\./]+)*
     beginCaptures:
@@ -123,6 +136,7 @@ repository:
     patterns:
     - {include: '#dust_block_comments'}
     - {include: '#dust_comments'}
+    - {include: '#dust_inline'}
     - {include: '#dust_block_start'}
     - {include: '#dust_block_end'}
     - {include: '#dust_partials'}
@@ -133,6 +147,7 @@ repository:
     - {include: '#dust_strings'}
     - {include: '#dust_block_comments'}
     - {include: '#dust_comments'}
+    - {include: '#dust_inline'}
     - {include: '#dust_block_start'}
     - {include: '#dust_block_end'}
     - {include: '#dust_partials'}
