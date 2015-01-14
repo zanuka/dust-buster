@@ -10,11 +10,11 @@
             "contents": "{+${1:block-name}}\n\t${2}\n{/${1}}"
         },
         {
-            "trigger": "de|dust-exist",
+            "trigger": "dy|dust-yes-exists",
             "contents": "{?${1:name}}${2}{/${1}}"
         },
         {
-            "trigger": "dn|dust-not-exist",
+            "trigger": "dn|dust-no-exists",
             "contents": "{^${1:name}}${2}{/${1}}"
         },
         {
@@ -22,7 +22,7 @@
             "contents": "{>\"${1:path/to/partial}\"/}"
         },
         {
-            "trigger": "dpp|dust-partial-with-params",
+            "trigger": "dpp|dust-partial-params",
             "contents": "{>\"${1:path/to/partial}\" ${2: params }/}${0}"
         },
         {
@@ -30,47 +30,27 @@
             "contents": "{>\"${1:path/to/partial}{${2:dynamic-param}}\"/}"
         },
         {
-            "trigger": "deq-typed|dust",
-            "contents": "{@eq key=\"${1:foo}\" value=\"${2:foo}\" type=\"${3:string}\"}\n\t${4}\n{:else}\n\t${5}\n{/eq}"
+            "trigger": "deq|dust-equals",
+            "contents": "{@eq value=\"${1:bar}\"}${2}{/eq}"
         },
         {
-            "trigger": "deq-untyped|dust",
-            "contents": "{@eq key=\"${1:foo}\" value=\"${2:foo}\"}\n\t${3}\n{:else}\n\t${4}\n{/eq}"
+            "trigger": "dne|dust-not-equals",
+            "contents": "{@ne key=\"${1:foo}\" value=\"${2:foo}\"}${3}{/ne}"
         },
         {
-            "trigger": "dne-matching-string|dust",
-            "contents": "{@ne key=\"${1:foo}\" value=\"${2:foo}\"}\n\t${3:not equal}\n{/ne}"
+            "trigger": "dlt|dust-less-than",
+            "contents": "{@lt value=${1:27}}${2}{/lt}"
         },
         {
-            "trigger": "dne-non-matching-string|dust",
-            "contents": "{@ne key=\"${1:foo}\" value=\"${2:bar}\"}\n\t${3:not equal}\n{:else\\}\n\t${4:bar}\n{/ne}"
+            "trigger": "dlte|dust-less-than-equals",
+            "contents": "{@lte value=${1:27}}${2}{/lte}"
         },
         {
-            "trigger": "dne-non-matching-string-missing-else|dust",
-            "contents": "{@ne key=\"${1:foo}\" value=\"${2:bar}\"}\n\t${3:not equal}\n{/ne}"
-        },
-        {
-            "trigger": "dne-non-equal-numbers-case|dust",
-            "contents": "{@ne key=\"${1:3}\" value=\"${2:5}\" type=\"${3:number}\"}\n\t${4:not equal}\n{/ne}"
-        },
-        {
-            "trigger": "dne-non-equal-boolean-case|dust",
-            "contents": "{@ne key=\"${1:false}\" value=\"${2:true}\" type=\"${3:boolean}\"}\n\t${4:not equal}\n{/ne}"
-        },
-        {
-            "trigger": "dlt|dust",
-            "contents": "{@lt key=\"{${1:a}}\" value=\"${2:27}\" type=\"${3:number}\"}\n\t${4}\n{:else}\n\t${5}\n{/lt}"
-        },
-        {
-            "trigger": "dlte|dust",
-            "contents": "{@lte key=\"${1:20}\" value=\"${2:27}\" type=\"${3:number}\"}\n\t${4}\n{:else}\n\t${5}\n{/lt}"
-        },
-        {
-            "trigger": "dgt|dust",
+            "trigger": "dgt|dust-greater-than",
             "contents": "{@gt key=\"${1:27}\" value=\"${2:20}\" type=\"${3:number}\"}\n\t${4}\n{:else}\n\t${5}\n{/gt}"
         },
         {
-            "trigger": "dgte|dust",
+            "trigger": "dgte|dust-greater-than-equals",
             "contents": "{@gte key=\"${1:27}\" value=\"${2:27}\" type=\"${3:number}\"}\n\t${4}\n{:else}\n\t${5}\n{/gte}"
         },
         {

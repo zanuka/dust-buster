@@ -26,165 +26,118 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
 ***
 
-### Triggers for code completion snippets
+### Sublime Completions
 
 - to use these completions, just start typing the completion name and hit tab
-- for example, you could type "sect" and hit tab for the dust section to render
-- once completion renders, you can then tab through the snippet accordingly
-- you can also type "d", then control+spacebar to view all of the completions
+- for example, type "ds", hit tab and `{#name}{/name}` will be rendered
+- you can then tab through the snippet and change values
+- type "d", then control+spacebar to view all of the completions
 
 
-#### `{#name}{/name}` : section
-
->   *trigger* > `ds|dust-section`
+#### `ds|dust-section`
 ```
         {#section-name}
         {/section-name}
 ```
 
-#### `{?name}{/name}` : block
-
->   *trigger* > `db|dust-block`
+#### `db|dust-block`
 ```
         {+block-name}
         {/block-name}
 ```
 
-#### `{?name}{/name}` : exist
-
->   *trigger* > `de|dust-exist`
+#### `dy|dust-yes-exist`
 ```
-        {?name} body {/name}
+        {?name} {/name}
 ```
 
-#### `{^name}{/name}` : exist-not
-
->   *trigger* > `dn|dust-exist-not`
+#### `dn|dust-no-exist` 
 ```
-        {^name} body {/name}
+        {^name} {/name}
 ```
 
-
-#### `{>"partial"/}` : partial
-
->   *trigger* > `dp|dust-partial`
+#### `dp|dust-partial`
 ```
         {>"path/to/partial"/}
 ```
 
-#### `{>"partial"/}` : partial
-
->   *trigger* > `dp|dust-partial`
+#### `dpp|dust-partial-params`
 ```
-        {?name}
-        {/name}
- 
-
-
-
- _____________________________________________________________________________
-
-    dbn|dust-block-no
-
-        {^name}
-        {/name}
- _____________________________________________________________________________
-
-    dp|dust-partial
-        {>"path/to/partial"/} 
-
-    dpp|dust-partial-with-params
-        {>"path/to/partial"  params /}
-
-    dpd|dust-partial-dynamic
-        {>"path/to/partial{dynamic-param}"/}
- _____________________________________________________________________________
-
-    deq-typed
-        {@eq key="foo" value="foo" type="string"}
-        {:else}
-        {/eq}
-
-    deq-untyped
-        {@eq key="foo" value="foo"}
-        {else}
-        {/eq}
-
+        {>"path/to/partial" params /}
 ```
 
- 
-#### `@ne` : not-equals
-    dne-matching-string
-        {@ne key="foo" value="foo"}
-          not equal
-        {/ne}
+#### `dpd|dust-partial-dynamic`
+```
+        {>"path/to/partial{dynamic-param}" /}
+```
 
-    dne-non-matching-string
-        {@ne key="foo" value="bar"}
-          not equal
-        {/ne}
+#### `deq|dust-equals`
+```
+    {@eq value="bar"} {/eq}
+```
 
-    dne-non-equal-numbers-case
-        {@ne key="3" value="5" type="number"}
-          not equal
-        {/ne}
+#### `dne|dust-not-equals`
+```
+    {@ne key="foo" value="foo"} {/ne}
+```
 
-    dne-non-equal-boolean-case
-        {@ne key="false" value="true" type="boolean"}
-          not equal
-        {/ne}
- 
-@lt : less than ---------------------------------------------
+#### `dlt|dust-less-than`
+```
+    {@lt value=27} {/lt}
+```
 
-    dlt
-        {@lt key="{a}" value="27" type="number"}
-        {:else}
-        {/lt}
+#### `dlte|dust-less-than-equals`
+```
+    {@lte value=27} {/lt}
+```
 
-    dlte
-        {@lte key="20" value="27" type="number"}
-        {:else}
-        {/lt}
- _____________________________________________________________________________
+#### `dgt|dust-greater-than`
+```
+    {@gt key="27" value="20" type="number"} {/gt}
+```
 
-    dgt
-        {@gt key="27" value="20" type="number"}
-        {:else}
-        {/gt}
+#### `dgte|dust-greater-than-equals`
+```
+    {@gte key="27" value="27" type="number"} {/gte}
+```
 
-    dgte
-        {@gte key="27" value="27" type="number"}
-        {:else}
-        {/gte}
- _____________________________________________________________________________
-
+#### `|`
     dmath
         {@math key="number" method="mod,add,abs,substract..." operand="number" round="true or false"/}
 
+#### `|`
     dmath-floor
         {@math key="27.5" method="floor"/}
 
+#### `|`
     dmath-ceil
         {@math key="27.5" method="ceil"/}
 
+#### `|`
     dmath-round
         {@math key="27.5" method="round"/}
 
+#### `|`
     dmath-abs
         {@math key="27.5" method="abs"/}
 
+#### `|`
     dmath-subtract
         {@math key="27" method="subtract" operand="7"/}
 
+#### `|`
     dmath-add
         {@math key="27" method="add" operand="7"/}
 
+#### `|`
     dmath-multiply
         {@math key="27" method="multiply" operand="7"/}
 
+#### `|`
     dmath-divide
         {@math key="27" method="divide" operand="7"/}
 
+#### `|`
     dmath-eq-filter
         {@math key="-27" method="abs"}
           {@eq value=27}
@@ -192,6 +145,7 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
           {/eq}
         {/math}   
 
+#### `|`
     dmath-greater-than-with-default
         {@math key="27" method="add" operand="100"}
           {@gt value=120}
@@ -202,6 +156,7 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
           {/default}
         {/math}
 
+#### `|`
     dmath-even-odd-bodies
         {@math key=$idx method="mod" operand=2}
           {@eq value=0}
@@ -211,16 +166,16 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
           {/eq}
         {/math}
 
+#### `|`
     dmath-multiply-and-round
         {@math key="27.5" method="multiply" operand="7" round="true"/}
 
- _____________________________________________________________________________
-
+#### `|`
     dselect-block-with-key-and-type
         {@select key="foo" type="string"}
-
         {/select}
 
+#### `|`
     dselect-multi-condition-default|dus
         {@select key="foo"}
           {@eq value="bar"}bar{/eq}
@@ -229,6 +184,7 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
           {@default value="default"}default{/default}
         {/select}
 
+#### `|`
     dselect-inside-array
         {#array}
           {@select key=.}
@@ -238,54 +194,41 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
           {/select}
         {/array}
 
+#### `|`
     dsize-with-empty-key
         {@size key=""/}
 
+#### `|`
     dsize-with-string-key
         {mystring} has {@size key=mystring/} letters
 
+#### `|`
     dcontext-dump
         {@contextDump/}
 
+#### `|`
     dcontext-dump-to-console
         {@contextDump to="console"/}
 
+#### `|`
     dcontext-dump-full-test
         {@contextDump key="full"/}
 
+#### `|`
     dcontext-dump-function-dump-test
         {#aa param="{p}"}{@contextDump key="full"/}{/aa}
 
+#### `|`
     dsep-partial-in-array
         {#n}{>hello_there name=. count="30"/}{@sep} {/sep}{/n}
 
+#### `|`
     dsep-partial-in-async-iterator
         {#numbers}{#delay}{.}{/delay}{@sep}, {/sep}{/numbers}
 
-    darray
-        {#array}
-          
-        {/array}
-
-    darray-with-index
-        {#list}
-          {idx}. {.}
-        {/list} 
-
-    darray-implicit
-        {#array}{.}{~n}{/array}
-
 ```
-
-***
-
-##### Existing Dust.js Completions (from previous version)
-by [gpbl](https://github.com/gpbl)
-
-
-
-##### Addition Credits
-DustBuster was created as a complete rewrite of a package by [sntran](https://github.com/sntran). If you already had this package installed, SublimeText will auto-update it with current version of DustBuster on next app startup.
+##### Additional Credits
+DustBuster is a complete rewrite of a package by [sntran](https://github.com/sntran) with completions by [gpbl](https://github.com/gpbl).
 
 ## License
 

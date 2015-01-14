@@ -1,89 +1,50 @@
 {! ds|dust-section !}
 {#section-name}
-  
 {/section-name}
 
 {! db|dust-block !}
 {+block-name}
-  
 {/block-name}
 
-{! de|dust-exist !}
+{! dy|dust-exist !}
 {?name}{/name}
 
 {! dn|dust-not-exist !}
 {^name}{/name}
 
-{! partial|dust !}
+{! dp|dust-partial !}
 {>"path/to/partial"/} 
 
-{! partial-with-params|dust !}
+{! dpp|dust-partial-params !}
 {>"path/to/partial" params /}
 
-{! partial-dynamic|dust !}
+{! dpd|dust-partial-dynamic !}
 {>"path/to/partial{dynamic-param}"/}
 
-{! eq-typed|dust !}
-{@eq key="foo" value="foo" type="string"}
-  
-{:else}
-  
-{/eq}
 
-{! eq-untyped|dust !}
-{@eq key="foo" value="foo"}
-  
-{:else}
-  
-{/eq}
+{! de|dust-equals !}
+{@eq value="bar"}{/eq}
 
-{! ne-matching-string|dust !}
-{@ne key="foo" value="foo"}
-  {! not equal !}
-{/ne}
 
-{! ne-non-matching-string|dust !}
-{@ne key="foo" value="bar"}
-  not equal
-{/ne}
+{! dne|dust-not-equals !}
+{@ne key="foo" value="foo"}{/ne}
 
-{! ne-non-equal-numbers-case|dust !}
-{@ne key="3" value="5" type="number"}
-  not equal
-{/ne}
 
-{! ne-non-equal-boolean-case|dust !}
-{@ne key="false" value="true" type="boolean"}
-  not equal
-{/ne}
+{! dlt|dust-less-than !}
+{@lt value=27}{/lt}
 
-{! lt|dust !}
-{@lt key="{a}" value="27" type="number"}
-  
-{:else}
-  
-{/lt}
 
-{! lte|dust !}
-{@lte key="20" value="27" type="number"}
-  
-{:else}
-  
-{/lt}
+{! dlte|dust-less-than-equals !}
+{@lte value=27}{/lte}
+
 
 {! gt|dust !}
-{@gt key="27" value="20" type="number"}
-  
-{:else}
-  
-{/gt}
+{@gt key="27" value="20" type="number"}{/gt}
+
 
 {! gte|dust !}
-{@gte key="27" value="27" type="number"}
-  
-{:else}
-  
-{/gte}
+{@gte key="27" value="27" type="number"}{/gte}
+
 
 {! math|dust !}
 {@math key="number" method="mod,add,abs,substract..." operand="number" round="true or false"/}
