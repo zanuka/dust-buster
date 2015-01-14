@@ -2,31 +2,31 @@
     "scope": "text.html.dust",
     "completions": [
         {
-            "trigger": "ds|dust",
-            "contents": "{#${1:name}}\n\t${2}\n{/${1}}",
+            "trigger": "ds|dust-section",
+            "contents": "{#${1:section-name}}\n\t${2}\n{/${1}}",
         },
         {
-            "trigger": "db|dust",
-            "contents": "{+${1:block}}\n\t${0}\n{/${1}}"
+            "trigger": "db|dust-block",
+            "contents": "{+${1:block-name}}\n\t${2}\n{/${1}}"
         },
         {
-            "trigger": "dy|dust",
-            "contents": "{?${1:name}}\n\t${2}\n{/${1}}"
+            "trigger": "de|dust-exist",
+            "contents": "{?${1:name}}${2}{/${1}}"
         },
         {
-            "trigger": "dn|dust",
-            "contents": "{^${1:name}}\n\t${2}\n{/${1}}"
+            "trigger": "dn|dust-not-exist",
+            "contents": "{^${1:name}}${2}{/${1}}"
         },
         {
-            "trigger": "dp|dust",
+            "trigger": "dp|dust-partial",
             "contents": "{>\"${1:path/to/partial}\"/}"
         },
         {
-            "trigger": "dp-with-params|dust",
+            "trigger": "dpp|dust-partial-with-params",
             "contents": "{>\"${1:path/to/partial}\" ${2: params }/}${0}"
         },
         {
-            "trigger": "dp-dynamic|dust",
+            "trigger": "dpd|dust-partial-dynamic",
             "contents": "{>\"${1:path/to/partial}{${2:dynamic-param}}\"/}"
         },
         {
