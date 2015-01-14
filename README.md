@@ -3,7 +3,7 @@
 by Mike Delucchi | [zanuka](https://github.com/zanuka)
 
 ***
-DustBuster is an enhanced syntax definition for .dust files that includes sublime completions of dustjs-helper snippets. More info on currently supported helpers can be found at the links below.
+DustBuster is an enhanced syntax definition for .dust files that includes sublime completions of dustjs-helpers and dustjs logic syntax. More info on currently supported helpers can be found at the links below.
 
 - [{linkedin/dustjs-helpers}](https://github.com/linkedin/dustjs-helpers)
 - [{linkedin/dustjs-helpers/wiki}](https://github.com/linkedin/dustjs-helpers/wiki)
@@ -83,22 +83,22 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
 #### `dlt|dust-less-than`
 ```
-    {@lt value=27} {/lt}
+    {@lt value=XX} {/lt}
 ```
 
 #### `dlte|dust-less-than-equals`
 ```
-    {@lte value=27} {/lte}
+    {@lte value=XX} {/lte}
 ```
 
 #### `dgt|dust-greater-than`
 ```
-    {@gt key="27" value="20" type="number"} {/gt}
+    {@gt key="XX" value="20" type="number"} {/gt}
 ```
 
 #### `dgte|dust-greater-than-equals`
 ```
-    {@gte key="27" value="27" type="number"} {/gte}
+    {@gte key="XX" value="XX" type="number"} {/gte}
 ```
 
 #### `dm|dust-math`
@@ -108,42 +108,43 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
 #### `dmf|dust-math-floor`
 ```
-    {@math key="27.5" method="floor"/}
+    {@math key="XX.5" method="floor"/}
 ```
 
 #### `dmc|dust-math-ceil`
 ```
-    {@math key="27.5" method="ceil"/}
+    {@math key="XX.5" method="ceil"/}
 ```
 
 #### `dmr|dust-math-round`
 ```
-    {@math key="27.5" method="round"/}
+    {@math key="XX.5" method="round"/}
 ```
 
 #### `dma|dust-math-add`
 ```
-    {@math key="27" method="add" operand="7"/}
+    {@math key="XX" method="add" operand="XX"/}
 ```
 
 #### `dms|dust-math-subtract`
-    dmath-subtract
-        {@math key="27" method="subtract" operand="7"/}
+```
+    {@math key="XX" method="subtract" operand="XX"/}
+```
 
 #### `dmm|dust-math-multiply`
 ```
-    {@math key="27" method="multiply" operand="7"/}
+    {@math key="XX" method="multiply" operand="XX"/}
 ```
 
 #### `dmd|dust-math-divide`
 ```
-    {@math key="27" method="divide" operand="7"/}
+    {@math key="XX" method="divide" operand="XX"/}
 ```
 
 #### `dmeq|dust-math-eq-filter`
 ```
-    {@math key="-27" method="abs"}
-      {@eq value=27}
+    {@math key="-XX" method="abs"}
+      {@eq value=XX}
         Test is true
       {/eq}
     {/math}   
