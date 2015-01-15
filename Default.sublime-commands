@@ -1,0 +1,16 @@
+[
+    {
+        "caption": "DustBuster: Open dust completions...",
+        "command": "open_file", "args":
+        {
+            "file": "${packages}/DustBuster/usage/DustBusterCompletions.dust"
+        }
+    },
+    {
+        "caption": "DustBuster: Open dust-with-html example...",
+        "command": "open_file", "args":
+        {
+            "file": "${packages}/DustBuster/usage/DustBusterHtmlSupport.dust"
+        }
+    }
+]

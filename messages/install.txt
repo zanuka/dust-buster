@@ -6,6 +6,11 @@ You have successfully installed
 
 I hope you enjoy these extra features and feel free to suggest new ones.
 
+v1.1.1
+- NEW: added screenshot to README.md
+- NEW: added command - "Open dust completions..."
+- NEW: added command - "Open dust-with-html example..."
+
 v1.1.0
 - NEW: all completions refactored (prefixed by d, shortened)
 - NEW: more improvements to syntax definition
