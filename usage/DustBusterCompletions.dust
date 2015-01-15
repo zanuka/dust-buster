@@ -73,13 +73,10 @@
   {/eq}
 {/math}
 
-
-
 {! dskt|dust-select-with-key-and-type !}
 {@select key="foo" type="string"}
   
 {/select}
-
 
 {! dsmcd|dust-select-multi-condition-with-default !}
 {@select key="foo"}

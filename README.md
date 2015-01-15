@@ -1,6 +1,8 @@
 ## DustBuster
-##### v1.1.0
+##### v1.1.1
 by Mike Delucchi [@zanuka](https://github.com/zanuka)
+
+![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")
 
 ***
 DustBuster is an enhanced syntax definition for .dust files that includes sublime completions of dustjs-helpers and dustjs logic syntax.

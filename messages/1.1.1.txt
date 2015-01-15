@@ -1,0 +1,9 @@
+DustBuster 1.1.1 Changelog:
+
+Please be sure to restart Sublime Text to start using this new version.
+
+- NEW: added screenshot to readme
+- NEW: added command - "Open dust completions..."
+- NEW: added command - "Open dust-with-html example..."
+
+[@zanuka](https://github.com/zanuka)
