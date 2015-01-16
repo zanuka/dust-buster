@@ -6,6 +6,10 @@ You have successfully installed
 
 I hope you enjoy these extra features and feel free to suggest new ones.
 
+v1.1.2
+- NEW: commands added to DustBuster menu
+- FIXED: $idx inline now recognized by syntax def
+
 v1.1.1
 - NEW: added screenshot to README.md
 - NEW: added command - "Open dust completions..."

@@ -321,7 +321,7 @@
 		<key>dust_inline</key>
 		<dict>
 			<key>begin</key>
-			<string>\{\s*([-a-zA-Z0-9_\./]+)</string>
+			<string>\{\s*([-a-zA-Z0-9_\./\$]+)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
