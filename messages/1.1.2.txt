@@ -1,0 +1,8 @@
+DustBuster 1.1.2 Changelog:
+
+Please be sure to restart Sublime Text to start using this new version.
+
+- NEW: commands for DustBuster menu
+- FIXED: $idx inline now recognized by syntax def
+
+[@zanuka](https://github.com/zanuka)

@@ -1,16 +1,65 @@
 [
     {
-        "caption": "DustBuster: Open dust completions...",
+        "caption": "DustBuster: README",
+        "command": "open_url", "args":
+        {
+            "url": "https://github.com/zanuka/dust-buster/blob/master/README.md"
+        }
+    },
+    {
+        "caption": "DustBuster: GitHub Issues",
+        "command": "open_url", "args":
+        {
+            "url": "https://github.com/zanuka/dust-buster/issues"
+        }
+    },
+    {
+        "caption": "DustBuster: Supported Trigger Completions",
         "command": "open_file", "args":
         {
             "file": "${packages}/DustBuster/usage/DustBusterCompletions.dust"
         }
     },
     {
-        "caption": "DustBuster: Open dust-with-html example...",
-        "command": "open_file", "args":
+        "caption": "DustBuster: Dust Tutorial",
+        "command": "open_url", "args":
         {
-            "file": "${packages}/DustBuster/usage/DustBusterHtmlSupport.dust"
+            "url": "https://github.com/linkedin/dustjs/wiki/Dust-Tutorial"
+        }
+    },
+    {
+        "caption": "DustBuster: Dust Helpers Tool",
+        "command": "open_url", "args":
+        {
+            "url": "http://linkedin.github.io/dustjs/test/test.html?q=helpers"
+        }
+    },
+    {
+        "caption": "DustBuster: Dust Core Features Tool",
+        "command": "open_url", "args":
+        {
+            "url": "http://linkedin.github.io/dustjs/test/test.html?q=helpers"
+        }
+    },
+    {
+        "caption": "DustBuster: Dust Reusable UI Modules",
+        "command": "open_url", "args":
+        {
+            "url": "https://github.com/linkedin/dustjs/wiki/Reusable-UI-Dust-modules"
+        }
+    },
+    {
+        "caption": "DustBuster: Dust Inner Workings",
+        "command": "open_url", "args":
+        {
+            "url": "https://github.com/linkedin/dustjs/wiki/Dust-Inner-Workings"
+        }
+    },
+    {
+        "caption": "DustBuster: How To Contribute",
+        "command": "open_url", "args":
+        {
+            "url": "https://github.com/linkedin/dustjs/wiki/How-to-Contribute"
         }
     }
 ]

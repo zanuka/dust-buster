@@ -21,7 +21,7 @@ repository:
         end: '\>\s?'
       - {include: '#dust_comments'}
   dust_inline:
-    begin: \{\s*([-a-zA-Z0-9_\./]+)
+    begin: \{\s*([-a-zA-Z0-9_\./\$]+)
     beginCaptures:
       '0': {name: entity.name.tag.delimiter.dust}
       '1': {name: constant.character.dust}
