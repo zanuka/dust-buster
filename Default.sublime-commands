@@ -17,7 +17,7 @@
         "caption": "DustBuster: Supported Trigger Completions",
         "command": "open_url", "args":
         {
-            "url": "https://github.com/zanuka/dust-buster/blob/docs/completions.md"
+            "url": "https://github.com/zanuka/dust-buster/blob/master/docs/completions.md"
         }
     },
     {
