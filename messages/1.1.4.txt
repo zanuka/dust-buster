@@ -1,0 +1,7 @@
+DustBuster 1.1.4 Changelog:
+
+Please be sure to restart Sublime Text to start using this new version.
+
+- FIXED: url for Supported Trigger Completions
+
+[@zanuka](https://github.com/zanuka)
