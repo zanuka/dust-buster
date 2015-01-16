@@ -6,6 +6,11 @@ You have successfully installed
 
 I hope you enjoy these extra features and feel free to suggest new ones.
 
+v1.1.3
+- FIXED: command url issue
+- NEW: refactored linkedin/dustjs commands
+- NEW: added docs + completions markdown file
+
 v1.1.2
 - NEW: commands added to DustBuster menu
 - FIXED: $idx inline now recognized by syntax def

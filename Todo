@@ -1,10 +1,10 @@
 
 # TODO:
-☐ add screenshots to readme
 ☐ add more custom commands 
 
 # Done:
-✔ create todo
+✔ add screenshots to readme
+✔ add completions markdown doc and menu command
 ✔ make compatible with ST2 and ST3
 ✔ refactor all dust completions
 ✔ create messages

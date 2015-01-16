@@ -1,34 +1,4 @@
-## DustBuster
-##### v1.1.3
-by Mike Delucchi [@zanuka](https://github.com/zanuka)
-
-![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")
-
-***
-DustBuster is an enhanced syntax definition for .dust files that includes sublime completions of dustjs-helpers and dustjs logic syntax.
-
-### Features
-- syntax definition for .dust files (with html support)
-- sublime completions for supported dustjs-helpers and dustjs logic
-
-### Requirements
-- [Sublime Text 2](http://www.sublimetext.com/2) or [Sublime Text 3](http://www.sublimetext.com/3)
-- [Package Control](https://packagecontrol.io/)
-
-### Installing DustBuster
-- cmd+shift+p, Install Package, search for DustBuster or Dust
-
-### Activating the Dust syntax definition for all .dust files
--  open any .dust file and then select View > Syntax > Dust
-
-### Supported Helpers ###
-- [{linkedin/dustjs-helpers}](https://github.com/linkedin/dustjs-helpers)
-- [{linkedin/dustjs-helpers/wiki}](https://github.com/linkedin/dustjs-helpers/wiki)
-- [{dust/helper/test/tool}](http://linkedin.github.io/dustjs/test/test.html?q=helpers)
-
-***
-
-### Sublime Completions
+### DustBuster Completions
 
 - to use these completions, just start typing the completion name and hit tab
 - for example, type "ds", hit tab and `{#name}{/name}` will be rendered
@@ -232,36 +202,4 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 ```
     {name|jp}
 ```
-
-
-
-###### Additional Credits
-DustBuster is a complete rewrite of a previous package by [sntran](https://github.com/sntran) and [gpbl](https://github.com/gpbl).
-
-## License
-
-(The MIT License)
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/zanuka/dust-buster/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
