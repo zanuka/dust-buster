@@ -4,11 +4,12 @@ You have successfully installed
  / // / // (_-</ __/ _  / // (_-</ __/ -_) __/
 /____/\_,_/___/\__/____/\_,_/___/\__/\__/_/   
 
-I hope you enjoy these extra features and feel free to suggest new ones.
+v1.1.5
+- UPDATE: readme
 
 v1.1.4
 - FIXED: url for Supported Trigger Completions
-- 
+ 
 v1.1.3
 - FIXED: command url issue
 - NEW: refactored linkedin/dustjs commands
