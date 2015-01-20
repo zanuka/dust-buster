@@ -4,6 +4,9 @@ You have successfully installed
  / // / // (_-</ __/ _  / // (_-</ __/ -_) __/
 /____/\_,_/___/\__/____/\_,_/___/\__/\__/_/   
 
+v1.1.6
+- FIX: Syntax highlighting breaks on partials typed without trailing space #29
+
 v1.1.5
 - UPDATE: readme
 

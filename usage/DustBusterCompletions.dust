@@ -16,7 +16,7 @@
 {>"path/to/partial"/} 
 
 {! dpp|dust-partial-params !}
-{>"path/to/partial" params /}
+{>"path/to/partial" params/}
 
 {! dpd|dust-partial-dynamic !}
 {>"path/to/partial{dynamic-param}"/}
