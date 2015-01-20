@@ -1,0 +1,9 @@
+DustBuster 1.1.7 Changelog:
+
+Please be sure to restart Sublime Text to start using this new version.
+
+- FIX: Syntax highlighting breaks on blocks and inline partials #31
+- NEW: added new completion - dpi|dust-partial-inline
+
+
+[@zanuka](https://github.com/zanuka)

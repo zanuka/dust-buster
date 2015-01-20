@@ -33,7 +33,7 @@ repository:
     patterns:
     - {include: '#dust_generic_attribute'}
   dust_block_start:
-    begin: (\{)(\+|\?|\^|\@|\#|\:)([-a-zA-Z0-9_\./]+)\s?(@?[-a-zA-Z0-9_\./]+)*
+    begin: (\{)(\+|\?|\^|\@|\#|\:|\<)([-a-zA-Z0-9_\./]+)\s?(@?[-a-zA-Z0-9_\./]+)*
     beginCaptures:
       '1': {name: entity.name.tag.delimiter.dust}
       '2': {name: constant.character}

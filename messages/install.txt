@@ -4,8 +4,12 @@ You have successfully installed
  / // / // (_-</ __/ _  / // (_-</ __/ -_) __/
 /____/\_,_/___/\__/____/\_,_/___/\__/\__/_/   
 
+v1.1.7
+- FIXED: Syntax highlighting breaks on blocks and inline partials #31
+- NEW: added inline partial completion - dpi|dust-partial-inline
+
 v1.1.6
-- FIX: Syntax highlighting breaks on partials typed without trailing space #29
+- FIXED: Syntax highlighting breaks on partials without trailing space #29
 
 v1.1.5
 - UPDATE: readme

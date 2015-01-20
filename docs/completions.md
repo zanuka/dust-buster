@@ -33,6 +33,12 @@
     {>"path/to/partial"/}
 ```
 
+#### `dpi|dust-partial-inline`
+```
+    {<inline-partial-name}
+    {/inline-partial-name}
+```
+
 #### `dpp|dust-partial-params`
 ```
     {>"path/to/partial" params /}
