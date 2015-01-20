@@ -1,5 +1,5 @@
 ## DustBuster
-##### v1.1.6
+##### v1.1.7
 by [zanuka](https://github.com/zanuka)
 
 ![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")
@@ -24,7 +24,7 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 ### Supported Helpers ###
 - [{linkedin/dustjs-helpers}](https://github.com/linkedin/dustjs-helpers)
 - [{linkedin/dustjs-helpers/wiki}](https://github.com/linkedin/dustjs-helpers/wiki)
-- [{dust/helper/test/tool}](http://linkedin.github.io/dustjs/test/test.html?q=helpers)
+- [{linkedin/dustjs-test-tool}](http://linkedin.github.io/dustjs/test/test.html?q=helpers)
 
 ***
 
