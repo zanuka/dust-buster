@@ -94,15 +94,15 @@ repository:
       patterns:
       - {include: '#dust_tags'}
   dust_partials:
-    begin: (\{*(>))\s*([-a-zA-Z0-9_\./]+)*
+    begin: (\{*(>))\s*([-a-zA-Z0-9_\.]+)*
     beginCaptures:
       '1': {name: entity.name.tag.block.open.dust}
       '2': {name: constant.character.dust}
-      '2': {name: constant.character.dust}
+      '3': {name: entity.name.tag.helper.dust}
     end: (~?\/\})
     endCaptures:
-      '1': {name: entity.name.tag.block.open.dust}
-      '2': {name: variable.parameter.dust}
+      '1': {name: entity.name.tag.block.closed.dust}
+      '2': {name: constant.character.dust}
     name: meta.function.block.start.dust
     patterns:
     - {include: '#dust_strings'}

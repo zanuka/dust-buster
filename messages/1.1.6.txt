@@ -1,0 +1,8 @@
+DustBuster 1.1.6 Changelog:
+
+Please be sure to restart Sublime Text to start using this new version.
+
+- FIX: Syntax highlighting breaks on partials typed without trailing space #29
+
+
+[@zanuka](https://github.com/zanuka)

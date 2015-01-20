@@ -1,5 +1,5 @@
 ## DustBuster
-##### v1.1.5
+##### v1.1.6
 by [zanuka](https://github.com/zanuka)
 
 ![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")

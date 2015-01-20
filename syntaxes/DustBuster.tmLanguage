@@ -363,7 +363,7 @@
 		<key>dust_partials</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{*(&gt;))\s*([-a-zA-Z0-9_\./]+)*</string>
+			<string>(\{*(&gt;))\s*([-a-zA-Z0-9_\.]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -376,6 +376,11 @@
 					<key>name</key>
 					<string>constant.character.dust</string>
 				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.helper.dust</string>
+				</dict>
 			</dict>
 			<key>end</key>
 			<string>(~?\/\})</string>
@@ -384,12 +389,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.block.open.dust</string>
+					<string>entity.name.tag.block.closed.dust</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.dust</string>
+					<string>constant.character.dust</string>
 				</dict>
 			</dict>
 			<key>name</key>
