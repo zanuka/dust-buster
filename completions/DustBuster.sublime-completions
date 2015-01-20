@@ -22,6 +22,10 @@
             "contents": "{>\"${1:path/to/partial}\"/}"
         },
         {
+            "trigger": "dpi|dust-partial-inline",
+            "contents": "{<${1:inline-partial-name}}\n\t${2}\n{/${1}}",
+        },
+        {
             "trigger": "dpp|dust-partial-params",
             "contents": "{>\"${1:path/to/partial}\" ${2: params }/}${0}"
         },
