@@ -1,0 +1,6 @@
+DustBuster 1.1.8 Changelog:
+
+Please be sure to restart Sublime Text to start using this new version.
+
+Author:
+Mike Delucchi - [@zanuka](https://github.com/zanuka)
