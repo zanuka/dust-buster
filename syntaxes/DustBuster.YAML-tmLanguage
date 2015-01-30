@@ -36,7 +36,7 @@ repository:
     begin: (\{)(\+|\?|\^|\@|\#|\:|\<)([-a-zA-Z0-9_\./]+)\s?(@?[-a-zA-Z0-9_\./]+)*
     beginCaptures:
       '1': {name: entity.name.tag.delimiter.dust}
-      '2': {name: constant.character}
+      '2': {name: constant.character.dust}
       '3': {name: entity.name.tag.helper.dust}
       '4': {name: entity.other.attribute-name.generic.dust}
     end: (~?\})
