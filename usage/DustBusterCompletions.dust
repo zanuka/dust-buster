@@ -143,3 +143,24 @@
 {@math key="27.5" method="multiply" operand="7" round="true"/}
 {! {@math key="27.5" method="multiply" operand="7" round="true"/} !}
 {@math key="27.5" method="multiply" operand="7" round="true"/}
+
+{! more examples !}
+
+{@if cond="foo > 0"}
+ <li id="lodgingLink" class="">
+   <a href=""><i class="icon-lodging"></i></a>
+ </li>
+{/if}
+
+{@if cond="{x}  {y} && {b} == {c}"}
+ <li id="lodgingLink" class=""> 
+   <a href=""><i class="icon-lodging"></i></a>
+ </li>
+{/if}
+
+{! replace with: !}
+{@lt key=x value=y}
+  {@eq key=b value=c}
+    The system is down
+  {/eq}
+{/lt}

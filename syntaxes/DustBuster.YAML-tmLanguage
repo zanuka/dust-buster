@@ -32,6 +32,7 @@ repository:
     name: meta.function.inline
     patterns:
     - {include: '#dust_generic_attribute'}
+    - {include: '#dust_strings'}
   dust_block_start:
     begin: (\{)(\+|\?|\^|\@|\#|\:|\<)([-a-zA-Z0-9_\./]+)\s?(@?[-a-zA-Z0-9_\./]+)*
     beginCaptures:
@@ -46,6 +47,7 @@ repository:
     name: meta.function.block.start.dust
     patterns:
     - {include: '#dust_strings'}
+    - {include: '#dust_html_tags'}
     - {include: '#dust_generic_attribute'}
   dust_comments:
     patterns:
@@ -76,8 +78,8 @@ repository:
       match: (&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)
       name: constant.character.entity.html
     - {match: '&', name: invalid.illegal.bad-ampersand.html}
-  escaped_double_quote: {match: \\", name: constant.character.escape.js}
-  escaped_single_quote: {match: \\', name: constant.character.escape.js}
+  escaped_double_quote: {match: \\", name: constant.character.escape.html}
+  escaped_single_quote: {match: \\', name: constant.character.escape.html}
   dust_html_tags:
     patterns:
     - begin: (<)([a-zA-Z0-9:-]+)(?=[^>]*></\2>)
@@ -94,7 +96,7 @@ repository:
       patterns:
       - {include: '#dust_tags'}
   dust_partials:
-    begin: (\{*(>))\s*([-a-zA-Z0-9_\.]+)*
+    begin: (\{(>))\s*([-a-zA-Z0-9_\.]+)*
     beginCaptures:
       '1': {name: entity.name.tag.block.open.dust}
       '2': {name: constant.character.dust}
@@ -140,6 +142,7 @@ repository:
     - {include: '#dust_block_start'}
     - {include: '#dust_block_end'}
     - {include: '#dust_partials'}
+    - {include: '#dust_strings'}
   dust_tags:
     patterns:
     - {include: '#dust_id_attribute'}

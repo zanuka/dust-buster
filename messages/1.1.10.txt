@@ -1,0 +1,8 @@
+DustBuster 1.1.10 Changelog:
+
+- FIXED: issue #38, > character breaking syntax highlighting in certain cases
+
+Please be sure to restart Sublime Text to start using this new version.
+
+Author:
+Mike Delucchi - [@zanuka](https://github.com/zanuka)
