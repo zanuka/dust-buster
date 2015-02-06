@@ -160,6 +160,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#dust_html_tags</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#dust_generic_attribute</string>
 				</dict>
 			</array>
@@ -358,12 +362,16 @@
 					<key>include</key>
 					<string>#dust_generic_attribute</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#dust_strings</string>
+				</dict>
 			</array>
 		</dict>
 		<key>dust_partials</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{*(&gt;))\s*([-a-zA-Z0-9_\.]+)*</string>
+			<string>(\{(&gt;))\s*([-a-zA-Z0-9_\.]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -509,6 +517,10 @@
 					<key>include</key>
 					<string>#dust_partials</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#dust_strings</string>
+				</dict>
 			</array>
 		</dict>
 		<key>dust_strings</key>
@@ -608,14 +620,14 @@
 			<key>match</key>
 			<string>\\"</string>
 			<key>name</key>
-			<string>constant.character.escape.js</string>
+			<string>constant.character.escape.html</string>
 		</dict>
 		<key>escaped_single_quote</key>
 		<dict>
 			<key>match</key>
 			<string>\\'</string>
 			<key>name</key>
-			<string>constant.character.escape.js</string>
+			<string>constant.character.escape.html</string>
 		</dict>
 		<key>yfm</key>
 		<dict>
