@@ -83,6 +83,15 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
     {@eq value="bar"} {/eq}
 ```
 
+#### `deqe|dust-equals-else`
+```
+    {@eq key="10" value="price"} 
+        Your price is 10
+    {:else}
+        Your price is not 10
+    {/eq}
+```
+
 #### `dne|dust-not-equals`
 ```
     {@ne key="foo" value="foo"} {/ne}
