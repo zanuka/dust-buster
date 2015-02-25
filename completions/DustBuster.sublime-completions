@@ -38,6 +38,10 @@
             "contents": "{@eq value=\"${1:bar}\"}${2}{/eq}"
         },
         {
+            "trigger": "deqe|dust-equals-else",
+            "contents": "{@eq key=\"${1:10}\" value=\"${2:price}\"}\n\t${3:Your price is 10}\n{:else}\n\t${4:Your price is not 10}\n{/eq}"
+        },
+        {
             "trigger": "dne|dust-not-equals",
             "contents": "{@ne key=\"${1:foo}\" value=\"${2:foo}\"}${3}{/ne}"
         },
