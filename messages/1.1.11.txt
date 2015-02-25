@@ -1,0 +1,8 @@
+DustBuster 1.1.11 Changelog:
+
+- NEW: changelog messages history restored
+- NEW: deqe trigger for dust-equals-else completion
+
+Now get out there and bust some Dust!
+
+Mike Delucchi - [@zanuka](https://github.com/zanuka)
