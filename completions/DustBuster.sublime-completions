@@ -119,7 +119,7 @@
         },
         {
             "trigger": "ddump|dust-context-dump",
-            "contents": "{@contextDump/}"
+            "contents": "{@contextDump key=\"${1:current}|${2:full}\" to=\"${3:output}|${4:console}\"/}"
         },
         {
             "trigger": "dsep|dust-separator",
