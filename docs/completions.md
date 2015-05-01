@@ -175,7 +175,7 @@
 
 #### `ddump|dust-context-dump`
 ```
-    {@contextDump/}
+    {@contextDump key="current|full" to="output|console" /}
 ```
 
 #### `dsep|dust-separator`

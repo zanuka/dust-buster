@@ -4,7 +4,7 @@ by Mike Delucchi - [zanuka](https://github.com/zanuka)
 ![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")
 
 ***
-DustBuster is an enhanced syntax definition for .dust files that includes sublime completions of dustjs-helpers and dustjs logic syntax.
+DustBuster is an enhanced syntax definition for .dust files that includes Sublime Text completions of dustjs-helpers and dustjs logic syntax.
 
 ### Features
 - syntax definition for .dust files (with html support)
@@ -204,7 +204,7 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
 #### `ddump|dust-context-dump`
 ```
-    {@contextDump/}
+    {@contextDump key="current|full" to="output|console" /}
 ```
 
 #### `dsep|dust-separator`

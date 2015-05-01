@@ -1,0 +1,7 @@
+DustBuster 1.1.12 Changelog:
+
+- Issue #42: update ddump|dust-context-dump completion to {@contextDump key="current|full" to="output|console" /}
+
+Now get out there and bust some Dust!
+
+Mike Delucchi - [@zanuka](https://github.com/zanuka)
