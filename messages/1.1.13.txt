@@ -1,6 +1,6 @@
 DustBuster 1.1.13 Changelog:
 
-- fix in dust_html_tags pattern
+- fixes Issue 47: Fix syntax highlighting for HTML tags with dashes
 
 Now get out there and bust some Dust!
 
