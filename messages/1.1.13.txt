@@ -1,0 +1,7 @@
+DustBuster 1.1.13 Changelog:
+
+- fixes Issue 47: Fix syntax highlighting for HTML tags with dashes
+
+Now get out there and bust some Dust!
+
+Mike Delucchi - [@zanuka](https://github.com/zanuka)
