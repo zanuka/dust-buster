@@ -1,5 +1,7 @@
 ## DustBuster
 
+<a href="https://app.codesponsor.io/link/vaB8KxvGTnMczNLBTQfLUZAU/mdelucchi/dust-buster" rel="nofollow"><img src="https://app.codesponsor.io/embed/vaB8KxvGTnMczNLBTQfLUZAU/mdelucchi/dust-buster.svg" style="width: 888px; height: 68px;" alt="Sponsor" /></a>
+
 ![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")
 
 ***
@@ -245,8 +247,6 @@ DustBuster is an enhanced syntax definition for .dust files that includes Sublim
 ```
     {name|jp}
 ```
-
-<a href="https://app.codesponsor.io/link/vaB8KxvGTnMczNLBTQfLUZAU/mdelucchi/dust-buster" rel="nofollow"><img src="https://app.codesponsor.io/embed/vaB8KxvGTnMczNLBTQfLUZAU/mdelucchi/dust-buster.svg" style="width: 888px; height: 68px;" alt="Sponsor" /></a>
 
 ###### Additional Credits
 DustBuster is a complete rewrite of a previous package by [sntran](https://github.com/sntran) and [gpbl](https://github.com/gpbl).
