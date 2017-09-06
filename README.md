@@ -3,7 +3,7 @@
 ![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")
 
 ***
-DustBuster is an enhanced syntax definition for .dust files that includes Sublime Text completions of dustjs-helpers and dustjs logic syntax.
+DustBuster is an enhanced syntax definition for .dust files that includes Sublime Text completions of dustjs-helpers and dustjs logic syntax. If you prefer Atom, checkout the [language-dustjs](https://atom.io/packages/language-dustjs) package.
 
 ### Features
 - syntax definition for .dust files (with html support)
