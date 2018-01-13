@@ -3,21 +3,21 @@
         "caption": "DustBuster: README",
         "command": "open_url", "args":
         {
-            "url": "https://github.com/zanuka/dust-buster/blob/master/README.md"
+            "url": "https://github.com/mdelucchi/dust-buster/blob/master/README.md"
         }
     },
     {
         "caption": "DustBuster: ISSUES",
         "command": "open_url", "args":
         {
-            "url": "https://github.com/zanuka/dust-buster/issues"
+            "url": "https://github.com/mdelucchi/dust-buster/issues"
         }
     },
     {
         "caption": "DustBuster: Supported Trigger Completions",
         "command": "open_url", "args":
         {
-            "url": "https://github.com/zanuka/dust-buster/blob/master/docs/completions.md"
+            "url": "https://github.com/mdelucchi/dust-buster/blob/master/docs/completions.md"
         }
     },
     {

@@ -4,6 +4,6 @@ You have successfully installed
  / // / // (_-</ __/ _  / // (_-</ __/ -_) __/
 /____/\_,_/___/\__/____/\_,_/___/\__/\__/_/   
 
-by Mike Delucchi - [@zanuka](https://github.com/zanuka)
+by Mike Delucchi - [@mdelucchi](https://github.com/mdelucchi)
 
 Enjoy!

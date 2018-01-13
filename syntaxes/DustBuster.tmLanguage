@@ -4,6 +4,7 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
+		<string>tl</string>
 		<string>dust</string>
 	</array>
 	<key>name</key>

@@ -5,4 +5,4 @@ DustBuster 1.1.11 Changelog:
 
 Now get out there and bust some Dust!
 
-Mike Delucchi - [@zanuka](https://github.com/zanuka)
+Mike Delucchi - [@mdelucchi](https://github.com/mdelucchi)
