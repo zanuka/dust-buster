@@ -3,6 +3,7 @@ DustBuster 1.1.14 Changelog:
 - fixes Issue 55: Add support for .tl files
 - remove code sponsor thing from readme
 - enhance readme with og dustbuster image
+- update github username
 
 [issues](https://github.com/mdelucchi/dust-buster/issues)
 
