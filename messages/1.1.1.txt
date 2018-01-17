@@ -6,4 +6,4 @@ Please be sure to restart Sublime Text to start using this new version.
 - NEW: added command - "Open dust completions..."
 - NEW: added command - "Open dust-with-html example..."
 
-[@zanuka](https://github.com/zanuka)
+[@mdelucchi](https://github.com/mdelucchi)

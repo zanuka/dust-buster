@@ -1,11 +1,11 @@
 ## DustBuster
 
-<a href="https://app.codesponsor.io/link/vaB8KxvGTnMczNLBTQfLUZAU/mdelucchi/dust-buster" rel="nofollow"><img src="https://app.codesponsor.io/embed/vaB8KxvGTnMczNLBTQfLUZAU/mdelucchi/dust-buster.svg" style="width: 888px; height: 68px;" alt="Sponsor" /></a>
-
-![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")
+![](images/dustbuster-og.png?raw=true "The Original")
 
 ***
 DustBuster is an enhanced syntax definition for .dust files that includes Sublime Text completions of dustjs-helpers and dustjs logic syntax. If you prefer Atom, checkout the [language-dustjs](https://atom.io/packages/language-dustjs) package.
+
+![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")
 
 ### Features
 - syntax definition for .dust files (with html support)
