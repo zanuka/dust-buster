@@ -1,7 +1,5 @@
 ## DustBuster
 
-![](images/dustbuster-og.png?raw=true "The Original")
-
 ***
 DustBuster is an enhanced syntax definition for .dust files that includes Sublime Text completions of dustjs-helpers and dustjs logic syntax. If you prefer Atom, checkout the [language-dustjs](https://atom.io/packages/language-dustjs) package.
 
