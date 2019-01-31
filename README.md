@@ -1,7 +1,7 @@
 ## DustBuster
 
 ***
-DustBuster is an enhanced syntax definition for .dust files that includes Sublime Text completions of dustjs-helpers and dustjs logic syntax. If you prefer Atom, checkout the [language-dustjs](https://atom.io/packages/language-dustjs) package.
+DustBuster is an enhanced syntax definition for .dust files that includes Sublime Text completions of dustjs-helpers and dustjs logic syntax. 
 
 ![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")
 
@@ -19,10 +19,14 @@ DustBuster is an enhanced syntax definition for .dust files that includes Sublim
 ### Activating the Dust syntax definition for all .dust files
 -  open any .dust file and then select View > Syntax > Dust
 
-### Supported Helpers ###
+### Supported Helpers
 - [{linkedin/dustjs-helpers}](https://github.com/linkedin/dustjs-helpers)
 - [{linkedin/dustjs-helpers/wiki}](https://github.com/linkedin/dustjs-helpers/wiki)
 - [{linkedin/dustjs-test-tool}](http://linkedin.github.io/dustjs/test/test.html?q=helpers)
+
+### Additional IDE Support
+- Atom package :: [language-dustjs](https://atom.io/packages/language-dustjs)
+- VSCode extension :: [vscode-dustjs](https://github.com/AzkabanCoders/vscode-dustjs)
 
 ***
 
