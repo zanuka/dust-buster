@@ -1,7 +1,7 @@
 ## DustBuster
 
 ***
-DustBuster is an enhanced syntax definition for .dust files that includes Sublime Text completions of dustjs-helpers and dustjs logic syntax. 
+DustBuster is an enhanced syntax definition for .dust files that includes completions of dustjs-helpers and dustjs logic syntax. 
 
 ![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")
 
