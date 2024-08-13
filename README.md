@@ -1,7 +1,7 @@
 ## DustBuster
 
 ***
-DustBuster is a syntax definition package for .dust files with completions for dustjs-helpers and dustjs logic syntax. 
+DustBuster is a package for Sublime Text used for syntax definitions in .dust files. It also includes custom shortcut completions for dustjs-helpers and dustjs logic syntax. 
 
 ![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")
 
