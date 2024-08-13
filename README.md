@@ -1,7 +1,7 @@
 ## DustBuster
 
 ***
-DustBuster is an enhanced syntax definition for .dust files that includes completions of dustjs-helpers and dustjs logic syntax. 
+DustBuster is a syntax definition package for .dust files with completions for dustjs-helpers and dustjs logic syntax. 
 
 ![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")
 
